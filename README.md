@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
 <meta charset="utf-8">
-<title>Meine erste Website</title>
+<title>Wilkommen in der Kunstgalerie</title>
 </head>
+
 <body>
-<h1>Meine Person </h1>
+<h1>Meine Person</h1>
 <img src="portrait.jgeg">
 <p> Das bin ich.</p>
-<h2> Meine Hochschule</h2>
+<h1> Meine Hochschule</h1>
