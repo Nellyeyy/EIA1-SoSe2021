@@ -14,4 +14,4 @@
 
 <h2> Die zerbrochene Mine</h2>
 <img src="foto2.jpg">
-<p>Fotograf: M.Mustermann</p>
+<p><b>Fotograf: M.Mustermann</b></p>
