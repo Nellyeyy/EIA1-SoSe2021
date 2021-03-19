@@ -5,9 +5,12 @@
 <head>
 <meta charset="utf-8">
 <h1>Wilkommen in der Kunstgalerie</h1>
+<h2>Viel Spaß beim Stöbern und Kaufen!</h2>
 </head>
 
 <body>
+<h1>Bildergalerie</h1>
+
 <h2>Das Tuch</h2>
 <img src="foto1.jpg">
 <p><b>Fotograf:</b> M.Mustermann</p>
