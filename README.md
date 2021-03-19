@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="utf-8">
-<h1><title>Wilkommen in der Kunstgalerie</title></h1>
+<h1><b>Wilkommen in der Kunstgalerie<b></h1>
 </head>
 
 <body>
