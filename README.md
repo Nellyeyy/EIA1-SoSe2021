@@ -11,8 +11,7 @@
 <h2>Das Tuch</h2>
 <img src="foto1.jpg">
 <p><b>Fotograf:</b> M.Mustermann</p>
-
-
+<p> </p>
 <h2>Die zerbrochene Mine</h2>
 <img src="foto2.jpg">
 <p><b>Fotograf:</b> M.Mustermann</p>
