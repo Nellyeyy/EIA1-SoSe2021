@@ -8,8 +8,8 @@
 </head>
 
 <body>
-<h1>Meine Person</h1>
+<h2>Meine Person</h2>
 <img src="portrait.jgeg">
 <p> Das bin ich.</p>
 
-<h1> Meine Hochschule</h1>
+<h2> Meine Hochschule</h2>
