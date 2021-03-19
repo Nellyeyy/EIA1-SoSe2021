@@ -26,3 +26,9 @@
 <h2>In Beton</h2>
 <img src="foto4.jpg">
 <p><b>Fotograf:</b> M.Mustermann</p>
+
+<h1>Videogalerie</h1>
+
+<h2>Nerven</h2>
+<img src="clip1.mp4">
+<p><b>Videograf:</b> M.Mustermann</p>
