@@ -4,11 +4,12 @@
 
 <head>
 <meta charset="utf-8">
-<title>Wilkommen in der Kunstgalerie</title>
+<h1><title>Wilkommen in der Kunstgalerie</title></h1>
 </head>
 
 <body>
 <h1>Meine Person</h1>
 <img src="portrait.jgeg">
 <p> Das bin ich.</p>
+
 <h1> Meine Hochschule</h1>
