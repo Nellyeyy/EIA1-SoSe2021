@@ -1,0 +1,63 @@
+.body{
+    background-image: url(bg.png);
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+.header{
+    display: block;
+    background-color: teal;
+    height: 550px;
+    width: 800px;
+    border-bottom-right-radius: 400px;
+    border-bottom-left-radius: 400px;
+    text-align: center;
+    top: 0;
+    margin-top: -175px;
+}
+#headline{
+    padding-top: 110px;
+    color:  rgba(255, 255, 255, 0.774);
+    font-size: 170px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Navi{
+    overflow: hidden;
+    background-color: rgb(4, 167, 167);
+    margin-left: 555px;
+    padding: 20px 20px 20px 20px;
+    position: fixed;
+    top: 0;
+    width: fit-content;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.Nav{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.774);
+    height: 10px;
+    width: 10px;
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 20px;
+}
+#aktuell{
+    color:rgb(4, 78, 78);
+}
+.h2{
+    color: rgb(4, 78, 78);
+    font-size: 50px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pic{
+    max-width: 800px;
+    text-align: center;
+}
+#back{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: right;
+    color:rgb(4, 78, 78) ;
+}
