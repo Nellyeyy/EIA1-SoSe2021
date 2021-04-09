@@ -13,10 +13,10 @@
     border-bottom-left-radius: 400px;
     text-align: center;
     top: 0;
-    margin-top: -175px;
+    margin-top: -200px;
 }
 #headline{
-    padding-top: 120px;
+    padding-top: 150px;
     color:  rgba(255, 255, 255, 0.774);
     font-size: 150px;
     font-family: Arial, Helvetica, sans-serif;
@@ -41,20 +41,41 @@
     font-size: 15pt;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px 20px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 50px;
+}
+.Nav:hover{
+    background-color: rgba(10, 204, 204, 0.637);
 }
 #aktuell{
     color:rgb(4, 78, 78);
+}
+#headname{
+    color: rgba(255, 255, 255, 0.774);
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 240px;
+    margin-top: -120px;
+}
+.sm{
+    text-align: center;
+    width: 50px;
+    margin-top: -120px;
+    filter: brightness(50%);
+}
+.sm:hover{
+    filter: brightness(100%);
 }
 .h2{
     color: rgb(4, 78, 78);
     font-size: 50px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: underline;
+    text-decoration: none;
 }
-.h2{
+.h3{
     color: rgb(4, 78, 78);
-    font-size: 50px;
+    font-size: 25px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -65,11 +86,73 @@
 }
 #back{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     text-align: right;
     color:rgb(4, 78, 78) ;
+    background-color: teal;
+    right: 30px;
+    float: right;
+    padding: 10px;
+    border-radius: 50px;
+    margin-right: -200px;
+    margin-top: 50px;
+    margin-bottom: 50px; 
 }
 .Me{
     max-width: 800px;
-    text-align: left; 
+    float: left; 
+    width: 50%;
+}
+.text{
+    color: teal;
+    font-size: 20px;
+    hyphens: auto;
+    text-align: justify;
+    margin-left: 450px;
+    margin-top: -23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form{
+    background-color: teal;
+    color: rgba(255, 255, 255, 0.774);
+    text-align: left;
+    margin-left: -580px;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.nachricht{
+    background-color: teal;
+    color: rgba(255, 255, 255, 0.774);
+    text-align: left;
+    margin-left: -530px;
+    width: 250px;
+    height: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#button{
+    background-color: teal;
+    text-align: left;
+    margin-left: -730px ;
+    border-radius: 50px;
+    filter: brightness(50%);
+}
+.button:hover{
+    filter: brightness(100%);
+}
+#Imp{
+    color: rgb(4, 78, 78);
+    font-size: 25px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+#impressum{
+    color: teal;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-top: -30px;
 }
