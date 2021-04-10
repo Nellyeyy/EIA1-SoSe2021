@@ -113,34 +113,45 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 .form{
-    background-color: teal;
-    color: rgba(255, 255, 255, 0.774);
+    background-color: rgb(4, 167, 167);
     text-align: left;
     margin-left: -580px;
     width: 200px;
     height: 30px;
-    font-size: 15px;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid grey;
 }
 .nachricht{
-    background-color: teal;
-    color: rgba(255, 255, 255, 0.774);
+    background-color: rgb(4, 167, 167);
     text-align: left;
     margin-left: -530px;
     width: 250px;
-    height: 30px;
+    height: 50px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid grey;
+}
+.sendtext{
+    margin-top: 30px;
+    margin-left: 8px;
     font-size: 15px;
+    color: grey;
+    text-align: left;
     font-family: Arial, Helvetica, sans-serif;
 }
 #button{
-    background-color: teal;
+    background-color: rgb(4, 167, 167);
     text-align: left;
-    margin-left: -730px ;
+    margin-left: -700px ;
     border-radius: 50px;
-    filter: brightness(50%);
+    padding: 10px 20px 10px 20px;
+    color: grey;
+    border: 2px solid grey;
 }
-.button:hover{
-    filter: brightness(100%);
+#button:hover{
+    background-color: teal;
+    color: rgba(255, 255, 255, 0.774);;
 }
 #Imp{
     color: rgb(4, 78, 78);
@@ -148,11 +159,13 @@
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+   
 }
 #impressum{
-    color: teal;
+    color: grey;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     margin-top: -30px;
+    margin-left: 8px;
 }
