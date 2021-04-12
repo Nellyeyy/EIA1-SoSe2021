@@ -1,0 +1,27 @@
+body{
+    background-image: url(bg.png);
+    max-width: 800px;
+    
+}
+#wrapper{
+    display: flex;
+    
+    
+}
+.text_card{
+    text-align: center;
+    
+}
+#h1{
+    color: white;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: auto;
+
+}
+.text{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin: auto;
+}
