@@ -1,5 +1,5 @@
 body{
-    background-image: url(../4.3/bg.png);    
+    background-image: url(../4.4/bg.png);    
 }
 #wrapper{
     display: flex;
@@ -7,4 +7,56 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+h1{
+    color: white;
+    font-size: 30 px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    margin-left: -70px;
+    
+    
+}
+.label1{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -70px;
+}
+p{
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -70px;
+    
+}
+#name{
+    margin-left: -70px;
+    width: 250px;
+    height: 20px;
+}
+#Nachricht{
+    margin-left: -70px;
+    width: 350px;
+    height: 70px;
+}
+.label2{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -70px;
+    margin-top: -15px;
+}
+.button{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: -70px;
+    margin-top: -65px;
 }
