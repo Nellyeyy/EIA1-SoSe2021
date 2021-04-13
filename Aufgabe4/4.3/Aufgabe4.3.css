@@ -1,0 +1,34 @@
+body{
+    background-image: url(../4.3/bg.png);    
+}
+#wrapper{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+h1{
+    color: white;
+    font-size: 50px;
+    font-family: font;
+}
+h2{
+    color: white;
+    font-size: 25px;
+    font-family: font;
+}
+
+@font-face {
+    font-family: font;
+    src: url(../4.3/font/jellyka_delicious_cake-webfont.ttf);
+    src: url(../4.3/font/jellyka_delicious_cake-webfont.woff);
+    scr: url(../4.3/font/jellyka_delicious_cake-webfont.woff2)
+}

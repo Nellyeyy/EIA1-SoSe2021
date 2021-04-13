@@ -1,5 +1,5 @@
 body{
-    background-image: url(../Aufgabe4/4.2/bg.png);    
+    background-image: url(../4.2/bg.png);    
 }
 #wrapper{
     display: flex;
@@ -49,11 +49,11 @@ h2{
     margin-left: -250px;
 }
 #Mr:hover{
-    Content: url(../Aufgabe4/4.2/muschel_perle.png);    
+    Content: url(../4.2/muschel_perle.png);    
 }
 #Mm:hover{
-    Content: url(../Aufgabe4/4.2/muschel_perle.png);
+    Content: url(../4.2/muschel_perle.png);
 }
 #Ml:hover{
-    Content: url(../Aufgabe4/4.2/muschel_perle.png);
+    Content: url(../4.2/muschel_perle.png);
 }
