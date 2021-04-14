@@ -1,0 +1,10 @@
+body{
+    background-image: url(../4.8/bg.png);    
+}
+#wrapper{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

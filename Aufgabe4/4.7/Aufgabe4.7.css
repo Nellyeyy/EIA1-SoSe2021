@@ -1,0 +1,26 @@
+body{
+    background-image: url(../4.7/bg.png);    
+}
+#wrapper{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ban{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+#banderole{
+    margin-top: 280px;
+    margin-left: 370px;
+}
