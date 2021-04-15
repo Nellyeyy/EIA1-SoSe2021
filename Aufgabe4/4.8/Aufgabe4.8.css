@@ -19,20 +19,50 @@ body{
     margin-left: -250px;
     margin-top: -110px;
     animation-name: muschel;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-direction: reverse;
-    
+    filter: brightness(80%); 
 }
 @keyframes muschel{
     from{
         margin-top: 110px;  
     }
+    0%  { transform: rotate(0);}
+  100%{ transform: rotate(2turn);}
+}
+#muschel2{
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -10px;
+    animation-name: muschel2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse; 
+     filter: brightness(50%);
+}
+@keyframes muschel2{
+    from{
+        margin-top: 110px;  
+    }
+    0%  { transform: rotate(0);}
+  100%{ transform: rotate(2turn);}
 }
 #perle{
     position: absolute;
     margin-left: 200px;
     margin-top: -170px;
+    animation-name: perle;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+@keyframes perle{
+    from{
+        margin-top: 110px;  
+    }
+    0%  { transform: rotate(0);}
+  100%{ transform: rotate(3turn);}
 }
 #banderole{
     position: absolute;
