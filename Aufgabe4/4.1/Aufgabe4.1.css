@@ -19,14 +19,13 @@ body{
     color: white;
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    position: absolute;
-    top: -35%;
 }
 .text{
     color: white;
     font-size: 15px;
     text-align: justify;
     max-width: 500px;
+    margin-top: -20px;
 }
 .img{
     position: absolute;
