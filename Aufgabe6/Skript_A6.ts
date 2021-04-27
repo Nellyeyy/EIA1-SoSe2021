@@ -68,3 +68,4 @@ Vergleich_08_18 (Kon_Europa, eu_18, eu_08);
 Vergleich_08_18 (Kon_NorthAmerika, na_18, na_08);
 Vergleich_08_18 (Kon_Asia, as_18, as_08);
 Vergleich_08_18 (Kon_Australia, au_18, au_08);
+
