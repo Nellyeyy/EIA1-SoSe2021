@@ -1,3 +1,58 @@
+// Europa
+document.getElementById("pic_eu").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in Europe";
+    document.getElementById("emi_number").innerHTML = "" + eu_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of Europe in 2018";
+    document.getElementById("total").innerHTML = "" + (eu_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((eu_18 - eu_08) / eu_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (eu_18 - eu_08).toFixed(2);
+});
+// Nord Amerika
+document.getElementById("pic_na").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in North America";
+    document.getElementById("emi_number").innerHTML = "" + na_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of North America in 2018";
+    document.getElementById("total").innerHTML = "" + (na_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((na_18 - na_08) / na_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (na_18 - na_08).toFixed(2);
+});
+// Süd Amerika
+document.getElementById("pic_sa").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in South America";
+    document.getElementById("emi_number").innerHTML = "" + sa_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of South America in 2018";
+    document.getElementById("total").innerHTML = "" + (sa_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((sa_18 - sa_08) / sa_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (sa_18 - sa_08).toFixed(2);
+});
+// Afrika
+document.getElementById("pic_af").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in Africa";
+    document.getElementById("emi_number").innerHTML = "" + af_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of Africa in 2018";
+    document.getElementById("total").innerHTML = "" + (af_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((af_18 - af_08) / af_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (af_18 - af_08).toFixed(2);
+});
+// Asia
+document.getElementById("pic_as").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in Asia";
+    document.getElementById("emi_number").innerHTML = "" + as_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of Asia in 2018";
+    document.getElementById("total").innerHTML = "" + (as_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((as_18 - as_08) / as_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (as_18 - as_08).toFixed(2);
+});
+// Australien
+document.getElementById("pic_au").addEventListener("click", function () {
+    document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in Australia";
+    document.getElementById("emi_number").innerHTML = "" + au_18;
+    document.getElementById("text_emi").innerHTML = "Emission absolute of Australia in 2018";
+    document.getElementById("total").innerHTML = "" + (au_18 * 100 / ges_18).toFixed(2) + " %";
+    document.getElementById("growth").innerHTML = "" + ((au_18 - au_08) / au_08 * 100).toFixed(2) + " %";
+    document.getElementById("change_absolut").innerHTML = "" + (au_18 - au_08).toFixed(2);
+});
+// Konsolenausgabe
 var Kon_Afrika = "Afrika";
 var Kon_SouthAmerika = "South Amerika";
 var Kon_Europa = "Europa";

@@ -1,5 +1,3 @@
-</body>
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carbon Dioxide Emissions</title>
     <link rel="stylesheet" href="../Aufgabe5/styles.css">
-    <script src="Skript_A6.js" defer></script>
+    <script src="Skript_A6.js" async></script>
 </head>
+
 <body>
     <nav>
-        <img src="../Aufgabe5/europe.png" class="europe">
-        <img src="../Aufgabe5/northamerica.png" class="northamerica">
-        <img src="../Aufgabe5/southamerica.png" class="southamerica">
-        <img src="../Aufgabe5/africa.png" class="africa">
-        <img src="../Aufgabe5/asia.png" class="asia">
-        <img src="../Aufgabe5/australia.png" class="australia">
+        <img src="../Aufgabe5/europe.png" class="europe" id="pic_eu" >
+        <img src="../Aufgabe5/northamerica.png" class="northamerica" id="pic_na" >
+        <img src="../Aufgabe5/southamerica.png" class="southamerica" id="pic_sa" >
+        <img src="../Aufgabe5/africa.png" class="africa" id="pic_af" >
+        <img src="../Aufgabe5/asia.png" class="asia" id="pic_as" >
+        <img src="../Aufgabe5/australia.png" class="australia" id="pic_au" >
     </nav>
 
-    <h1>
+    <h1 id="head">
         Carbon Dioxide Emissions in Europe
     </h1>
 
+    <div class="chartWrapper">
+        <div class="chart"></div>
+    </div>
+
     <main>
         <section>
-            <h2>4209.3</h2>
-            <p>Emission absolute of Europe in 2018</p>
+            <h2 id="emi_number">4209.3</h2>
+            <p id="text_emi">Emission absolute of Europe in 2018</p>
         </section>
         
         <section>
-            <h2>4%</h2>
+            <h2 id="total">13,53%</h2>
             <p>Relative to total world's emission</p>
         </section>
         
         <section>
-            <h2>1.2%</h2>
+            <h2 id="growth">-15.23 %</h2>
             <p>Growth rate between 2008 and 2018 (in %)</p>
         </section>
         
         <section>
-            <h2>-400</h2>
+            <h2 id="change_absolut">-756.40 </h2>
             <p>Growth rate between 2008 and 2018 (absolute)</p>
         </section>
     </main>
