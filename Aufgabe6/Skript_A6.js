@@ -6,6 +6,7 @@ document.getElementById("pic_eu").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (eu_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((eu_18 - eu_08) / eu_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (eu_18 - eu_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (eu_18 * 100 / ges_18) + '%');
 });
 // Nord Amerika
 document.getElementById("pic_na").addEventListener("click", function () {
@@ -15,6 +16,7 @@ document.getElementById("pic_na").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (na_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((na_18 - na_08) / na_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (na_18 - na_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (na_18 * 100 / ges_18) + '%');
 });
 // Süd Amerika
 document.getElementById("pic_sa").addEventListener("click", function () {
@@ -24,6 +26,7 @@ document.getElementById("pic_sa").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (sa_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((sa_18 - sa_08) / sa_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (sa_18 - sa_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (sa_18 * 100 / ges_18) + '%');
 });
 // Afrika
 document.getElementById("pic_af").addEventListener("click", function () {
@@ -33,6 +36,7 @@ document.getElementById("pic_af").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (af_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((af_18 - af_08) / af_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (af_18 - af_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (af_18 * 100 / ges_18) + '%');
 });
 // Asia
 document.getElementById("pic_as").addEventListener("click", function () {
@@ -42,6 +46,7 @@ document.getElementById("pic_as").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (as_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((as_18 - as_08) / as_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (as_18 - as_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (as_18 * 100 / ges_18) + '%');
 });
 // Australien
 document.getElementById("pic_au").addEventListener("click", function () {
@@ -51,6 +56,7 @@ document.getElementById("pic_au").addEventListener("click", function () {
     document.getElementById("total").innerHTML = "" + (au_18 * 100 / ges_18).toFixed(2) + " %";
     document.getElementById("growth").innerHTML = "" + ((au_18 - au_08) / au_08 * 100).toFixed(2) + " %";
     document.getElementById("change_absolut").innerHTML = "" + (au_18 - au_08).toFixed(2);
+    document.getElementById("chart").setAttribute('style', 'height:' + (au_18 * 100 / ges_18) + '%');
 });
 // Konsolenausgabe
 var Kon_Afrika = "Afrika";
