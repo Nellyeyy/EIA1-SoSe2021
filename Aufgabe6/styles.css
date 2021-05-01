@@ -5,7 +5,7 @@ html, body {
     height: 100%;
     padding: 0;
     overflow: hidden;
-    background-image: radial-gradient(circle 100vw at left top,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.5) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(247,105,6,.25) 0,rgba(247,105,6,0) 100%),radial-gradient(circle 100vw at left center,rgba(28,222,126,.2) 0,rgba(28,222,126,0) 100%),radial-gradient(circle 100vw at right center,rgba(0,136,160,.4) 0,rgba(0,136,160,0) 100%);
+    background-color: rgb(54, 54, 54);
 }
 
 nav {
@@ -23,7 +23,9 @@ section {
     display: inline-block;
     width: 50px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.356);
+    border-radius: 10px 10px 0px 0px;
+  
 }
 
 .chartWrapper #chart {
@@ -32,10 +34,47 @@ section {
     width: 100%;
     height: 20%;
     background: white;
+    
 }
 
 footer p {
     margin-top: 50px;
     font-size: 10px;
     opacity: .5;
+}
+#pic_eu{
+    filter: brightness(50%);
+}
+#pic_eu:hover{
+    filter: brightness(100%);
+}
+#pic_na{
+    filter: brightness(50%);
+}
+#pic_na:hover{
+    filter: brightness(100%);
+}
+#pic_sa{
+    filter: brightness(50%);
+}
+#pic_sa:hover{
+    filter: brightness(100%);
+}
+#pic_af{
+    filter: brightness(50%);
+}
+#pic_af:hover{
+    filter: brightness(100%);
+}
+#pic_as{
+    filter: brightness(50%);
+}
+#pic_as:hover{
+    filter: brightness(100%);
+}
+#pic_au{
+    filter: brightness(50%);
+}
+#pic_au:hover{
+    filter: brightness(100%);
 }
