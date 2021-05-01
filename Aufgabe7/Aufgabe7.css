@@ -1,0 +1,118 @@
+body{
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#eins{
+    background-color: rgb(0, 89, 255);
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(189, 174, 255);
+    border-width: 2px;
+}
+
+#eins:hover{ 
+    transform: scale(1.05); 
+}
+
+#zwei{
+    background-color: rgb(0, 89, 255);
+    padding: 70px;
+    border-radius: 10px;
+    margin-top: -20px;
+    border-color: rgb(189, 174, 255);
+    border-width: 2px;
+}
+
+#zwei:hover{ 
+    transform: scale(1.05); 
+}
+
+#drei{
+    background-color: rgb(0, 89, 255);
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(189, 174, 255);
+    border-width: 2px;
+}
+
+#drei:hover{ 
+    transform: scale(1.05); 
+}
+
+#vier{
+    background-color:palevioletred;
+    padding: 70px;
+    border-radius: 10px;
+    margin-top: 4px;
+    border-color: rgb(238, 176, 222);
+    border-width: 2px;
+}
+
+#vier:hover{ 
+    transform: scale(1.05); 
+}
+
+#fuenf{
+    background-color:palevioletred;
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(238, 176, 222);
+    border-width: 2px;
+}
+
+#fuenf:hover{ 
+    transform: scale(1.05); 
+}
+
+#sechs{
+    background-color:palevioletred;
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(238, 176, 222);
+    border-width: 2px;
+}
+
+#sechs:hover{ 
+    transform: scale(1.05); 
+}
+
+#sieben{
+    background-color:palevioletred;
+    padding: 70px;
+    border-radius: 10px;
+    margin-top: 4px;
+    border-color: rgb(238, 176, 222);
+    border-width: 2px;
+}
+
+#sieben:hover{ 
+    transform: scale(1.05); 
+}
+
+#acht{
+    background-color: rgb(236, 130, 60);
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(253, 224, 187);
+    border-width: 2px;
+}
+
+#acht:hover{ 
+    transform: scale(1.05); 
+}
+
+#neun{
+    background-color: rgb(236, 130, 60);
+    padding: 70px;
+    border-radius: 10px;
+    border-color: rgb(253, 224, 187);
+    border-width: 2px;
+}
+
+#neun:hover{ 
+    transform: scale(1.05); 
+}
