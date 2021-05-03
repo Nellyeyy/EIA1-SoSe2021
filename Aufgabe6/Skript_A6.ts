@@ -1,49 +1,48 @@
 // Version 2
 
-var Kon_Europa: string ="Europa";
-var Kon_NorthAmerika: string = "Nord Amerika";
-var Kon_SouthAmerika: string = "South Amerika";
-var Kon_Afrika: string ="Afrika";
-var Kon_Asia: string ="Asien";
-var Kon_Australia: string ="Australien";
-
+var kon_Europa: string ="Europa";
 var eu_18: number = 4209.3;
 var eu_08: number = 4965.7;
 
+var kon_NorthAmerika: string = "Nord Amerika";
 var na_18: number = 6035.6;
 var na_08: number = 6600.4;
 
+var kon_SouthAmerika: string = "South Amerika";
 var sa_18: number = 1261.5;
 var sa_08: number = 1132.6;
 
+var kon_Afrika: string ="Afrika";
 var af_18: number = 1235.5;
 var af_08: number = 1028;
 
+var kon_Asia: string ="Asien";
 var as_18: number = 16274.1;
 var as_08: number = 12954.7;
 
+var kon_Australia: string ="Australien";
 var au_18: number = 2100.5;
 var au_08: number = 1993;
 
 var ges_18: number = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
 
 window.addEventListener("load", function() {
-    document.querySelector("Kon_Europa").addEventListener("click" , function() { Emissionen(Kon_Europa, eu_08, eu_18)});
-    document.querySelector("Kon_NorthAmerika").addEventListener("click" , function() { Emissionen(Kon_NorthAmerika, na_08, na_18)});
-    document.querySelector("Kon_SouthAmerika").addEventListener("click" , function() { Emissionen(Kon_SouthAmerika, sa_08, sa_18)});
-    document.querySelector("Kon_Afrika").addEventListener("click" , function() { Emissionen(Kon_Afrika, af_08, af_18)});
-    document.querySelector("Kon_Asia").addEventListener("click" , function() { Emissionen(Kon_Asia, as_08, as_18)});
-    document.querySelector("Kon_Australia").addEventListener("click" , function() { Emissionen(Kon_Australia, au_08, au_18)});
+    document.querySelector(".Kon_Europa").addEventListener("click", function() {A6(kon_Europa, eu_08, eu_18)});
+    document.querySelector(".Kon_NorthAmerika").addEventListener("click", function() {A6(kon_NorthAmerika, na_08, na_18)});
+    document.querySelector(".Kon_SouthAmerika").addEventListener("click", function() {A6(kon_SouthAmerika, sa_08, sa_18)});
+    document.querySelector(".Kon_Afrika").addEventListener("click", function() {A6(kon_Afrika, af_08, af_18)});
+    document.querySelector(".Kon_Asia").addEventListener("click", function() {A6(kon_Asia, as_08, as_18)});
+    document.querySelector(".Kon_Australia").addEventListener("click", function() {A6(kon_Australia, au_08, au_18)});
 });
 
-function Emissionen (Kon: string, Kon_08 :number, Kon_18:number) {
-    document.querySelector(".Konti").innerHTML = Kon;
-    document.querySelector(".Konti_1").innerHTML = Kon;
-    document.querySelector("#emi_number").innerHTML = Kon_18.toString();
-    document.querySelector("#total").innerHTML = (Kon_18*100/ges_18).toFixed(2) + " %";
-    document.querySelector("#growth").innerHTML = ((Kon_18-Kon_08)/Kon_08*100).toFixed(2) + " %";
-    document.querySelector("#change_absolut").innerHTML = (Kon_18-Kon_08).toFixed(2);
-    document.querySelector ("#chart").setAttribute("style", "height:" + (Kon_18 *100/ ges_18) + " %" );
+function A6(kon:string, kon_08:number, kon_18:number) {
+    document.querySelector(".Konti").innerHTML = kon;
+    document.querySelector(".Konti_1").innerHTML = kon;
+    document.querySelector("#emi_number").innerHTML = kon_18.toString();
+    document.querySelector("#total").innerHTML = (kon_18*100/ges_18).toFixed(2) + " %";
+    document.querySelector("#growth").innerHTML = ((kon_18-kon_08)/kon_08*100).toFixed(2) + " %";
+    document.querySelector("#change_absolut").innerHTML = (kon_18-kon_08).toFixed(2);
+    document.querySelector ("#chart").setAttribute("style", "height:" + (kon_18 *100/ ges_18) + " %" );
 };
 
 
@@ -121,42 +120,42 @@ function Emi (name_Kon: string, Kontinent_18: number){
     console.log('Die Emission von ' + name_Kon + ' ist: ' + (Kontinent_18).toFixed(2) + ' kg CO2');
 }
 
-Emi(Kon_Afrika, af_18);
-Emi(Kon_SouthAmerika, sa_18);
-Emi(Kon_Europa, eu_18);
-Emi(Kon_NorthAmerika, na_18);
-Emi(Kon_Asia, as_18);
-Emi(Kon_Australia, au_18);
+Emi(kon_Afrika, af_18);
+Emi(kon_SouthAmerika, sa_18);
+Emi(kon_Europa, eu_18);
+Emi(kon_NorthAmerika, na_18);
+Emi(kon_Asia, as_18);
+Emi(kon_Australia, au_18);
 
 function GesEmi (name_Kon: string, Kontinent_18: number, Ges18: number){
     console.log('Relativ zur Gesamtemission der Welt verursacht ' + name_Kon + ' damit ' + (Kontinent_18*100/Ges18).toFixed(2) + ' %');
 }
 
-GesEmi(Kon_Afrika, af_18, ges_18);
-GesEmi(Kon_SouthAmerika, sa_18, ges_18);
-GesEmi(Kon_Europa, eu_18, ges_18);
-GesEmi(Kon_NorthAmerika, na_18, ges_18);
-GesEmi(Kon_Asia, as_18, ges_18);
-GesEmi(Kon_Australia, au_18, ges_18);
+GesEmi(kon_Afrika, af_18, ges_18);
+GesEmi(kon_SouthAmerika, sa_18, ges_18);
+GesEmi(kon_Europa, eu_18, ges_18);
+GesEmi(kon_NorthAmerika, na_18, ges_18);
+GesEmi(kon_Asia, as_18, ges_18);
+GesEmi(kon_Australia, au_18, ges_18);
 
 function Ver_08_18_prozent (name_Kon: string, Kontinent_18: number, Kontinent_08: number){
 console.log('Für ' + name_Kon + ' hat sich 2018 im Vergleich zu 2008 die Emmission um ' + ((Kontinent_18-Kontinent_08)/Kontinent_08*100).toFixed(2)+ ' verändert');
 }
 
-Ver_08_18_prozent (Kon_Afrika, af_18, af_08);
-Ver_08_18_prozent (Kon_SouthAmerika, sa_18, sa_08);
-Ver_08_18_prozent (Kon_Europa, eu_18, eu_08);
-Ver_08_18_prozent (Kon_NorthAmerika, na_18, na_08);
-Ver_08_18_prozent (Kon_Asia, as_18, as_08);
-Ver_08_18_prozent (Kon_Australia, au_18, au_08);
+Ver_08_18_prozent (kon_Afrika, af_18, af_08);
+Ver_08_18_prozent (kon_SouthAmerika, sa_18, sa_08);
+Ver_08_18_prozent (kon_Europa, eu_18, eu_08);
+Ver_08_18_prozent (kon_NorthAmerika, na_18, na_08);
+Ver_08_18_prozent (kon_Asia, as_18, as_08);
+Ver_08_18_prozent (kon_Australia, au_18, au_08);
 
 function Vergleich_08_18 (name_Kon: string, Kontinent_18: number, Kontinent_08: number){
     console.log('2018 im Vergleich zu 2008 sind das in ' + name_Kon + ' ' + (Kontinent_18-Kontinent_08).toFixed(2) + ' kg CO2');
 }
 
-Vergleich_08_18 (Kon_Afrika, af_18, af_08);
-Vergleich_08_18 (Kon_SouthAmerika, sa_18, sa_08);
-Vergleich_08_18 (Kon_Europa, eu_18, eu_08);
-Vergleich_08_18 (Kon_NorthAmerika, na_18, na_08);
-Vergleich_08_18 (Kon_Asia, as_18, as_08);
-Vergleich_08_18 (Kon_Australia, au_18, au_08);
+Vergleich_08_18 (kon_Afrika, af_18, af_08);
+Vergleich_08_18 (kon_SouthAmerika, sa_18, sa_08);
+Vergleich_08_18 (kon_Europa, eu_18, eu_08);
+Vergleich_08_18 (kon_NorthAmerika, na_18, na_08);
+Vergleich_08_18 (kon_Asia, as_18, as_08);
+Vergleich_08_18 (kon_Australia, au_18, au_08);
