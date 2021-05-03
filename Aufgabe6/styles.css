@@ -42,39 +42,39 @@ footer p {
     font-size: 10px;
     opacity: .5;
 }
-#pic_eu{
+.Kon_Europa{
     filter: brightness(50%);
 }
-#pic_eu:hover{
+.Kon_Europa:hover{
     filter: brightness(100%);
 }
-#pic_na{
+.Kon_Northamerica{
     filter: brightness(50%);
 }
-#pic_na:hover{
+.Kon_Northamerica:hover{
     filter: brightness(100%);
 }
-#pic_sa{
+.Kon_Southamerica{
     filter: brightness(50%);
 }
-#pic_sa:hover{
+.Kon_Southamerica:hover{
     filter: brightness(100%);
 }
-#pic_af{
+.Kon_Africa{
     filter: brightness(50%);
 }
-#pic_af:hover{
+.Kon_Africa:hover{
     filter: brightness(100%);
 }
-#pic_as{
+.Kon_Asia{
     filter: brightness(50%);
 }
-#pic_as:hover{
+.Kon_Asia:hover{
     filter: brightness(100%);
 }
-#pic_au{
+.Kon_Australia{
     filter: brightness(50%);
 }
-#pic_au:hover{
+.Kon_Australia:hover{
     filter: brightness(100%);
 }

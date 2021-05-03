@@ -27,29 +27,28 @@ var au_08: number = 1993;
 var ges_18: number = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
 
 window.addEventListener("load", function() {
-    document.querySelector(".Kon_Europa").addEventListener("click", function() {A6(kon_Europa, eu_08, eu_18)});
-    document.querySelector(".Kon_NorthAmerika").addEventListener("click", function() {A6(kon_NorthAmerika, na_08, na_18)});
-    document.querySelector(".Kon_SouthAmerika").addEventListener("click", function() {A6(kon_SouthAmerika, sa_08, sa_18)});
-    document.querySelector(".Kon_Afrika").addEventListener("click", function() {A6(kon_Afrika, af_08, af_18)});
-    document.querySelector(".Kon_Asia").addEventListener("click", function() {A6(kon_Asia, as_08, as_18)});
-    document.querySelector(".Kon_Australia").addEventListener("click", function() {A6(kon_Australia, au_08, au_18)});
+    document.querySelector (".Kon_Europa").addEventListener("click", function() {Emission(kon_Europa, eu_18, eu_08)});
+    document.querySelector (".Kon_NorthAmerika").addEventListener("click", function() {Emission(kon_NorthAmerika, na_18, na_08)});
+    document.querySelector (".Kon_SouthAmerika").addEventListener("click", function() {Emission(kon_SouthAmerika, sa_18, sa_08)});
+    document.querySelector (".Kon_Afrika").addEventListener("click", function() {Emission(kon_Afrika, af_18, af_08)});
+    document.querySelector (".Kon_Asia").addEventListener("click", function() {Emission(kon_Asia, as_18, as_08)});
+    document.querySelector (".Kon_Australia").addEventListener("click", function() {Emission(kon_Australia, au_18, au_08)});
 });
 
-function A6(kon:string, kon_08:number, kon_18:number) {
+function Emission(kon:string, kon_08:number, kon_18:number) {
     document.querySelector(".Konti").innerHTML = kon;
     document.querySelector(".Konti_1").innerHTML = kon;
-    document.querySelector("#emi_number").innerHTML = kon_18.toString();
-    document.querySelector("#total").innerHTML = (kon_18*100/ges_18).toFixed(2) + " %";
-    document.querySelector("#growth").innerHTML = ((kon_18-kon_08)/kon_08*100).toFixed(2) + " %";
-    document.querySelector("#change_absolut").innerHTML = (kon_18-kon_08).toFixed(2);
-    document.querySelector ("#chart").setAttribute("style", "height:" + (kon_18 *100/ ges_18) + " %" );
+    document.querySelector(".emi_number").innerHTML = kon_18.toString();
+    document.querySelector(".total").innerHTML = (kon_18*100/ges_18).toFixed(2) + " %";
+    document.querySelector(".growth").innerHTML = ((kon_18-kon_08)/kon_08*100).toFixed(2) + " %";
+    document.querySelector(".change_absolut").innerHTML = (kon_18-kon_08).toFixed(2);
+    document.querySelector (".chart").setAttribute("style", "height:" + (kon_18 *100/ ges_18) + " %" );
 };
 
+// // Version 1
 
-// Version 1
-
-// Europa
-// document.getElementById("pic_eu").addEventListener("click", function(){ 
+// // Europa
+// document.getElementById("Kon_Europa").addEventListener("click", function(){ 
 //     document.getElementById("head").innerHTML = "Carbon Dioxide Emissions in Europe";
 //     document.getElementById("emi_number").innerHTML = "" + eu_18;
 //     document.getElementById("text_emi").innerHTML = "Emission absolute of Europe in 2018";
