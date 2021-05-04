@@ -20,19 +20,19 @@ var au_08 = 1993;
 var ges_18 = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
 window.addEventListener("load", function () {
     document.querySelector(".Kon_Europa").addEventListener("click", function () { Emission(kon_Europa, eu_18, eu_08); });
-    document.querySelector(".Kon_NorthAmerika").addEventListener("click", function () { Emission(kon_NorthAmerika, na_18, na_08); });
-    document.querySelector(".Kon_SouthAmerika").addEventListener("click", function () { Emission(kon_SouthAmerika, sa_18, sa_08); });
-    document.querySelector(".Kon_Afrika").addEventListener("click", function () { Emission(kon_Afrika, af_18, af_08); });
+    document.querySelector(".Kon_Northamerica").addEventListener("click", function () { Emission(kon_NorthAmerika, na_18, na_08); });
+    document.querySelector(".Kon_Southamerica").addEventListener("click", function () { Emission(kon_SouthAmerika, sa_18, sa_08); });
+    document.querySelector(".Kon_Africa").addEventListener("click", function () { Emission(kon_Afrika, af_18, af_08); });
     document.querySelector(".Kon_Asia").addEventListener("click", function () { Emission(kon_Asia, as_18, as_08); });
     document.querySelector(".Kon_Australia").addEventListener("click", function () { Emission(kon_Australia, au_18, au_08); });
 });
-function Emission(kon, kon_08, kon_18) {
+function Emission(kon, kon_18, kon_08) {
     document.querySelector(".Konti").innerHTML = kon;
-    document.querySelector(".Konti_1").innerHTML = kon;
     document.querySelector(".emi_number").innerHTML = kon_18.toString();
+    document.querySelector(".Konti_1").innerHTML = kon;
     document.querySelector(".total").innerHTML = (kon_18 * 100 / ges_18).toFixed(2) + " %";
     document.querySelector(".growth").innerHTML = ((kon_18 - kon_08) / kon_08 * 100).toFixed(2) + " %";
-    document.querySelector(".change_absolut").innerHTML = (kon_18 - kon_08).toFixed(2);
+    document.querySelector(".change_absolut").innerHTML = (kon_18 - kon_08).toString();
     document.querySelector(".chart").setAttribute("style", "height:" + (kon_18 * 100 / ges_18) + " %");
 }
 ;
