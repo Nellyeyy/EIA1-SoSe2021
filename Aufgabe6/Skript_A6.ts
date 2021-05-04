@@ -26,16 +26,16 @@ var au_08: number = 1993;
 
 var ges_18: number = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
 
-window.addEventListener("load", function() {
-    document.querySelector (".Kon_Europa").addEventListener("click", function() {Emission(kon_Europa, eu_18, eu_08)});
-    document.querySelector (".Kon_Northamerica").addEventListener("click", function() {Emission(kon_NorthAmerika, na_18, na_08)});
-    document.querySelector (".Kon_Southamerica").addEventListener("click", function() {Emission(kon_SouthAmerika, sa_18, sa_08)});
-    document.querySelector (".Kon_Africa").addEventListener("click", function() {Emission(kon_Afrika, af_18, af_08)});
-    document.querySelector (".Kon_Asia").addEventListener("click", function() {Emission(kon_Asia, as_18, as_08)});
-    document.querySelector (".Kon_Australia").addEventListener("click", function() {Emission(kon_Australia, au_18, au_08)});
+window.addEventListener("load", function () {
+    document.querySelector (".Kon_Europa").addEventListener("click", function () {Emission(kon_Europa, eu_18, eu_08)});
+    document.querySelector (".Kon_Northamerica").addEventListener("click", function () {Emission(kon_NorthAmerika, na_18, na_08)});
+    document.querySelector (".Kon_Southamerica").addEventListener("click", function () {Emission(kon_SouthAmerika, sa_18, sa_08)});
+    document.querySelector (".Kon_Africa").addEventListener("click", function () {Emission(kon_Afrika, af_18, af_08)});
+    document.querySelector (".Kon_Asia").addEventListener("click", function () {Emission(kon_Asia, as_18, as_08)});
+    document.querySelector (".Kon_Australia").addEventListener("click", function () {Emission(kon_Australia, au_18, au_08)});
 });
 
-function Emission(kon:string,kon_18:number, kon_08:number){
+function Emission(kon: string, kon_18: number, kon_08: number) {
     document.querySelector(".Konti").innerHTML = kon;
     document.querySelector(".emi_number").innerHTML = kon_18.toString();
     document.querySelector(".Konti_1").innerHTML = kon;
