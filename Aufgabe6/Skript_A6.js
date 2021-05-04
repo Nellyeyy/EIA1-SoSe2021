@@ -1,20 +1,20 @@
 // Version 2
-var kon_Europa = "Europa";
+var kon_Europa = "Europe";
 var eu_18 = 4209.3;
 var eu_08 = 4965.7;
-var kon_NorthAmerika = "Nord Amerika";
+var kon_NorthAmerika = "North America";
 var na_18 = 6035.6;
 var na_08 = 6600.4;
-var kon_SouthAmerika = "South Amerika";
+var kon_SouthAmerika = "South America";
 var sa_18 = 1261.5;
 var sa_08 = 1132.6;
-var kon_Afrika = "Afrika";
+var kon_Afrika = "Africa";
 var af_18 = 1235.5;
 var af_08 = 1028;
-var kon_Asia = "Asien";
+var kon_Asia = "Asia";
 var as_18 = 16274.1;
 var as_08 = 12954.7;
-var kon_Australia = "Australien";
+var kon_Australia = "Australia";
 var au_18 = 2100.5;
 var au_08 = 1993;
 var ges_18 = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
@@ -32,8 +32,8 @@ function Emission(kon, kon_18, kon_08) {
     document.querySelector(".Konti_1").innerHTML = kon;
     document.querySelector(".total").innerHTML = (kon_18 * 100 / ges_18).toFixed(2) + " %";
     document.querySelector(".growth").innerHTML = ((kon_18 - kon_08) / kon_08 * 100).toFixed(2) + " %";
-    document.querySelector(".change_absolut").innerHTML = (kon_18 - kon_08).toString();
-    document.querySelector(".chart").setAttribute("style", "height:" + (kon_18 * 100 / ges_18) + " %");
+    document.querySelector(".change_absolut").innerHTML = (kon_18 - kon_08).toFixed(2).toString();
+    document.querySelector("#chart").setAttribute("style", "height:" + ((kon_18 / ges_18) * 100) + " %");
 }
 ;
 // // Version 1

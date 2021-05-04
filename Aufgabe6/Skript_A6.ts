@@ -1,38 +1,38 @@
 // Version 2
 
-var kon_Europa: string ="Europa";
+var kon_Europa: string ="Europe";
 var eu_18: number = 4209.3;
 var eu_08: number = 4965.7;
 
-var kon_NorthAmerika: string = "Nord Amerika";
+var kon_NorthAmerika: string = "North America";
 var na_18: number = 6035.6;
 var na_08: number = 6600.4;
 
-var kon_SouthAmerika: string = "South Amerika";
+var kon_SouthAmerika: string = "South America";
 var sa_18: number = 1261.5;
 var sa_08: number = 1132.6;
 
-var kon_Afrika: string ="Afrika";
+var kon_Afrika: string ="Africa";
 var af_18: number = 1235.5;
 var af_08: number = 1028;
 
-var kon_Asia: string ="Asien";
+var kon_Asia: string ="Asia";
 var as_18: number = 16274.1;
 var as_08: number = 12954.7;
 
-var kon_Australia: string ="Australien";
+var kon_Australia: string ="Australia";
 var au_18: number = 2100.5;
 var au_08: number = 1993;
 
 var ges_18: number = eu_18 + af_18 + sa_18 + na_18 + as_18 + au_18;
 
 window.addEventListener("load", function () {
-    document.querySelector (".Kon_Europa").addEventListener("click", function () {Emission(kon_Europa, eu_18, eu_08)});
-    document.querySelector (".Kon_Northamerica").addEventListener("click", function () {Emission(kon_NorthAmerika, na_18, na_08)});
-    document.querySelector (".Kon_Southamerica").addEventListener("click", function () {Emission(kon_SouthAmerika, sa_18, sa_08)});
-    document.querySelector (".Kon_Africa").addEventListener("click", function () {Emission(kon_Afrika, af_18, af_08)});
-    document.querySelector (".Kon_Asia").addEventListener("click", function () {Emission(kon_Asia, as_18, as_08)});
-    document.querySelector (".Kon_Australia").addEventListener("click", function () {Emission(kon_Australia, au_18, au_08)});
+    document.querySelector(".Kon_Europa").addEventListener("click", function () {Emission(kon_Europa, eu_18, eu_08)});
+    document.querySelector(".Kon_Northamerica").addEventListener("click", function () {Emission(kon_NorthAmerika, na_18, na_08)});
+    document.querySelector(".Kon_Southamerica").addEventListener("click", function () {Emission(kon_SouthAmerika, sa_18, sa_08)});
+    document.querySelector(".Kon_Africa").addEventListener("click", function () {Emission(kon_Afrika, af_18, af_08)});
+    document.querySelector(".Kon_Asia").addEventListener("click", function () {Emission(kon_Asia, as_18, as_08)});
+    document.querySelector(".Kon_Australia").addEventListener("click", function () {Emission(kon_Australia, au_18, au_08)});
 });
 
 function Emission(kon: string, kon_18: number, kon_08: number) {
@@ -41,9 +41,9 @@ function Emission(kon: string, kon_18: number, kon_08: number) {
     document.querySelector(".Konti_1").innerHTML = kon;
     document.querySelector(".total").innerHTML = (kon_18*100/ges_18).toFixed(2) + " %";
     document.querySelector(".growth").innerHTML = ((kon_18-kon_08)/kon_08*100).toFixed(2) + " %";
-    document.querySelector(".change_absolut").innerHTML = (kon_18-kon_08).toString();
-
-    document.querySelector (".chart").setAttribute("style", "height:" + (kon_18 *100/ ges_18) + " %" );
+    document.querySelector(".change_absolut").innerHTML = (kon_18-kon_08).toFixed(2).toString();
+  
+    document.querySelector("#chart").setAttribute("style", "height:" + ((kon_18 / ges_18) * 100) + " %" );
 };
 
 // // Version 1

@@ -7,10 +7,11 @@ body{
 }
 
 #eins{
-    background-color: rgb(0, 89, 255);
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color: #0089ff;
     border-radius: 10px;
-    border-color: rgb(189, 174, 255);
+    border-color: #D2D2ff;
     border-width: 2px;
 }
 
@@ -19,11 +20,12 @@ body{
 }
 
 #zwei{
-    background-color: rgb(0, 89, 255);
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color: #0089ff;;
     border-radius: 10px;
     margin-top: -20px;
-    border-color: rgb(189, 174, 255);
+    border-color: #D2D2ff;
     border-width: 2px;
 }
 
@@ -32,10 +34,11 @@ body{
 }
 
 #drei{
-    background-color: rgb(0, 89, 255);
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color: #0089ff;;
     border-radius: 10px;
-    border-color: rgb(189, 174, 255);
+    border-color: #D2D2ff;
     border-width: 2px;
 }
 
@@ -44,11 +47,12 @@ body{
 }
 
 #vier{
-    background-color:palevioletred;
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color:#d87093;
     border-radius: 10px;
     margin-top: 4px;
-    border-color: rgb(238, 176, 222);
+    border-color: #eeb0de;
     border-width: 2px;
 }
 
@@ -57,10 +61,11 @@ body{
 }
 
 #fuenf{
-    background-color:palevioletred;
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color:#d87093;
     border-radius: 10px;
-    border-color: rgb(238, 176, 222);
+    border-color: #eeb0de;
     border-width: 2px;
 }
 
@@ -69,10 +74,11 @@ body{
 }
 
 #sechs{
-    background-color:palevioletred;
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color:#d87093;
     border-radius: 10px;
-    border-color: rgb(238, 176, 222);
+    border-color: #eeb0de;
     border-width: 2px;
 }
 
@@ -80,12 +86,13 @@ body{
     transform: scale(1.05); 
 }
 
-#sieben{
-    background-color:palevioletred;
-    padding: 70px;
+#sieben{ 
+    width: 150px;
+    height: 150px;
+    background-color:#d87093;
     border-radius: 10px;
     margin-top: 4px;
-    border-color: rgb(238, 176, 222);
+    border-color: #eeb0de;
     border-width: 2px;
 }
 
@@ -93,11 +100,12 @@ body{
     transform: scale(1.05); 
 }
 
-#acht{
-    background-color: rgb(236, 130, 60);
-    padding: 70px;
+#acht{ 
+    width: 150px;
+    height: 150px;
+    background-color: #ec823c;
     border-radius: 10px;
-    border-color: rgb(253, 224, 187);
+    border-color: #fde0bb;
     border-width: 2px;
 }
 
@@ -106,13 +114,22 @@ body{
 }
 
 #neun{
-    background-color: rgb(236, 130, 60);
-    padding: 70px;
+    width: 150px;
+    height: 150px;
+    background-color: #ec823c;
     border-radius: 10px;
-    border-color: rgb(253, 224, 187);
+    border-color: #fde0bb;
     border-width: 2px;
 }
 
 #neun:hover{ 
     transform: scale(1.05); 
+}
+
+#playBut{
+    position: absolute;
+    top: 450px;
+    left: 155px;
+    width: 150px;
+    height: 150px;
 }
