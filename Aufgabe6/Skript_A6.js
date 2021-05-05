@@ -33,7 +33,7 @@ function Emission(kon, kon_18, kon_08) {
     document.querySelector(".total").innerHTML = (kon_18 * 100 / ges_18).toFixed(2) + " %";
     document.querySelector(".growth").innerHTML = ((kon_18 - kon_08) / kon_08 * 100).toFixed(2) + " %";
     document.querySelector(".change_absolut").innerHTML = (kon_18 - kon_08).toFixed(2).toString();
-    document.querySelector("#chart").setAttribute("style", "height:" + ((kon_18 / ges_18) * 100) + " %");
+    document.querySelector("#chart").setAttribute("style", "height: " + ((kon_18 / ges_18) * 100) + "%");
 }
 ;
 // // Version 1
