@@ -133,3 +133,6 @@ body{
     width: 150px;
     height: 150px;
 }
+#playBut:hover{ 
+    transform: scale(1.05); 
+}
