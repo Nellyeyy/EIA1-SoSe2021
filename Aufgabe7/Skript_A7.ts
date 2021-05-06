@@ -19,3 +19,8 @@ function playSample(sample: string): void{
 }
 
 // Aufgabe 7.2
+window.addEventListener('load', function()  {
+    document.querySelector("#playBut").addEventListener('click', function() {setInterval(function() {button.play()}, 500);
+})
+       
+var button: HTMLAudioElement[] = [nameBeat [0], nameBeat [1], nameBeat [2], nameBeat [1]];
