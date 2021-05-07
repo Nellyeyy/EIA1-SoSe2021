@@ -17,9 +17,23 @@ function playSample(sample) {
 }
 // Aufgabe 7.2
 window.addEventListener('load', function () {
-    document.querySelector("#playBut").addEventListener('click', function () {
-        setInterval(function () { button.play(); }, 500);
-    });
-    var button = [nameBeat[0], nameBeat[1], nameBeat[2], nameBeat[1]];
+    document.querySelector("#playBut").addEventListener('click', function () { playbeat(); });
 });
+function playbeat() {
+    setTimeout(function () {
+        playSample(nameBeat[3]);
+    }, 500);
+    setTimeout(function () {
+        playSample(nameBeat[4]);
+    }, 1000);
+    setTimeout(function () {
+        playSample(nameBeat[5]);
+    }, 1500);
+    setTimeout(function () {
+        playSample(nameBeat[6]);
+    }, 2000);
+    setTimeout(function () {
+        playSample(nameBeat[3]);
+    }, 2500);
+}
 //# sourceMappingURL=Skript_A7.js.map
