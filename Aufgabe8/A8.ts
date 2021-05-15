@@ -3,7 +3,7 @@ window.addEventListener("load", function () {
 
     // Drumpad - Button
 
-    let nameBeat: string[] = ["kick.mp3", "hihat.mp3", "snare.mp3", "A.mp3", "C.mp3", "F.mp3", "G.mp3", "laugh-1.mp3", "laugh-2.mp3"];
+    let nameBeat: string[] = ["../Aufgabe7/kick.mp3", "../Aufgabe7/hihat.mp3", "../Aufgabe7/snare.mp3", "../Aufgabe7/A.mp3", "../Aufgabe7/C.mp3", "../Aufgabe7/F.mp3", "../Aufgabe7/G.mp3", "../Aufgabe7/laugh-1.mp3", "../Aufgabe7/laugh-2.mp3"];
 
     document.querySelector("#eins").addEventListener("click", function (): void { playSample(nameBeat[0]); });
     document.querySelector("#zwei").addEventListener("click", function (): void { playSample(nameBeat[1]); });
