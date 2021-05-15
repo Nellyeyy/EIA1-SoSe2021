@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
     document.querySelector('#neun').addEventListener('click', function () { playSample(nameBeat[8]) })
 })
 
-function playSample(sample: string): void {
+function playSample (sample: string): void {
     var sound: HTMLAudioElement = new Audio(sample); sound.play();
 }
 
