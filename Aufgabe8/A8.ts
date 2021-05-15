@@ -1,4 +1,3 @@
-
 // tslint:disable-next-line: typedef
 window.addEventListener("load", function () {
 
@@ -20,19 +19,13 @@ window.addEventListener("load", function () {
         var sound: HTMLAudioElement = new Audio(sample); sound.play();
     }
 
+    // Beat abspielen mit Schleife
 
-
-
-    let beat: string[] = [nameBeat[3], nameBeat[4], nameBeat[5], nameBeat[6], nameBeat[3]];
+    let beat: string[] = [nameBeat[3], nameBeat[4], nameBeat[5], nameBeat[6]];
     let i: number = 0;
-    let interval: number;
-    var knopf = document.querySelector(".knoepfe");
-    var play = document.getElementById("pBut");
-    var stop = document.getElementById("sBut");
-    var muell = document.getElementById("mBut");
 
     document.querySelector("#pBut").addEventListener("click", function (): void {
-        var drumMachine: number = setInterval(function myInterval(): void {
+        var soundplay: number = setInterval(function myInterval(): void {
 
             playSample(
 
@@ -41,33 +34,27 @@ window.addEventListener("load", function () {
 
             if (i > 4) { i = 0; }
 
-
-            console.log("play");
-            console.log(i);
-
-        },                                    500);
+        }, 500);
 
 
         document.querySelector("#sBut").addEventListener("click", function (): void {
-            clearInterval(drumMachine);
-
-            console.log("stop");
+            clearInterval(soundplay);
         });
     });
-
+  
     // Play-Knopf
-    document.querySelector("#pBut").addEventListener("click", function (): void {
+    document.getElementById("pBut").addEventListener("click", function (): void {
 
-        document.querySelector("#pBut").classList.add("is-hidden");
-        document.querySelector("#sBut").classList.remove("is-hidden");
+        document.getElementById("pBut").classList.add("is-hidden");
+        document.getElementById("sBut").classList.remove("is-hidden");
 
     });
 
     // Stop-Knopf
-    document.querySelector("#sBut").addEventListener("click", function (): void {
+    document.getElementById("sBut").addEventListener("click", function (): void {
 
-        document.querySelector("#sBut").classList.add("is-hidden");
-        document.querySelector("#pBut").classList.remove("is-hidden");
+        document.getElementById("sBut").classList.add("is-hidden");
+        document.getElementById("pBut").classList.remove("is-hidden");
 
     });
 
@@ -80,6 +67,8 @@ window.addEventListener("load", function () {
     });
 
     // Mix-Knopf
+    var muell = document.getElementById("mBut");
+
     document.querySelector("#mBut").addEventListener("click", function (): void {
 
         var muell: number = setInterval(function (): void {

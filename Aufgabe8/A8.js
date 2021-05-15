@@ -15,37 +15,30 @@ window.addEventListener("load", function () {
         var sound = new Audio(sample);
         sound.play();
     }
-    var beat = [nameBeat[3], nameBeat[4], nameBeat[5], nameBeat[6], nameBeat[3]];
+    // Beat abspielen mit Schleife
+    var beat = [nameBeat[3], nameBeat[4], nameBeat[5], nameBeat[6]];
     var i = 0;
-    var interval;
-    var knopf = document.querySelector(".knoepfe");
-    var play = document.getElementById("pBut");
-    var stop = document.getElementById("sBut");
-    var muell = document.getElementById("mBut");
     document.querySelector("#pBut").addEventListener("click", function () {
-        var drumMachine = setInterval(function myInterval() {
+        var soundplay = setInterval(function myInterval() {
             playSample(beat[i]);
             i += 1;
             if (i > 4) {
                 i = 0;
             }
-            console.log("play");
-            console.log(i);
         }, 500);
         document.querySelector("#sBut").addEventListener("click", function () {
-            clearInterval(drumMachine);
-            console.log("stop");
+            clearInterval(soundplay);
         });
     });
     // Play-Knopf
-    document.querySelector("#pBut").addEventListener("click", function () {
-        document.querySelector("#pBut").classList.add("is-hidden");
-        document.querySelector("#sBut").classList.remove("is-hidden");
+    document.getElementById("pBut").addEventListener("click", function () {
+        document.getElementById("pBut").classList.add("is-hidden");
+        document.getElementById("sBut").classList.remove("is-hidden");
     });
     // Stop-Knopf
-    document.querySelector("#sBut").addEventListener("click", function () {
-        document.querySelector("#sBut").classList.add("is-hidden");
-        document.querySelector("#pBut").classList.remove("is-hidden");
+    document.getElementById("sBut").addEventListener("click", function () {
+        document.getElementById("sBut").classList.add("is-hidden");
+        document.getElementById("pBut").classList.remove("is-hidden");
     });
     // Trash-Knopf
     document.querySelector("#tBut").addEventListener("click", function () {
@@ -53,6 +46,7 @@ window.addEventListener("load", function () {
         console.log("löschen");
     });
     // Mix-Knopf
+    var muell = document.getElementById("mBut");
     document.querySelector("#mBut").addEventListener("click", function () {
         var muell = setInterval(function () {
             playSample(nameBeat[i]);
