@@ -45,36 +45,24 @@ window.addEventListener("load", function () {
         beat = [];
         console.log("löschen");
     });
-    // Mix-Knopf
-    var muell = document.getElementById("mBut");
-    document.querySelector("#mBut").addEventListener("click", function () {
-        var muell = setInterval(function () {
-            playSample(nameBeat[i]);
-            i = Math.floor(Math.random() * 9);
-            console.log(i);
-        }, 500);
-    });
+    // Mix-Knopf - Korrektur 
+    document.querySelector("#mBut").addEventListener("click", mix);
+    function mix() {
+        beat.length = 0;
+        for (var i_1 = 0; i_1 < 3; i_1++) {
+            var index = Math.floor(Math.random() * 9);
+            playSample(nameBeat[index]);
+        }
+    }
 });
-// // Aufgabe 7.2
-// window.addEventListener('load', function () {
-//     document.querySelector("#playBut").addEventListener('click', function () { playbeat() }
-//     )
-// })
-// function playbeat() {
-//     setTimeout(function () {
-//         playSample(nameBeat[3]);
-//     }, 500)
-//     setTimeout(function () {
-//         playSample(nameBeat[4]);
-//     }, 1000)
-//     setTimeout(function () {
-//         playSample(nameBeat[5]);
-//     }, 1500)
-//     setTimeout(function () {
-//         playSample(nameBeat[6]);
-//     }, 2000)
-//     setTimeout(function () {
-//         playSample(nameBeat[3]);
-//     }, 2500)
-// }
+// // Mix-Knopf - 1. Versuch
+// var muell = document.getElementById("mBut");
+// document.querySelector("#mBut").addEventListener("click", function (): void {
+//     var muell: number = setInterval(function (): void {
+//         playSample(
+//             nameBeat[i]);
+//         i = Math.floor(Math.random() * 9);
+//         console.log(i);
+//     },                              500);
+// });
 //# sourceMappingURL=A8.js.map

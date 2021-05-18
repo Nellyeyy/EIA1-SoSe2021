@@ -41,7 +41,7 @@ window.addEventListener("load", function () {
             clearInterval(soundplay);
         });
     });
-  
+
     // Play-Knopf
     document.getElementById("pBut").addEventListener("click", function (): void {
 
@@ -66,49 +66,33 @@ window.addEventListener("load", function () {
 
     });
 
-    // Mix-Knopf
-    var muell = document.getElementById("mBut");
+    // Mix-Knopf - Korrektur 
 
-    document.querySelector("#mBut").addEventListener("click", function (): void {
+    document.querySelector("#mBut").addEventListener("click", mix);
 
-        var muell: number = setInterval(function (): void {
-            playSample(
-                nameBeat[i]);
-            i = Math.floor(Math.random() * 9);
-            console.log(i);
-        },                              500);
+    function mix(): void {
+        beat.length = 0;
 
-    });
+        for (let i: number = 0; i < 3; i++) {
+            const index: number = Math.floor(Math.random() * 9);
+            
+            playSample(nameBeat[index]);
+        }
+        
+    }
 
 });
 
+    // // Mix-Knopf - 1. Versuch
+    // var muell = document.getElementById("mBut");
 
-// // Aufgabe 7.2
+    // document.querySelector("#mBut").addEventListener("click", function (): void {
 
-// window.addEventListener('load', function () {
-//     document.querySelector("#playBut").addEventListener('click', function () { playbeat() }
-//     )
-// })
+    //     var muell: number = setInterval(function (): void {
+    //         playSample(
+    //             nameBeat[i]);
+    //         i = Math.floor(Math.random() * 9);
+    //         console.log(i);
+    //     },                              500);
 
-// function playbeat() {
-
-//     setTimeout(function () {
-//         playSample(nameBeat[3]);
-//     }, 500)
-
-//     setTimeout(function () {
-//         playSample(nameBeat[4]);
-//     }, 1000)
-
-//     setTimeout(function () {
-//         playSample(nameBeat[5]);
-//     }, 1500)
-
-//     setTimeout(function () {
-//         playSample(nameBeat[6]);
-//     }, 2000)
-
-//     setTimeout(function () {
-//         playSample(nameBeat[3]);
-//     }, 2500)
-// }
+    // });
