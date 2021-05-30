@@ -1,33 +1,33 @@
-window.addEventListener("load", function (): void {
+// Varriablen
+var inputDOMElement: HTMLInputElement;
+var addButtonDOMElement: HTMLElement;
+var todosDOMElement: HTMLElement;
+var counterDOMElement: HTMLElement;
 
-    // Varriablen
-    var inputDOMElement: HTMLInputElement;
-    var addButtonDOMElement: HTMLElement;
-    var todosDOMElement: HTMLElement;
-    var counterDOMElement: HTMLElement;
+//interface
+interface ToDos {
+    todosText: string;
+    todosChecked: boolean;
+}
 
-    //interface
-    interface ToDos {
-        todosText: string;
-        todosChecked: boolean;
+//Array
+let toDoArray: ToDos[] = [
+    {
+        todosText: "Lorem",
+        todosChecked: true
+    },
+    {
+        todosText: "Ipsum",
+        todosChecked: false
+    },
+    {
+        todosText: "Dolor",
+        todosChecked: false
     }
+];
 
-    //Array
-    let toDoArray: ToDos[] = [
-        {
-            todosText: "Lorem",
-            todosChecked: true
-        },
-        {
-            todosText: "Ipsum",
-            todosChecked: false
-        },
-        {
-            todosText: "Dolor",
-            todosChecked: false
-        }
-    ];
-
+window.addEventListener("load", function (): void {
+    
     inputDOMElement = document.querySelector("#inputTodo");
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
@@ -96,5 +96,4 @@ window.addEventListener("load", function (): void {
 
         drawListToDOM();
     }
-
 });
