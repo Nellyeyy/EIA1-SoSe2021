@@ -9,6 +9,11 @@ main {
     text-align: center;
 }
 
+h2 {
+    color: grey;
+    font-size: 15px;
+}
+
 #counter, #done, #open {
     color: grey;
 }
@@ -86,20 +91,3 @@ main {
     color: black;
 }
 
-#spracherkennung {
-    background-color: transparent;
-    color: grey;
-    position:absolute;
-    border: none;
-    width: 60px;
-    height:60px;
-    transform: scale(2.3);
-}
-
-#spracherkennung:hover {
-    color: black;
-
-}
-#spracherkennung:active {
-    color: green;
-}

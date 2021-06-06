@@ -6,6 +6,9 @@ var counterDOMElement: HTMLElement;
 var counterDOMElementOpen: HTMLElement;
 var counterDOMElementDone: HTMLElement;
 
+declare var Artyom: any;
+const artyom: any = new Artyom();
+
 //interface
 interface ToDos {
     todosText: string;
@@ -136,4 +139,36 @@ window.addEventListener("load", function (): void {
 
         drawListToDOM();
     }
+
+    // Spracherkennung
+
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *"],
+        smart: true,
+        action: function (i: any, wildcard: string): void {
+            tDA.unshift({
+                todosText: wildcard,
+                todosChecked: false
+            });
+
+            function startContinuousArtyom(): void {
+                artyom.fatality();
+
+                setTimeout(
+                    function (): void {
+                        artyom.initialize({
+                            lang: "de-DE",
+                            continuous: true,
+                            listen: true,
+                            interimResults: true,
+                            debug: true
+                        }).then(function (): void {
+                            console.log("Ready!");
+                        });
+                    },
+                    250);
+            }
+
+            startContinuousArtyom();
+            
 });
