@@ -170,5 +170,6 @@ window.addEventListener("load", function (): void {
             }
 
             startContinuousArtyom();
-            
+        }
+    });
 });

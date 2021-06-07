@@ -5,6 +5,7 @@ var todosDOMElement;
 var counterDOMElement;
 var counterDOMElementOpen;
 var counterDOMElementDone;
+var artyom = new Artyom();
 //Array
 var tDA = [
     {
@@ -89,5 +90,31 @@ window.addEventListener("load", function () {
         tDA.splice(index, 1);
         drawListToDOM();
     }
+    // Spracherkennung
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe *"],
+        smart: true,
+        action: function (i, wildcard) {
+            tDA.unshift({
+                todosText: wildcard,
+                todosChecked: false
+            });
+            function startContinuousArtyom() {
+                artyom.fatality();
+                setTimeout(function () {
+                    artyom.initialize({
+                        lang: "de-DE",
+                        continuous: true,
+                        listen: true,
+                        interimResults: true,
+                        debug: true
+                    }).then(function () {
+                        console.log("Ready!");
+                    });
+                }, 250);
+            }
+            startContinuousArtyom();
+        }
+    });
 });
 //# sourceMappingURL=script11.js.map
