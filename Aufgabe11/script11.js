@@ -91,6 +91,21 @@ window.addEventListener("load", function () {
         drawListToDOM();
     }
     // Spracherkennung
+    function startContinuousArtyom() {
+        artyom.fatality();
+        setTimeout(function () {
+            artyom.initialize({
+                lang: "de-DE",
+                continuous: true,
+                listen: true,
+                interimResults: true,
+                debug: true
+            }).then(function () {
+                console.log("Ready!");
+            });
+        }, 250);
+    }
+    startContinuousArtyom();
     artyom.addCommands({
         indexes: ["erstelle Aufgabe *"],
         smart: true,
@@ -99,21 +114,7 @@ window.addEventListener("load", function () {
                 todosText: wildcard,
                 todosChecked: false
             });
-            function startContinuousArtyom() {
-                artyom.fatality();
-                setTimeout(function () {
-                    artyom.initialize({
-                        lang: "de-DE",
-                        continuous: true,
-                        listen: true,
-                        interimResults: true,
-                        debug: true
-                    }).then(function () {
-                        console.log("Ready!");
-                    });
-                }, 250);
-            }
-            startContinuousArtyom();
+            drawListToDOM();
         }
     });
 });
