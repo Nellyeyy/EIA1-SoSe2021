@@ -142,6 +142,26 @@ window.addEventListener("load", function (): void {
 
     // Spracherkennung
 
+    function startContinuousArtyom(): void {
+        artyom.fatality();
+
+        setTimeout(
+            function (): void {
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true
+                }).then(function (): void {
+                    console.log("Ready!");
+                });
+            },
+            250);
+    }
+
+    startContinuousArtyom();
+
     artyom.addCommands({
         indexes: ["erstelle Aufgabe *"],
         smart: true,
@@ -150,26 +170,9 @@ window.addEventListener("load", function (): void {
                 todosText: wildcard,
                 todosChecked: false
             });
-
-            function startContinuousArtyom(): void {
-                artyom.fatality();
-
-                setTimeout(
-                    function (): void {
-                        artyom.initialize({
-                            lang: "de-DE",
-                            continuous: true,
-                            listen: true,
-                            interimResults: true,
-                            debug: true
-                        }).then(function (): void {
-                            console.log("Ready!");
-                        });
-                    },
-                    250);
-            }
-
-            startContinuousArtyom();
+            
+            drawListToDOM();
         }
     });
+
 });
