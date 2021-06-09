@@ -72,6 +72,16 @@ h2{
     background-image: url();
 }
 
+#spielstand {
+    color: white;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #spielfeld{
     position: absolute;
     top: 65%;
