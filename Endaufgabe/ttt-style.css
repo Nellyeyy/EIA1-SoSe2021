@@ -13,8 +13,9 @@ h1{
     font-size: 50px;
     display: flex;
     position: absolute;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
 }
 
 h2{
@@ -23,10 +24,50 @@ h2{
     font-size: 25px;
     display: flex;
     position: absolute;
-    top: 13%;
+    top: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url();
+}
+
+p{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+#leicht {
+    display: flex;
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background-image: url();
+    border-radius: 15px;  
+}
+
+#mittel {
+    display: flex;
+    position: absolute;
+    top: 21%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url();
+    border-radius: 15px;
+}
+
+#schwer {
+    display: flex;
+    position: absolute;
+    top: 21%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-image: url();
+    border-radius: 15px;
 }
 
 #leicht, #mittel, #schwer {
@@ -36,55 +77,93 @@ h2{
     color: gray;
     background-color: white;
     font-size: 20px;
-    text-decoration: underline;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
 }
 
 #leicht:hover, #mittel:hover, #schwer:hover{
     background-color: rgb(197, 197, 197);
 }
 
-#leicht {
-    display: flex;
+#leicht:active{
+    background-color: rgb(209, 240, 169);
+}
+
+#mittel:active{
+    background-color: rgb(240, 223, 169);
+}
+
+#schwer:active{
+    background-color: rgb(243, 158, 158);
+}
+
+#l{
     position: absolute;
-    top: 28%;
+    top: 22%;
     left: 40%;
     transform: translate(-50%, -50%);
-    background-image: url();
-
 }
 
-#mittel {
-    display: flex;
+#m{
     position: absolute;
-    top: 28%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url();
+    visibility: visible;
 }
 
-#schwer {
-    display: flex;
+#s{
     position: absolute;
-    top: 28%;
+    top: 22%;
     left: 60%;
     transform: translate(-50%, -50%);
-    background-image: url();
+    visibility: visible;
+}
+
+#spiele {
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #spielstand {
     color: white;
-    font-size: 35px;
+    font-size: 45px;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+img{
+    height: 100px;
+    width: 100px; 
+}
+
+#mensch{
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
+#computer{
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+
 #spielfeld{
     position: absolute;
-    top: 65%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: grey; 
@@ -112,6 +191,6 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     position: absolute;
-    top: 85%;
+    top: 95%;
     left: 85%;
 }
