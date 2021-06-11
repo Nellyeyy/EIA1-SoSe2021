@@ -4,9 +4,6 @@ var mittel: HTMLElement;
 var schwer: HTMLElement;
 
 var spielfeld: HTMLInputElement;
-var oben: HTMLInputElement;
-var mitte: HTMLInputElement;
-var unten: HTMLInputElement;
 
 window.addEventListener("load", function (): void {
 
@@ -16,41 +13,39 @@ window.addEventListener("load", function (): void {
     schwer = document.querySelector("#schwer");
 
     spielfeld = document.querySelector("#spielfeld");
-    oben = document.querySelector("#oben");
-    mitte = document.querySelector("#mitte");
-    unten = document.querySelector("#unten");
 
-    //Spielfeld nicht sichtbar bei beim aufrufen
-    // spielfeld.innerHTML = "";
-    // oben.innerHTML = "";
-
-
-    // Auswahl der Schwirigkeit
+    // Auswahl der Schwierigkeit
     leicht.addEventListener("click", playleicht);
 
     function playleicht(): void {
         console.log("Sie spielen ein leichtes Spiel!");
 
-        // if (spielfeld.value != "") {
-        //     console.log ("Test");
-        // }
+        // 3x3 Spielfeld erscheinen lassen        
+        spielfeld.classList.remove("ausblenden");
+        console.log("Das 3x3 Spielfeld erscheint");
 
-        // if (oben.value != "") {
-        //     console.log ("Test");
-            
-        // }
+        // // Background Button Leicht 
+        // leicht.classList.add("background1");
     }
 
     mittel.addEventListener("click", playmittel);
 
     function playmittel(): void {
         console.log("Sie spielen ein mittleres Spiel!");
+
+        // 4x4 Spielfeld erscheinen lassen 
+        spielfeld.classList.remove("ausblenden");
+        console.log("Das 4x4 Spielfeld erscheint");
     }
 
     schwer.addEventListener("click", playschwer);
 
     function playschwer(): void {
         console.log("Sie spielen ein schweres Spiel!");
+
+        // 5x5 Spielfeld erscheinen lassen
+        spielfeld.classList.remove("ausblenden");
+        console.log("Das 5x5 Spielfeld erscheint");
     }
 
 });

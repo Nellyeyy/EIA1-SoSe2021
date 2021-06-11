@@ -38,8 +38,6 @@ p{
     text-align: center;
 }
 
-
-
 #leicht {
     display: flex;
     position: absolute;
@@ -86,6 +84,10 @@ p{
 }
 
 #leicht:active{
+    background-color: rgb(209, 240, 169);
+}
+
+.background1{
     background-color: rgb(209, 240, 169);
 }
 
@@ -170,6 +172,10 @@ img{
     border-color: cadetblue; 
     border-radius: 100%;
     height: 300px;
+}
+
+.ausblenden{
+    display: none;
 }
 
 #eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun {
