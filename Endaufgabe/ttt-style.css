@@ -5,6 +5,7 @@ body {
     height: 800px;
 }
 
+/* Texte (Überschrift, gespielte Runden*/
 h1{
     text-align: center;
     color: white;
@@ -18,31 +19,22 @@ h1{
     transform: translate(-50%, -50%);
 }
 
-h2{
+#spiele {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
-    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 8%;
+    top: 13%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url();
 }
 
-p{
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-}
-
+/* Button für Schwierigkeit */
 #leicht {
     display: flex;
     position: absolute;
-    top: 21%;
-    left: 40%;
+    top: 50%;
+    left: 15%;
     transform: translate(-50%, -50%);
     background-image: url();
     border-radius: 15px;  
@@ -51,8 +43,8 @@ p{
 #mittel {
     display: flex;
     position: absolute;
-    top: 21%;
-    left: 50%;
+    top: 65%;
+    left: 15%;
     transform: translate(-50%, -50%);
     background-image: url();
     border-radius: 15px;
@@ -61,8 +53,8 @@ p{
 #schwer {
     display: flex;
     position: absolute;
-    top: 21%;
-    left: 60%;
+    top: 80%;
+    left: 15%;
     transform: translate(-50%, -50%);
     background-image: url();
     border-radius: 15px;
@@ -83,61 +75,44 @@ p{
     background-color: rgb(197, 197, 197);
 }
 
-#leicht:active{
-    background-color: rgb(209, 240, 169);
-}
-
-.background1{
-    background-color: rgb(209, 240, 169);
-}
-
-#mittel:active{
-    background-color: rgb(240, 223, 169);
-}
-
-#schwer:active{
-    background-color: rgb(243, 158, 158);
-}
-
 #l{
     position: absolute;
-    top: 22%;
-    left: 40%;
+    top: 51%;
+    left: 15%;
     transform: translate(-50%, -50%);
 }
 
 #m{
     position: absolute;
-    top: 22%;
-    left: 50%;
+    top: 66%;
+    left: 15%;
     transform: translate(-50%, -50%);
     visibility: visible;
 }
 
 #s{
     position: absolute;
-    top: 22%;
-    left: 60%;
+    top: 81%;
+    left: 15%;
     transform: translate(-50%, -50%);
     visibility: visible;
 }
 
-#spiele {
-    color: white;
-    font-size: 25px;
+p{
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 34%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    text-align: center;
 }
 
+/* Bilder und Spielstand */
 #spielstand {
     color: white;
     font-size: 45px;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 45%;
+    top: 23%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -149,7 +124,7 @@ img{
 
 #mensch{
     position: absolute;
-    top: 45%;
+    top: 23%;
     left: 40%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
@@ -157,46 +132,116 @@ img{
 
 #computer{
     position: absolute;
-    top: 45%;
+    top: 23%;
     left: 60%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
 }
 
-#spielfeld{
-    position: absolute;
-    top: 73%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: cadetblue; 
-    border-radius: 100%;
-    height: 300px;
-}
-
-.ausblenden{
-    display: none;
-}
-
-#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun {
+/* Spielfeld Button */
+#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, #fuenfz, #sechsz, #siebz, 
+#achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
     background-color: cadetblue;
     border-color: cadetblue;
     border-style: none;
     height: 100px;
     width: 100px;
-    
 }
 
-#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover{
+#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, 
+#elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover,
+#ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover{
     background-color: rgb(114, 189, 192);
 }
 
+/* Spielfelder 3x3*/
+#spielfeld{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: grey; 
+    border-color: grey; 
+    border-style:solid;
+    height: 306px;
+}
+
+/* Spielfelder 4x4*/
+#rechts{
+    position: absolute;
+    top: 52.2%;
+    left: 66.25%;
+    transform: translate(-50%, -50%);
+    background-color: grey; 
+    border-color: grey; 
+    border-style:solid;
+}
+
+#u4x4{
+    position: absolute;
+    top: 77.8%;
+    left: 54.025%;
+    transform: translate(-50%, -50%);
+    background-color: grey; 
+    border-color: grey; 
+    border-style:solid;
+    height: 100px;
+}
+
+/* Spielfelder 5x5*/
+#links{
+    position: absolute;
+    top: 58.6%;
+    left: 33.75%;
+    transform: translate(-50%, -50%);
+    background-color: grey; 
+    border-color: grey; 
+    border-style:solid;
+}
+
+#u5x5{
+    position: absolute;
+    top: 90.6%;
+    left: 49.98%;
+    transform: translate(-50%, -50%);
+    background-color: grey; 
+    border-color: grey; 
+    border-style:solid;
+    height: 100px;
+}
+
+/* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
+
+#spielfeld.active{
+    display: none;
+}
+#spielfeld4x4.active{
+    display: none;
+}
+#spielfeld5x5.active{
+    display: none;
+}
+
+#leicht.active{
+    background-color: rgb(209, 240, 169);
+}
+
+#mittel.active{
+    background-color: rgb(240, 223, 169);
+}
+
+#schwer.active{
+    background-color: rgb(243, 158, 158);
+}
+/* Footer */
 footer {
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     position: absolute;
-    top: 95%;
-    left: 85%;
+    top: 97.8%;
+    left: 85.6%;
 }
+
+
