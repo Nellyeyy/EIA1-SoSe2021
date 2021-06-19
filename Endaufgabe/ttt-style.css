@@ -6,7 +6,7 @@ body {
 }
 
 /* Texte (Überschrift, gespielte Runden*/
-h1{
+h1 {
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -29,22 +29,84 @@ h1{
     transform: translate(-50%, -50%);
 }
 
+/* Hintergrunddeko (Kreise) */
+#kreis {
+    background-color: rgb(114, 189, 192);
+    width: 530px;
+    height: 530px;
+    border-radius: 50%;
+    position: absolute;
+    top: 65%;
+    transform: translate(-50%, -50%);
+    border-style:dotted;
+    border-color: white;
+}
+
+#kreisz {
+    background-color: rgb(114, 189, 192);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style:dotted;
+    border-color: white;
+    margin-top: -60px;
+    margin-left: 350px;
+}
+
+/* Hilfe-Button */
+h3 {
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 50px 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(114, 189, 192);
+    margin-top: 25px;
+    margin-left: 150px;
+    border-color: white;
+    border-style:dotted;  
+}
+
+h3:hover{
+    background-color: rgb(42, 97, 99);
+}
+
+#erklaerung{
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(42, 97, 99);
+    height: 150px;
+    width: 550px;
+    border-radius: 25px;
+    margin-left: 150px;
+    margin-top: -50px;
+    position: relative;
+    z-index: 99;
+}
+.ausblenden{
+    display: none;
+}
+
 /* Button für Schwierigkeit */
 #leicht {
     display: flex;
     position: absolute;
     top: 50%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     background-image: url();
-    border-radius: 15px;  
+    border-radius: 15px;
 }
 
 #mittel {
     display: flex;
     position: absolute;
     top: 65%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     background-image: url();
     border-radius: 15px;
@@ -54,7 +116,7 @@ h1{
     display: flex;
     position: absolute;
     top: 80%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     background-image: url();
     border-radius: 15px;
@@ -64,41 +126,44 @@ h1{
     height: 100px;
     width: 100px;
     border: white;
-    color: gray;
+    color: rgb(114, 189, 192);
     background-color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
 }
 
-#leicht:hover, #mittel:hover, #schwer:hover{
-    background-color: rgb(197, 197, 197);
+#leicht:hover, #mittel:hover, #schwer:hover {
+    background-color: cadetblue;
+    border-color: white;
+    border-width: 10px;
+    color: rgb(42, 97, 99);
 }
 
-#l{
+#l {
     position: absolute;
     top: 51%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
 }
 
-#m{
+#m {
     position: absolute;
     top: 66%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     visibility: visible;
 }
 
-#s{
+#s {
     position: absolute;
     top: 81%;
-    left: 15%;
+    left: 8%;
     transform: translate(-50%, -50%);
     visibility: visible;
 }
 
-p{
+p {
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -107,6 +172,7 @@ p{
 }
 
 /* Bilder und Spielstand */
+
 #spielstand {
     color: white;
     font-size: 45px;
@@ -117,12 +183,12 @@ p{
     transform: translate(-50%, -50%);
 }
 
-img{
+img {
     height: 100px;
-    width: 100px; 
+    width: 100px;
 }
 
-#mensch{
+#mensch {
     position: absolute;
     top: 23%;
     left: 40%;
@@ -130,7 +196,7 @@ img{
     border-radius: 15px;
 }
 
-#computer{
+#computer {
     position: absolute;
     top: 23%;
     left: 60%;
@@ -139,8 +205,8 @@ img{
 }
 
 /* Spielfeld Button */
-#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, #fuenfz, #sechsz, #siebz, 
-#achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
+
+#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, #fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
     background-color: cadetblue;
     border-color: cadetblue;
     border-style: none;
@@ -148,100 +214,105 @@ img{
     width: 100px;
 }
 
-#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, 
-#elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover,
-#ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover{
+#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, #elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover, #ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover {
     background-color: rgb(114, 189, 192);
 }
 
 /* Spielfelder 3x3*/
-#spielfeld{
+
+#spielfeld {
     position: absolute;
     top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: grey; 
-    border-style:solid;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
     height: 306px;
 }
 
 /* Spielfelder 4x4*/
-#rechts{
+
+#rechts {
     position: absolute;
     top: 52.2%;
     left: 66.25%;
     transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: grey; 
-    border-style:solid;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
 }
 
-#u4x4{
+#u4x4 {
     position: absolute;
     top: 77.8%;
     left: 54.025%;
     transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: grey; 
-    border-style:solid;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
     height: 100px;
 }
 
 /* Spielfelder 5x5*/
-#links{
+
+#links {
     position: absolute;
     top: 58.6%;
     left: 33.75%;
     transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: grey; 
-    border-style:solid;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
 }
 
-#u5x5{
+#u5x5 {
     position: absolute;
     top: 90.6%;
     left: 49.98%;
     transform: translate(-50%, -50%);
-    background-color: grey; 
-    border-color: grey; 
-    border-style:solid;
+    background-color: white;
+    border-color: white;
+    border-style: solid;
     height: 100px;
 }
 
 /* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
 
-#spielfeld.active{
-    display: none;
-}
-#spielfeld4x4.active{
-    display: none;
-}
-#spielfeld5x5.active{
+#spielfeld.active {
     display: none;
 }
 
-#leicht.active{
-    background-color: rgb(209, 240, 169);
+#spielfeld4x4.active {
+    display: none;
 }
 
-#mittel.active{
+#spielfeld5x5.active {
+    display: none;
+}
+
+#leicht.active {
+    background-color: rgb(196, 228, 154);
+    color: white;
+}
+
+#mittel.active {
     background-color: rgb(240, 223, 169);
+    color: white;
 }
 
-#schwer.active{
+#schwer.active {
     background-color: rgb(243, 158, 158);
+    color: white;
 }
+
 /* Footer */
+
 footer {
     color: white;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
     position: absolute;
     top: 97.8%;
     left: 85.6%;
 }
-
-

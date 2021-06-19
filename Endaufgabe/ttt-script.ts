@@ -7,6 +7,8 @@ var spielfeld: HTMLInputElement;
 var spielfeld4x4: HTMLInputElement;
 var spielfeld5x5: HTMLInputElement;
 
+var hilfe: HTMLElement;
+
 window.addEventListener("load", function (): void {
 
     // Zuweisungen
@@ -18,6 +20,17 @@ window.addEventListener("load", function (): void {
     spielfeld4x4 = document.querySelector("#spielfeld4x4");
     spielfeld5x5 = document.querySelector("#spielfeld5x5");
 
+    hilfe = document.querySelector("#hilfe");
+
+    // Hilfebutton
+    var erklaeren: HTMLElement = document.getElementById("erklaerung");
+
+    hilfe.addEventListener("click", erklaerung);
+
+    function erklaerung(): void {
+        erklaeren.classList.remove("ausblenden");
+    }
+
     // Auswahl der Schwierigkeit
     // Variablen für Schwierifkeit
     var activeeins: HTMLElement = document.getElementById("spielfeld4x4");
@@ -26,16 +39,17 @@ window.addEventListener("load", function (): void {
     var buttonmittel: HTMLElement = document.getElementById("mittel");
     var buttonschwer: HTMLElement = document.getElementById("schwer");
 
+
     // 1. Leicht
     leicht.addEventListener("click", playleicht);
 
     function playleicht(): void {
 
         // Hintergrundfarbe
-        if (activeeins.getAttribute("class") == "active") {
-            activeeins.setAttribute("class", "");
+        if (buttonleicht.getAttribute("class") == "active") {
+            buttonleicht.setAttribute("class", "");
         } else {
-            activeeins.setAttribute("class", "active");
+            buttonleicht.setAttribute("class", "active");
         }
 
         // Ausblenden des 4x4 und 5x5
@@ -45,10 +59,10 @@ window.addEventListener("load", function (): void {
             activezwei.setAttribute("class", "active");
         }
 
-        if (buttonleicht.getAttribute("class") == "active") {
-            buttonleicht.setAttribute("class", "");
+        if (activeeins.getAttribute("class") == "active") {
+            activeeins.setAttribute("class", "");
         } else {
-            buttonleicht.setAttribute("class", "active");
+            activeeins.setAttribute("class", "active");
         }
 
         // Hintergrund der beiden anderen Button ausblenden bei klicken des aktuellen Buttons
@@ -67,6 +81,12 @@ window.addEventListener("load", function (): void {
 
         if (activeeins.getAttribute("class") == "") {
             activeeins.setAttribute("class", "active");
+        }
+
+        // Bei deaktivieren von Button wird Start gezeigt
+        if (buttonleicht.getAttribute("class") == "") {
+            activeeins.setAttribute("class", "");
+            activezwei.setAttribute("class", "");
         }
     }
 
@@ -104,6 +124,12 @@ window.addEventListener("load", function (): void {
         }
         if (activezwei.getAttribute("class") == "") {
             activezwei.setAttribute("class", "active");
+        }
+
+        // Bei deaktivieren von Button wird Start gezeigt
+        if (buttonmittel.getAttribute("class") == "") {
+            activeeins.setAttribute("class", "");
+            activezwei.setAttribute("class", "");
         }
     }
 

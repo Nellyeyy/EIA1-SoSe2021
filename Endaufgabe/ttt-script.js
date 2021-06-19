@@ -5,6 +5,7 @@ var schwer;
 var spielfeld;
 var spielfeld4x4;
 var spielfeld5x5;
+var hilfe;
 window.addEventListener("load", function () {
     // Zuweisungen
     leicht = document.querySelector("#leicht");
@@ -13,6 +14,13 @@ window.addEventListener("load", function () {
     spielfeld = document.querySelector("#spielfeld");
     spielfeld4x4 = document.querySelector("#spielfeld4x4");
     spielfeld5x5 = document.querySelector("#spielfeld5x5");
+    hilfe = document.querySelector("#hilfe");
+    // Hilfebutton
+    var erklaeren = document.getElementById("erklaerung");
+    hilfe.addEventListener("click", erklaerung);
+    function erklaerung() {
+        erklaeren.classList.remove("ausblenden");
+    }
     // Auswahl der Schwierigkeit
     // Variablen für Schwierifkeit
     var activeeins = document.getElementById("spielfeld4x4");
@@ -24,11 +32,11 @@ window.addEventListener("load", function () {
     leicht.addEventListener("click", playleicht);
     function playleicht() {
         // Hintergrundfarbe
-        if (activeeins.getAttribute("class") == "active") {
-            activeeins.setAttribute("class", "");
+        if (buttonleicht.getAttribute("class") == "active") {
+            buttonleicht.setAttribute("class", "");
         }
         else {
-            activeeins.setAttribute("class", "active");
+            buttonleicht.setAttribute("class", "active");
         }
         // Ausblenden des 4x4 und 5x5
         if (activezwei.getAttribute("class") == "active") {
@@ -37,11 +45,11 @@ window.addEventListener("load", function () {
         else {
             activezwei.setAttribute("class", "active");
         }
-        if (buttonleicht.getAttribute("class") == "active") {
-            buttonleicht.setAttribute("class", "");
+        if (activeeins.getAttribute("class") == "active") {
+            activeeins.setAttribute("class", "");
         }
         else {
-            buttonleicht.setAttribute("class", "active");
+            activeeins.setAttribute("class", "active");
         }
         // Hintergrund der beiden anderen Button ausblenden bei klicken des aktuellen Buttons
         if (buttonmittel.getAttribute("class") == "active") {
@@ -56,6 +64,11 @@ window.addEventListener("load", function () {
         }
         if (activeeins.getAttribute("class") == "") {
             activeeins.setAttribute("class", "active");
+        }
+        // Bei deaktivieren von Button wird Start gezeigt
+        if (buttonleicht.getAttribute("class") == "") {
+            activeeins.setAttribute("class", "");
+            activezwei.setAttribute("class", "");
         }
     }
     // Mittleres Spiel
@@ -88,6 +101,11 @@ window.addEventListener("load", function () {
         }
         if (activezwei.getAttribute("class") == "") {
             activezwei.setAttribute("class", "active");
+        }
+        // Bei deaktivieren von Button wird Start gezeigt
+        if (buttonmittel.getAttribute("class") == "") {
+            activeeins.setAttribute("class", "");
+            activezwei.setAttribute("class", "");
         }
     }
     // 3. Schwer
