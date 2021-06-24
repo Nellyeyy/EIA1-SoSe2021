@@ -6,6 +6,7 @@ var spielfeld;
 var spielfeld4x4;
 var spielfeld5x5;
 var hilfe;
+var spielfigur;
 window.addEventListener("load", function () {
     // Zuweisungen
     leicht = document.querySelector("#leicht");
@@ -15,6 +16,7 @@ window.addEventListener("load", function () {
     spielfeld4x4 = document.querySelector("#spielfeld4x4");
     spielfeld5x5 = document.querySelector("#spielfeld5x5");
     hilfe = document.querySelector("#hilfe");
+    spielfigur = document.querySelector(".spielfigur");
     // Hilfebutton
     var erklaeren = document.getElementById("erklaerung");
     hilfe.addEventListener("click", erklaerung);
@@ -167,12 +169,15 @@ window.addEventListener("load", function () {
     function play() {
         if (buttonleicht.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
         if (buttonmittel.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
         if (buttonschwer.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
     }
 });

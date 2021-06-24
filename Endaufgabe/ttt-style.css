@@ -216,21 +216,71 @@ img {
     border-radius: 15px;
 }
 
+/* Spielfiguren*/
+#o{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: -110px;
+    margin-left: 390px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+}
+
+#x{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: -128px;
+    margin-left: 830px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+}
+
 /* Spielfeld Button */
-#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, #fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
+#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, 
+#fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
     background-color: cadetblue;
     border-color: cadetblue;
     border-style: none;
     height: 100px;
     width: 100px;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, #elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover, #ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover {
     background-color: rgb(114, 189, 192);
 }
 
+.spielfigur{
+    display: none;
+}
+
 /* Spielfelder 3x3*/
-#spielfeld {
+#oben{
+    position: absolute;
+    top: 39.1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+}
+
+#mitte{
     position: absolute;
     top: 52%;
     left: 50%;
@@ -238,18 +288,52 @@ img {
     background-color: white;
     border-color: white;
     border-style: solid;
-    height: 306px;
+    height: 100px;
+}
+
+#unten{
+    position: absolute;
+    top: 64.9%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
 }
 
 /* Spielfelder 4x4*/
-#rechts {
+.zehn{
     position: absolute;
-    top: 52.2%;
+    top: 39.1%;
     left: 66.25%;
     transform: translate(-50%, -50%);
     background-color: white;
     border-color: white;
     border-style: solid;
+    height: 100px;
+}
+
+.elf{
+    position: absolute;
+    top: 52%;
+    left: 66.25%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+}
+
+.zwoelf{
+    position: absolute;
+    top: 64.9%;
+    left: 66.25%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
 }
 
 #u4x4 {
@@ -264,15 +348,49 @@ img {
 }
 
 /* Spielfelder 5x5*/
-#links {
+.siebz{
     position: absolute;
-    top: 58.6%;
+    top: 39.1%;
     left: 33.75%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
     background-color: white;
     border-color: white;
     border-style: solid;
+    height: 100px;
 }
+
+ .achz{
+    position: absolute;
+    top: 52%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+
+ }
+ .neunz{
+    position: absolute;
+    top: 64.9%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+ }
+
+ .z{
+    position: absolute;
+    top: 77.8%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+ }
 
 #u5x5 {
     position: absolute;
@@ -323,33 +441,3 @@ footer {
     left: 85.6%;
 }
 
-/* Spielfiguren*/
-#o{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 50px;
-    margin-top: -110px;
-    margin-left: 390px;
-    background-color: rgb(42, 97, 99);
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    border-radius: 50%;
-    border-style: dotted;
-    border-color: white;
-}
-
-#x{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 50px;
-    margin-top: -128px;
-    margin-left: 830px;
-    background-color: rgb(42, 97, 99);
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    border-radius: 50%;
-    border-style: dotted;
-    border-color: white;
-}

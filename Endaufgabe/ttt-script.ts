@@ -8,6 +8,7 @@ var spielfeld4x4: HTMLInputElement;
 var spielfeld5x5: HTMLInputElement;
 
 var hilfe: HTMLElement;
+var spielfigur: HTMLElement;
 
 window.addEventListener("load", function (): void {
 
@@ -21,6 +22,7 @@ window.addEventListener("load", function (): void {
     spielfeld5x5 = document.querySelector("#spielfeld5x5");
 
     hilfe = document.querySelector("#hilfe");
+    spielfigur = document.querySelector(".spielfigur");
 
     // Hilfebutton
     var erklaeren: HTMLElement = document.getElementById("erklaerung");
@@ -169,7 +171,6 @@ window.addEventListener("load", function (): void {
     }
 
     // Züge/ Kreis und Kreiz setzen
-
     document.querySelector("#eins").addEventListener("click", function (): void { play(); });
     document.querySelector("#zwei").addEventListener("click", function (): void { play(); });
     document.querySelector("#drei").addEventListener("click", function (): void { play(); });
@@ -203,32 +204,24 @@ window.addEventListener("load", function (): void {
     document.querySelector("#fz").addEventListener("click", function (): void { play(); });
 
     function play(): void {
-
+        
+        
         if (buttonleicht.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
 
         if (buttonmittel.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
 
         if (buttonschwer.getAttribute("class") == "active") {
             console.log("Hallo");
+            spielfigur.classList.remove("spielfigur");
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
 
