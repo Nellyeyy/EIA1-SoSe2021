@@ -54,7 +54,7 @@ h1 {
 }
 
 /* Hilfe-Button */
-h3 {
+h2 {
     color: white;
     font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -70,23 +70,38 @@ h3 {
     border-style:dotted;  
 }
 
-h3:hover{
+h2:hover{
     background-color: rgb(42, 97, 99);
 }
 
-#erklaerung{
+#erklaerung {
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(42, 97, 99);
-    height: 150px;
-    width: 550px;
-    border-radius: 25px;
-    margin-left: 150px;
-    margin-top: -50px;
+    height: 708px;
+    width: 660px;
+    border-radius: 15%;
+    margin-left: 303px;
+    margin-top: -198px;
     position: relative;
     z-index: 99;
+    border-style:dotted;
+    border-color: white;
+    text-align: center;
+    line-height: 50px;
 }
+
+#style{
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.styles{
+    text-decoration: underline;
+}
+
+
 .ausblenden{
     display: none;
 }

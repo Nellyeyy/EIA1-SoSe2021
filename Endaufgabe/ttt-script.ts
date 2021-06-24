@@ -28,7 +28,12 @@ window.addEventListener("load", function (): void {
     hilfe.addEventListener("click", erklaerung);
 
     function erklaerung(): void {
-        erklaeren.classList.remove("ausblenden");
+
+        if (erklaeren.getAttribute("class") == "ausblenden") {
+            erklaeren.setAttribute("class", "");
+        } else {
+            erklaeren.setAttribute("class", "ausblenden");
+        }
     }
 
     // Auswahl der Schwierigkeit

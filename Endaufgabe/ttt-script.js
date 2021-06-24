@@ -19,7 +19,12 @@ window.addEventListener("load", function () {
     var erklaeren = document.getElementById("erklaerung");
     hilfe.addEventListener("click", erklaerung);
     function erklaerung() {
-        erklaeren.classList.remove("ausblenden");
+        if (erklaeren.getAttribute("class") == "ausblenden") {
+            erklaeren.setAttribute("class", "");
+        }
+        else {
+            erklaeren.setAttribute("class", "ausblenden");
+        }
     }
     // Auswahl der Schwierigkeit
     // Variablen für Schwierifkeit
