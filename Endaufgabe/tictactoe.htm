@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    <!-- Überschrift -->
     <header>
         <div id="h1">
             <h1>Tic-Tac-Toe</h1>
@@ -20,30 +20,47 @@
     </header>
 
     <main>
+        <!-- Deko - Kreise -->
         <div id="kreis"></div>
         <div id="kreisz"></div>
 
+        <!-- Hilfe -->
         <div>
-            <h2 id="hilfe">?</h3>
+            <h2 id="hilfe"><span>?</span></h2>
             <h3 id="erklaerung" class="ausblenden">
-                <div id="style">Spielanleitung</div> 
-                Um  Spiel zu starten, wähle passende Schwierigkeit aus:
+                <div id="style">Spielanleitung</div>
+                Um Spiel zu starten, wähle passende Schwierigkeit aus:
                 <br>Leichtes Spiel: 3 Runden & 3x3 Spielfeld
                 <br>Mittleres Spiel: 4 Runden & 4x4 Spielfeld
                 <br>Schweres Spiel: 5 Runden & 5x5 Spielfeld
                 <br>
                 <div class="styles">Spielablauf und Ziel:</div>
-                Um einen Zug zu machen, klicke in ein freies Kästchen auf dem  
+                Um einen Zug zu machen, klicke in ein freies Kästchen auf dem
                 <br>Spielfeld. Ziel ist es, das eigene Zeichen 3, 4 bzw. 5 Mal
-                <br>(je nach Schwierigkeit) in einer Zeile, Spalte oder Diagonale 
+                <br>(je nach Schwierigkeit) in einer Zeile, Spalte oder Diagonale
                 <br>zu platzieren. Wem das zuerst gelingt, holt die Runde!
                 <div class="styles">Wertung:</div>
-                Über dem Spielfeld werden die gespielten Runden sowie der Spielstand angezeigt. Wer mehr Runden hohlt hat gewonnen! 
-                <div class="styles">Viel Spaß und viel Erfolg!</div> 
+                Über dem Spielfeld werden die gespielten Runden sowie der Spielstand angezeigt. Wer mehr Runden hohlt
+                hat gewonnen!
+                <div class="styles">Viel Spaß und viel Erfolg!</div>
             </h3>
-            
         </div>
 
+        <!-- Spielstand und gespielte Runden -->
+        <div id="spiele">0 gespielte Runden von 3</div>
+        <div id="spielstand">0:0</div>
+
+        <!-- Deko - Bilder -->
+        <div>
+            <img src="mensch.PNG" alt="mensch" id="mensch">
+            <img src="Computer.PNG" alt="Computer" id="computer">
+        </div>
+
+        <!-- Deko - Spielfiguren -->
+        <h4 id="o">O</h4>
+        <h5 id="x">X</h5>
+
+        <!-- Button um Schwierigkeit auszuwählen -->
         <div id="level">
             <button id="leicht" class="background1">Leichtes Spiel </button>
             <p id="l">3 Runden <br> 3x3</p>
@@ -53,17 +70,9 @@
             <p id="s">5 Runden <br> 5x5</p>
         </div>
 
-        <div id="spiele">0 gespielte Runden von 3</div>
-
-        <div>
-            <img src="mensch.PNG" alt="mensch" id="mensch">
-            <img src="Computer.PNG" alt="Computer" id="computer">
-        </div>
-
-        <div id="spielstand">0:0</div>
-
-
+        <!-- Spielfeld 3x3-->
         <div id="spielfeld">
+
             <div id="oben">
                 <button id="eins"></button>
                 <button id="zwei"></button>
@@ -84,9 +93,9 @@
                 <button id="neun"></button>
                 <br>
             </div>
-
         </div>
 
+        <!-- Spielfeld 4x4 (add rechts und unten zu 3x3) -->
         <div id="spielfeld4x4">
 
             <div id="rechts">
@@ -105,9 +114,9 @@
                 <button id="sechsz"></button>
                 <br>
             </div>
-
         </div>
 
+        <!-- Spielfeld 5x5 (add links und unten zu 3x3) -->
         <div id="spielfeld5x5">
 
             <div id="links">
@@ -129,12 +138,11 @@
                 <button id="fz"></button>
                 <br>
             </div>
-
         </div>
-
     </main>
 
     <footer>
+        <!-- Name und Martrikelnummer -->
         <div id="footer">
             Eileen Harr / 268387
         </div>

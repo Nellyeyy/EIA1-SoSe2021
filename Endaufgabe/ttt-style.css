@@ -14,7 +14,6 @@ h1 {
     font-size: 50px;
     display: flex;
     position: absolute;
-    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -101,7 +100,6 @@ h2:hover{
     text-decoration: underline;
 }
 
-
 .ausblenden{
     display: none;
 }
@@ -187,7 +185,6 @@ p {
 }
 
 /* Bilder und Spielstand */
-
 #spielstand {
     color: white;
     font-size: 45px;
@@ -220,7 +217,6 @@ img {
 }
 
 /* Spielfeld Button */
-
 #eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, #fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
     background-color: cadetblue;
     border-color: cadetblue;
@@ -234,7 +230,6 @@ img {
 }
 
 /* Spielfelder 3x3*/
-
 #spielfeld {
     position: absolute;
     top: 52%;
@@ -247,7 +242,6 @@ img {
 }
 
 /* Spielfelder 4x4*/
-
 #rechts {
     position: absolute;
     top: 52.2%;
@@ -270,7 +264,6 @@ img {
 }
 
 /* Spielfelder 5x5*/
-
 #links {
     position: absolute;
     top: 58.6%;
@@ -293,7 +286,6 @@ img {
 }
 
 /* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
-
 #spielfeld.active {
     display: none;
 }
@@ -322,7 +314,6 @@ img {
 }
 
 /* Footer */
-
 footer {
     color: white;
     font-size: 20px;
@@ -330,4 +321,35 @@ footer {
     position: absolute;
     top: 97.8%;
     left: 85.6%;
+}
+
+/* Spielfiguren*/
+#o{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: -110px;
+    margin-left: 390px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+}
+
+#x{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: -128px;
+    margin-left: 830px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
 }

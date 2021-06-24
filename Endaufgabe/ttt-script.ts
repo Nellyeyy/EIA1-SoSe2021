@@ -44,7 +44,6 @@ window.addEventListener("load", function (): void {
     var buttonmittel: HTMLElement = document.getElementById("mittel");
     var buttonschwer: HTMLElement = document.getElementById("schwer");
 
-
     // 1. Leicht
     leicht.addEventListener("click", playleicht);
 
@@ -168,6 +167,68 @@ window.addEventListener("load", function (): void {
             activeeins.setAttribute("class", "");
         }
     }
+
+    // Züge/ Kreis und Kreiz setzen
+
+    document.querySelector("#eins").addEventListener("click", function (): void { play(); });
+    document.querySelector("#zwei").addEventListener("click", function (): void { play(); });
+    document.querySelector("#drei").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#vier").addEventListener("click", function (): void { play(); });
+    document.querySelector("#fuenf").addEventListener("click", function (): void { play(); });
+    document.querySelector("#sechs").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#sieben").addEventListener("click", function (): void { play(); });
+    document.querySelector("#acht").addEventListener("click", function (): void { play(); });
+    document.querySelector("#neun").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#zehn").addEventListener("click", function (): void { play(); });
+    document.querySelector("#elf").addEventListener("click", function (): void { play(); });
+    document.querySelector("#zwoelf").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#dreiz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#vierz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#fuenfz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#sechsz").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#siebz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#achz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#neunz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#z").addEventListener("click", function (): void { play(); });
+
+    document.querySelector("#ez").addEventListener("click", function (): void { play(); });
+    document.querySelector("#zz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#dz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#vz").addEventListener("click", function (): void { play(); });
+    document.querySelector("#fz").addEventListener("click", function (): void { play(); });
+
+    function play(): void {
+
+        if (buttonleicht.getAttribute("class") == "active") {
+            console.log("Hallo");
+        }
+
+        if (buttonmittel.getAttribute("class") == "active") {
+            console.log("Hallo");
+        }
+
+        if (buttonschwer.getAttribute("class") == "active") {
+            console.log("Hallo");
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 
