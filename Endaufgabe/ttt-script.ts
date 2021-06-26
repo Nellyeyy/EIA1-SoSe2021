@@ -276,264 +276,280 @@ window.addEventListener("load", function (): void {
         }
     }
 
-    // Züge/ Kreis und Kreiz setzen
+    // Züge 3x3 / Kreis und Kreiz setzen
+    let i: number = 0;
+    let button3x3: HTMLElement[] = [aa, bb, cc, dd, ee, ff, gg, hh, ii];
 
-    eins.addEventListener("click", play);
-    function play(): void {
+    leicht.addEventListener("click", computer);
+
+    function computer(): void {
         if (buttonleicht.getAttribute("class") == "active") {
-            aa.classList.remove("aa");
+            i = Math.floor(Math.random() * button3x3.length);
+            // aa.classList.remove("bb");
+            // aa.classList.remove("aa");
+            console.log(i);
         }
-        if (buttonmittel.getAttribute("class") == "active") {
-            aa.classList.remove("aa");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            aa.classList.remove("aa");
-        }
+
+
     }
 
-    zwei.addEventListener("click", palyz);
-    function palyz(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            bb.classList.remove("bb");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            bb.classList.remove("bb");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            bb.classList.remove("bb");
-        }
-    }
 
-    drei.addEventListener("click", playd);
-    function playd(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            cc.classList.remove("cc");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            cc.classList.remove("cc");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            cc.classList.remove("cc");
-        }
-    }
+    // eins.addEventListener("click", play);
+    // function play(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         aa.classList.remove("aa");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         aa.classList.remove("aa");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         aa.classList.remove("aa");
+    //     }
+    // }
 
-    vier.addEventListener("click", playv);
-    function playv(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            dd.classList.remove("dd");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            dd.classList.remove("dd");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            dd.classList.remove("dd");
-        }
-    }
+    // zwei.addEventListener("click", palyz);
+    // function palyz(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         bb.classList.remove("bb");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         bb.classList.remove("bb");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         bb.classList.remove("bb");
+    //     }
+    // }
 
-    fuenf.addEventListener("click", playf);
-    function playf(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            ee.classList.remove("ee");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            ee.classList.remove("ee");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            ee.classList.remove("ee");
-        }
-    }
+    // drei.addEventListener("click", playd);
+    // function playd(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         cc.classList.remove("cc");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         cc.classList.remove("cc");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         cc.classList.remove("cc");
+    //     }
+    // }
 
-    sechs.addEventListener("click", plays);
-    function plays(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            ff.classList.remove("ff");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            ff.classList.remove("ff");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            ff.classList.remove("ff");
-        }
-    }
+    // vier.addEventListener("click", playv);
+    // function playv(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         dd.classList.remove("dd");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         dd.classList.remove("dd");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         dd.classList.remove("dd");
+    //     }
+    // }
 
-    sieben.addEventListener("click", playsi);
-    function playsi(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            gg.classList.remove("gg");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            gg.classList.remove("gg");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            gg.classList.remove("gg");
-        }
-    }
+    // fuenf.addEventListener("click", playf);
+    // function playf(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         ee.classList.remove("ee");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         ee.classList.remove("ee");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ee.classList.remove("ee");
+    //     }
+    // }
 
-    acht.addEventListener("click", playa);
-    function playa(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            hh.classList.remove("hh");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            hh.classList.remove("hh");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            hh.classList.remove("hh");
-        }
-    }
+    // sechs.addEventListener("click", plays);
+    // function plays(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         ff.classList.remove("ff");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         ff.classList.remove("ff");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ff.classList.remove("ff");
+    //     }
+    // }
 
-    neun.addEventListener("click", playn);
-    function playn(): void {
-        if (buttonleicht.getAttribute("class") == "active") {
-            ii.classList.remove("ii");
-        }
-        if (buttonmittel.getAttribute("class") == "active") {
-            ii.classList.remove("ii");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            ii.classList.remove("ii");
-        }
-    }
-    
-    zehn.addEventListener("click", playz);
-    function playz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            jj.classList.remove("jj");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            jj.classList.remove("jj");
-        }
-    }
+    // sieben.addEventListener("click", playsi);
+    // function playsi(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         gg.classList.remove("gg");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         gg.classList.remove("gg");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         gg.classList.remove("gg");
+    //     }
+    // }
 
-    elf.addEventListener("click", playez);
-    function playez(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            kk.classList.remove("kk");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            kk.classList.remove("kk");
-        }
-    }
+    // acht.addEventListener("click", playa);
+    // function playa(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         hh.classList.remove("hh");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         hh.classList.remove("hh");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         hh.classList.remove("hh");
+    //     }
+    // }
 
-    zwoelf.addEventListener("click", playzz);
-    function playzz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            ll.classList.remove("ll");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            ll.classList.remove("ll");
-        }
-    }
-    
-    dreiz.addEventListener("click", playdz);
-    function playdz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            mm.classList.remove("mm");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            mm.classList.remove("mm");
-        }
-    }
+    // neun.addEventListener("click", playn);
+    // function playn(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         ii.classList.remove("ii");
+    //     }
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         ii.classList.remove("ii");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ii.classList.remove("ii");
+    //     }
+    // }
 
-    vierz.addEventListener("click", playvz);
-    function playvz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            nn.classList.remove("nn");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            nn.classList.remove("nn");
-        }
-    }
+    // zehn.addEventListener("click", playz);
+    // function playz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         jj.classList.remove("jj");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         jj.classList.remove("jj");
+    //     }
+    // }
 
-    fuenfz.addEventListener("click", playfz);
-    function playfz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            oo.classList.remove("oo");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            oo.classList.remove("oo");
-        }
-    }
+    // elf.addEventListener("click", playez);
+    // function playez(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         kk.classList.remove("kk");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         kk.classList.remove("kk");
+    //     }
+    // }
 
-    sechsz.addEventListener("click", playsz);
-    function playsz(): void {
-        if (buttonmittel.getAttribute("class") == "active") {
-            pp.classList.remove("pp");
-        }
-        if (buttonschwer.getAttribute("class") == "active") {
-            pp.classList.remove("pp");
-        }
-    }
+    // zwoelf.addEventListener("click", playzz);
+    // function playzz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         ll.classList.remove("ll");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ll.classList.remove("ll");
+    //     }
+    // }
 
-    siebz.addEventListener("click", playsiz);
-    function playsiz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            qq.classList.remove("qq");
-        }
-    }
+    // dreiz.addEventListener("click", playdz);
+    // function playdz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         mm.classList.remove("mm");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         mm.classList.remove("mm");
+    //     }
+    // }
 
-    achz.addEventListener("click", playaz);
-    function playaz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            rr.classList.remove("rr");
-        }
-    }
+    // vierz.addEventListener("click", playvz);
+    // function playvz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         nn.classList.remove("nn");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         nn.classList.remove("nn");
+    //     }
+    // }
 
-    neunz.addEventListener("click", playnz);
-    function playnz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            ss.classList.remove("ss");
-        }
-    }
+    // fuenfz.addEventListener("click", playfz);
+    // function playfz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         oo.classList.remove("oo");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         oo.classList.remove("oo");
+    //     }
+    // }
 
-    z.addEventListener("click", playzzz);
-    function playzzz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            tt.classList.remove("tt");
-        }
-    }
+    // sechsz.addEventListener("click", playsz);
+    // function playsz(): void {
+    //     if (buttonmittel.getAttribute("class") == "active") {
+    //         pp.classList.remove("pp");
+    //     }
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         pp.classList.remove("pp");
+    //     }
+    // }
 
-    ez.addEventListener("click", playzzzz);
-    function playzzzz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            uu.classList.remove("uu");
-        }
-    }
+    // siebz.addEventListener("click", playsiz);
+    // function playsiz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         qq.classList.remove("qq");
+    //     }
+    // }
 
-    zz.addEventListener("click", playzdz);
-    function playzdz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            vv.classList.remove("vv");
-        }
-    }
+    // achz.addEventListener("click", playaz);
+    // function playaz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         rr.classList.remove("rr");
+    //     }
+    // }
 
-    dz.addEventListener("click", playzvz);
-    function playzvz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            ww.classList.remove("ww");
-        }
-    }
+    // neunz.addEventListener("click", playnz);
+    // function playnz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ss.classList.remove("ss");
+    //     }
+    // }
 
-    vz.addEventListener("click", playzfz);
-    function playzfz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            xx.classList.remove("xx");
-        }
-    }
+    // z.addEventListener("click", playzzz);
+    // function playzzz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         tt.classList.remove("tt");
+    //     }
+    // }
 
-    fz.addEventListener("click", playzsz);
-    function playzsz(): void {
-        if (buttonschwer.getAttribute("class") == "active") {
-            yy.classList.remove("yy");
-        }
-    }
+    // ez.addEventListener("click", playzzzz);
+    // function playzzzz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         uu.classList.remove("uu");
+    //     }
+    // }
 
-    // Neustart
-    neustart.addEventListener("click", neu);
+    // zz.addEventListener("click", playzdz);
+    // function playzdz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         vv.classList.remove("vv");
+    //     }
+    // }
 
-    function neu(): void {
-        console.log("löschen");
-    }
+    // dz.addEventListener("click", playzvz);
+    // function playzvz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         ww.classList.remove("ww");
+    //     }
+    // }
+
+    // vz.addEventListener("click", playzfz);
+    // function playzfz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         xx.classList.remove("xx");
+    //     }
+    // }
+
+    // fz.addEventListener("click", playzsz);
+    // function playzsz(): void {
+    //     if (buttonschwer.getAttribute("class") == "active") {
+    //         yy.classList.remove("yy");
+    //     }
+    // }
+
+    // // Neustart
+    // neustart.addEventListener("click", neu);
+
+    // function neu(): void {
+    //     console.log("löschen");
+    // }
 
 });
 
