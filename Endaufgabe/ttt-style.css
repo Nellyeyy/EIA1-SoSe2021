@@ -57,6 +57,20 @@ h1 {
     margin-top: 120px;
     margin-left: 1100px;
 }
+#flowchart{
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 50%;
+    left: 88%;
+    position:absolute;
+}
+#flowchart:hover{
+    color: rgb(42, 97, 99);
+    text-decoration: underline;
+}
 #kreisv {
     background-color: rgb(114, 189, 192);
     width: 400px;
@@ -460,9 +474,10 @@ img {
 /* Footer */
 footer {
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    top: 97.8%;
-    left: 85.6%;
+    top: 5%;
+    left: 78%;
+    text-align: center;
 }
