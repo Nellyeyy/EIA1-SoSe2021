@@ -1,0 +1,140 @@
+html, body {
+    background: rgb(0, 135, 85);
+    position: absolute;
+    width: 1280px;
+    height: 800px;
+}
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    font-size: 50px;
+    top: 5%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 3px;
+    word-spacing: .1em;    
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+#automat{
+    background-color: rgb(161, 161, 161);
+    height: 700px;
+    width: 500px;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(87, 86, 86);
+    border-style: ridge;
+    box-shadow: rgb(46, 45, 45) 0.2em 0.2em 0.4em ;
+
+}
+#bildschirm{
+    background-color: rgb(233, 232, 232);
+    height: 400px;
+    width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(87, 86, 86);
+    border-style: ridge;
+}
+#geld{
+    background-color: rgb(126, 125, 125);
+    height: 25px;
+    width: 300px;
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(233, 232, 232);
+    top: 80%;
+    left: 44.2%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(87, 86, 86);
+    border-style: ridge;
+}
+#karte{
+    background-color: rgb(164, 226, 156);
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    top: 80%;
+    left: 64.5%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(87, 86, 86);
+    border-style: ridge;
+    color: rgb(139, 139, 139);
+}
+#karte2{
+    background-color: rgb(164, 226, 156);
+    height: 25px;
+    width: 80px;
+    position: absolute;
+    top: 84%;
+    left: 64.5%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(87, 86, 86);
+    border-style: ridge;
+}
+#karte3{
+    background-color: rgb(0, 135, 85);
+    height: 120px;
+    width: 80px;
+    position: absolute;
+    top: 95%;
+    left: 64.5%;
+    transform:translate(-50%, -50%);
+    border-color: rgb(116, 115, 115);
+    border-style:solid;
+    color: white;
+    border-radius: 15px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    writing-mode: vertical-rl;
+    text-align: center;
+}
+#tastatur{
+    position: absolute;
+    top: 93%;
+    left: 40%;
+    transform:translate(-50%, -50%);
+}
+button{
+    width: 35px;
+    height: 35px;
+    background-color: rgb(126, 125, 125);   
+    color: white;
+}
+#knoepfe{
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+}
+#A{
+    background-color: rgb(180, 75, 75);
+    height: 35px;
+    width: 80px;
+    color: white;
+}
+#K{
+    background-color: rgb(158, 158, 73);
+    height: 35px;
+    width: 80px;
+    color: white;
+}
+#H{
+    background-color: rgb(126, 125, 125);
+    height: 35px;
+    width: 80px;
+    color: white;
+}
+#B{
+    background-color: rgb(51, 145, 51);
+    height: 35px;
+    width: 80px;
+    color: white;
+}
