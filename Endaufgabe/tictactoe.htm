@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="ttt-style.css">
     <script src="ttt-script.js"></script>
 </head>
@@ -20,9 +19,22 @@
     </header>
 
     <main>
-        <!-- Deko - Kreise -->
+        <!-- Deko - Kreise linke-Seite) -->
         <div id="kreis"></div>
         <div id="kreisz"></div>
+        
+        <!-- Neustart-Button -->
+        <div id="neustart">
+            <h6>Neustart</h6>
+        </div>
+
+        <!-- Deko - Spielfiguren -->
+        <h4 id="o">O</h4>
+        <h5 id="x">X</h5>
+
+        <!-- Deko - Kreise (rechte Seite)-->
+        <div id="kreisd"></div>
+        <div id="kreisv"></div>
 
         <!-- Hilfe -->
         <div>
@@ -39,12 +51,14 @@
                 <br>Spielfeld. Ziel ist es, das eigene Zeichen 3, 4 bzw. 5 Mal
                 <br>(je nach Schwierigkeit) in einer Zeile, Spalte oder Diagonale
                 <br>zu platzieren. Wem das zuerst gelingt, holt die Runde!
-                <div class="styles">Wertung:</div>
-                Über dem Spielfeld werden die gespielten Runden sowie der Spielstand angezeigt. Wer mehr Runden hohlt
-                hat gewonnen!
+                <div class="styles">Wertung und Neustart:</div>
+                Gespielte Runden & Spielstand stehen oben. Gewinner ist, Spieler mit meisten Runden!
+                Neustart des Spieles, bei klick auf Neustart.
                 <div class="styles">Viel Spaß und viel Erfolg!</div>
             </h3>
         </div>
+
+        
 
         <!-- Spielstand und gespielte Runden -->
         <div id="spiele">0 gespielte Runden von 3</div>
@@ -55,10 +69,6 @@
             <img src="mensch.PNG" alt="mensch" id="mensch">
             <img src="Computer.PNG" alt="Computer" id="computer">
         </div>
-
-        <!-- Deko - Spielfiguren -->
-        <h4 id="o">O</h4>
-        <h5 id="x">X</h5>
 
         <!-- Button um Schwierigkeit auszuwählen -->
         <div id="level">
@@ -74,23 +84,23 @@
         <div id="spielfeld">
 
             <div id="oben">
-                <button id="eins"><a class="spielfigur">O</a></button>
-                <button id="zwei"><a class="spielfigur">O</a></button>
-                <button id="drei"><a class="spielfigur">O</a></button>
+                <button id="eins"><a class="aa">O</a></button>
+                <button id="zwei"><a class="bb">O</a></button>
+                <button id="drei"><a class="cc">O</a></button>
                 <br>
             </div>
 
             <div id="mitte">
-                <button id="vier"><a class="spielfigur">O</a></button>
-                <button id="fuenf"><a class="spielfigur">O</a></button>
-                <button id="sechs"><a class="spielfigur">O</a></button>
+                <button id="vier"><a class="dd">O</a></button>
+                <button id="fuenf"><a class="ee">O</a></button>
+                <button id="sechs"><a class="ff">O</a></button>
                 <br>
             </div>
 
             <div id="unten">
-                <button id="sieben"><a class="spielfigur">O</a></button>
-                <button id="acht"><a class="spielfigur">O</a></button>
-                <button id="neun"><a class="spielfigur">O</a></button>
+                <button id="sieben"><a class="gg">O</a></button>
+                <button id="acht"><a class="hh">O</a></button>
+                <button id="neun"><a class="ii">O</a></button>
                 <br>
             </div>
         </div>
@@ -99,19 +109,19 @@
         <div id="spielfeld4x4">
 
             <div id="rechts">
-                <div class="zehn"><button id="zehn"><a class="spielfigur">O</a></button></div>
+                <div class="zehn"><button id="zehn"><a class="jj">O</a></button></div>
                 <br>
-                <div class="elf"><button id="elf"><a class="spielfigur">O</a></button></div>
+                <div class="elf"><button id="elf"><a class="kk">O</a></button></div>
                 <br>
-                <div class="zwoelf"><button id="zwoelf"><a class="spielfigur">O</a></button></div>
+                <div class="zwoelf"><button id="zwoelf"><a class="ll">O</a></button></div>
                 <br>
             </div>
 
             <div id="u4x4">
-                <button id="dreiz"><a class="spielfigur">O</a></button>
-                <button id="vierz"><a class="spielfigur">O</a></button>
-                <button id="fuenfz"><a class="spielfigur">O</a></button>
-                <button id="sechsz"><a class="spielfigur">O</a></button>
+                <button id="dreiz"><a class="mm">O</a></button>
+                <button id="vierz"><a class="nn">O</a></button>
+                <button id="fuenfz"><a class="oo">O</a></button>
+                <button id="sechsz"><a class="pp">O</a></button>
                 <br>
             </div>
         </div>
@@ -120,22 +130,22 @@
         <div id="spielfeld5x5">
 
             <div id="links">
-                <div class="siebz"><button id="siebz"><a class="spielfigur">O</a></button></div>
+                <div class="siebz"><button id="siebz"><a class="qq">O</a></button></div>
                 <br>
-                <div class="achz"><button id="achz"><a class="spielfigur">O</a></button></div>
+                <div class="achz"><button id="achz"><a class="rr">O</a></button></div>
                 <br>
-                <div class="neunz"><button id="neunz"><a class="spielfigur">O</a></button></div>
+                <div class="neunz"><button id="neunz"><a class="ss">O</a></button></div>
                 <br>
-                <div class="z"><button id="z"><a class="spielfigur">O</a></button></div>
+                <div class="z"><button id="z"><a class="tt">O</a></button></div>
                 <br>
             </div>
 
             <div id="u5x5">
-                <button id="ez"><a class="spielfigur">O</a></button>
-                <button id="zz"><a class="spielfigur">O</a></button>
-                <button id="dz"><a class="spielfigur">O</a></button>
-                <button id="vz"><a class="spielfigur">O</a></button>
-                <button id="fz"><a class="spielfigur">O</a></button>
+                <button id="ez"><a class="uu">O</a></button>
+                <button id="zz"><a class="vv">O</a></button>
+                <button id="dz"><a class="ww">O</a></button>
+                <button id="vz"><a class="xx">O</a></button>
+                <button id="fz"><a class="yy">O</a></button>
                 <br>
             </div>
         </div>

@@ -52,6 +52,28 @@ h1 {
     margin-left: 350px;
 }
 
+#kreisd {
+    background-color: rgb(114, 189, 192);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border-style:dotted;
+    border-color: white;
+    margin-top: 120px;
+    margin-left: 1100px;
+}
+
+#kreisv {
+    background-color: rgb(114, 189, 192);
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border-style:dotted;
+    border-color: white;
+    margin-top: -700px;
+    margin-left: 850px;
+}
+
 /* Hilfe-Button */
 h2 {
     color: white;
@@ -63,7 +85,7 @@ h2 {
     width: 50px;
     border-radius: 50%;
     background-color: rgb(114, 189, 192);
-    margin-top: 25px;
+    margin-top: -130px;
     margin-left: 150px;
     border-color: white;
     border-style:dotted;  
@@ -102,6 +124,59 @@ h2:hover{
 
 .ausblenden{
     display: none;
+}
+
+/* Spielfiguren*/
+#o{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: 110px;
+    margin-left: 390px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+}
+
+#x{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 50px;
+    margin-top: -128px;
+    margin-left: 830px;
+    background-color: rgb(42, 97, 99);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+}
+
+/* Neustart-Button */
+#neustart{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 25px;
+    margin-top: 600px;
+    margin-left: 1000px;
+    background-color: rgb(114, 189, 192);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    border-style: dotted;
+    border-color: white;
+    vertical-align: middle;
+    position: absolute;
+}
+
+#neustart:hover{
+    background-color: rgb(42, 97, 99);
 }
 
 /* Button für Schwierigkeit */
@@ -216,37 +291,6 @@ img {
     border-radius: 15px;
 }
 
-/* Spielfiguren*/
-#o{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 50px;
-    margin-top: -110px;
-    margin-left: 390px;
-    background-color: rgb(42, 97, 99);
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    border-radius: 50%;
-    border-style: dotted;
-    border-color: white;
-}
-
-#x{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 50px;
-    margin-top: -128px;
-    margin-left: 830px;
-    background-color: rgb(42, 97, 99);
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    border-radius: 50%;
-    border-style: dotted;
-    border-color: white;
-}
-
 /* Spielfeld Button */
 #eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, 
 #fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
@@ -263,8 +307,9 @@ img {
 #eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, #elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover, #ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover {
     background-color: rgb(114, 189, 192);
 }
-
-.spielfigur{
+/* Spielfeld-Button Inhalt ausblenden */
+.aa, .bb, .cc, .dd, .ee, .ff, .gg, .hh, .ii, .jj, .kk, .ll, .mm, .nn, 
+.oo, .pp, .qq, .rr, .ss, .tt, .uu, .vv, .ww, .xx, .yy{
     display: none;
 }
 
@@ -440,4 +485,3 @@ footer {
     top: 97.8%;
     left: 85.6%;
 }
-
