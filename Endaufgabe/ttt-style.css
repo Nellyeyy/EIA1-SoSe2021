@@ -4,6 +4,7 @@ body {
     width: 1280px;
     height: 800px;
 }
+
 /* Texte (Überschrift, gespielte Runden*/
 h1 {
     text-align: center;
@@ -25,6 +26,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* Hintergrunddeko (Kreise) */
 #kreis {
     background-color: rgb(114, 189, 192);
@@ -57,20 +59,6 @@ h1 {
     margin-top: 120px;
     margin-left: 1100px;
 }
-#flowchart{
-    color: white;
-    text-decoration: none;
-    text-align: left;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 50%;
-    left: 88%;
-    position:absolute;
-}
-#flowchart:hover{
-    color: rgb(42, 97, 99);
-    text-decoration: underline;
-}
 #kreisv {
     background-color: rgb(114, 189, 192);
     width: 400px;
@@ -81,6 +69,7 @@ h1 {
     margin-top: -700px;
     margin-left: 850px;
 }
+
 /* Hilfe-Button */
 h2 {
     color: white;
@@ -92,7 +81,7 @@ h2 {
     width: 50px;
     border-radius: 50%;
     background-color: rgb(114, 189, 192);
-    margin-top: -130px;
+    margin-top: -120px;
     margin-left: 150px;
     border-color: white;
     border-style:dotted;  
@@ -127,6 +116,23 @@ h2:hover{
 .ausblenden{
     display: none;
 }
+
+/* Flowchart */
+#flowchart{
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 50%;
+    left: 88%;
+    position:absolute;
+}
+#flowchart:hover{
+    color: rgb(42, 97, 99);
+    text-decoration: underline;
+}
+
 /* Spielfiguren*/
 #o{
     font-family: Arial, Helvetica, sans-serif;
@@ -156,6 +162,7 @@ h2:hover{
     border-style: dotted;
     border-color: white;
 }
+
 /* Neustart-Button */
 #neustart{
     font-family: Arial, Helvetica, sans-serif;
@@ -176,6 +183,7 @@ h2:hover{
 #neustart:hover{
     background-color: rgb(42, 97, 99);
 }
+
 /* Button für Schwierigkeit */
 #leicht {
     display: flex;
@@ -247,6 +255,7 @@ p {
     font-size: 18px;
     text-align: center;
 }
+
 /* Bilder und Spielstand */
 #spielstand {
     color: white;
@@ -275,180 +284,34 @@ img {
     transform: translate(-50%, -50%);
     border-radius: 15px;
 }
+
 /* Spielfeld Button */
-#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, 
-#fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
-    background-color: cadetblue;
-    border-color: white;
-    border-style: solid;
-    height: 100px;
-    width: 100px;
-    color: white;
-    font-size: 90px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-}
-#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, #elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover, #ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover {
-    background-color: rgb(114, 189, 192);
-}
-/* Spielfeld-Button Inhalt ausblenden */
-.aa, .bb, .cc, .dd, .ee, .ff, .gg, .hh, .ii, .jj, .kk, .ll, .mm, .nn, 
-.oo, .pp, .qq, .rr, .ss, .tt, .uu, .vv, .ww, .xx, .yy{
+.spiel{
+    width: 21.4rem;
+    height: 21.4rem;
+    margin: auto;
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    position:relative;
     display: none;
 }
-/* Spielfelder 3x3*/
-#eins{
-    position: absolute;
-    top: 40%;
-    left: 41.9%;
-    transform: translate(-50%, -50%);  
+.spiel.active{
+    display: ;
 }
-#zwei{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
+.feld{
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid white;
 }
-#drei{
-    position: absolute;
-    top: 40%;
-    left: 57.9%;
-    transform: translate(-50%, -50%);  
+.feld:hover{
+    background-color: rgb(114, 189, 192);
 }
-#vier{
-    position: absolute;
-    top: 53%;
-    left: 41.9%;
-    transform: translate(-50%, -50%);  
+.feld.active{
+    display: none;
 }
-#fuenf{
-    position: absolute;
-    top: 53%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-}
-#sechs{
-    position: absolute;
-    top: 53%;
-    left: 57.9%;
-    transform: translate(-50%, -50%);  
-}
-#sieben{
-    position: absolute;
-    top: 66%;
-    left: 41.9%;
-    transform: translate(-50%, -50%);  
-}
-#acht{
-    position: absolute;
-    top: 66%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-}
-#neun{
-    position: absolute;
-    top: 66%;
-    left: 57.9%;
-    transform: translate(-50%, -50%);  
-}
-/* Spielfelder 4x4*/
-#zehn{
-    position: absolute;
-    top: 40%;
-    left: 66%;
-    transform: translate(-50%, -50%);
-}
-#elf{
-    position: absolute;
-    top: 53%;
-    left: 66%;
-    transform: translate(-50%, -50%);
-}
-#zwoelf{
-    position: absolute;
-    top: 66%;
-    left: 66%;
-    transform: translate(-50%, -50%);
-}
-#dreiz{
-    position: absolute;
-    top: 79%;
-    left: 41.9%;
-    transform: translate(-50%, -50%);  
-}
-#vierz{
-    position: absolute;
-    top: 79%;
-    left: 50%;
-    transform: translate(-50%, -50%);  
-}
-#fuenfz{
-    position: absolute;
-    top: 79%;
-    left: 57.9%;
-    transform: translate(-50%, -50%);  
-}
-#sechsz{
-    position: absolute;
-    top: 79%;
-    left: 66%;
-    transform: translate(-50%, -50%);  
-}
-/* Spielfelder 5x5*/
-#siebz{
-    position: absolute;
-    top: 40%;
-    left: 33.75%;
-    transform: translate(-50%, -50%); 
-}
-#achz{
-    position: absolute;
-    top: 53%;
-    left: 33.75%;
-    transform: translate(-50%, -50%); 
-}
-#neunz{
-    position: absolute;
-    top: 66%;
-    left: 33.75%;
-    transform: translate(-50%, -50%); 
-}
-#z{
-    position: absolute;
-    top: 79%;
-    left: 33.75%;
-    transform: translate(-50%, -50%); 
-}
-#ez{
-    position: absolute;
-    top: 92%;
-    left: 33.75%;
-    transform: translate(-50%, -50%); 
-}
-#zz{
-    position: absolute;
-    top: 92%;
-    left: 41.9%;
-    transform: translate(-50%, -50%); 
-}
-#dz{
-    position: absolute;
-    top: 92%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-}
-#vz{
-    position: absolute;
-    top: 92%;
-    left: 57.9%;
-    transform: translate(-50%, -50%); 
-}
-#fz{
-    position: absolute;
-    top: 92%;
-    left: 66%;
-    transform: translate(-50%, -50%); 
-}
+
 /* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
 #spielfeld.active {
     display: none;
@@ -471,7 +334,8 @@ img {
     background-color: rgb(243, 158, 158);
     color: white;
 }
-/* Footer */
+
+/* Footer (Ich weiß, Footer gehört normalerweise nach unten, Gestalterisch sah meine Variante jedoch besser aus...*/
 footer {
     color: white;
     font-size: 25px;

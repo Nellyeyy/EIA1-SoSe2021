@@ -22,18 +22,33 @@
         <!-- Deko - Kreise linke-Seite) -->
         <div id="kreis"></div>
         <div id="kreisz"></div>
+
         <!-- Neustart-Button -->
         <div id="neustart">
             <h6>Neustart</h6>
         </div>
+
         <!-- Deko - Spielfiguren -->
         <h4 id="o">O</h4>
         <h5 id="x">X</h5>
+
         <!-- Deko - Kreise (rechte Seite)-->
         <div id="kreisd"></div>
         <div id="kreisv"></div>
+
         <!-- Flowchart -->
         <div><a id="flowchart" href=".JPG" target="_blank" class="flowchart">Flowchart</a></div>
+
+        <!-- Spielstand und gespielte Runden -->
+        <div id="spiele">0 gespielte Runden von 3</div>
+        <div id="spielstand">0:0</div>
+
+        <!-- Deko - Bilder -->
+        <div>
+            <img src="mensch.PNG" alt="mensch" id="mensch">
+            <img src="Computer.PNG" alt="Computer" id="computer">
+        </div>
+
         <!-- Hilfe -->
         <div>
             <h2 id="hilfe">?</h2>
@@ -55,14 +70,7 @@
                 <div class="styles">Viel Spaß und viel Erfolg!</div>
             </h3>
         </div>
-        <!-- Spielstand und gespielte Runden -->
-        <div id="spiele">0 gespielte Runden von 3</div>
-        <div id="spielstand">0:0</div>
-        <!-- Deko - Bilder -->
-        <div>
-            <img src="mensch.PNG" alt="mensch" id="mensch">
-            <img src="Computer.PNG" alt="Computer" id="computer">
-        </div>
+
         <!-- Button um Schwierigkeit auszuwählen -->
         <div id="level">
             <button id="leicht" class="background1">Leichtes Spiel </button>
@@ -72,63 +80,31 @@
             <button id="schwer"> Schweres Spiel </button>
             <p id="s">5 Runden <br> 5x5</p>
         </div>
-        <!-- Spielfeld 3x3-->
-        <div id="spielfeld">
-            <div id="oben">
-                <div id="eins"><a class="aa">O</a></div>
-                <div id="zwei"><a class="bb">O</a></div>
-                <div id="drei"><a class="cc">O</a></div>
-            </div>
-            <div id="mitte">
-                <div id="vier"><a class="dd">O</a></div>
-                <div id="fuenf"><a class="ee">O</a></div>
-                <div id="sechs"><a class="ff">O</a></div>
-            </div>
-            <div id="unten">
-                <div id="sieben"><a class="gg">O</a></div>
-                <div id="acht"><a class="hh">O</a></div>
-                <div id="neun"><a class="ii">O</a></div>
-            </div>
-        </div>
-        <!-- Spielfeld 4x4 (add rechts und unten zu 3x3) -->
-        <div id="spielfeld4x4">
-            <div id="rechts">
-                <div id="zehn"><a class="jj">O</a></div>
-                <div id="elf"><a class="kk">O</a></div>
-                <div id="zwoelf"><a class="ll">O</a></div>
-            </div>
-            <div id="u4x4">
-                <div id="dreiz"><a class="mm">O</a></div>
-                <div id="vierz"><a class="nn">O</a></div>
-                <div id="fuenfz"><a class="oo">O</a></div>
-                <div id="sechsz"><a class="pp">O</a></div>
-            </div>
-        </div>
-        <!-- Spielfeld 5x5 (add links und unten zu 3x3) -->
-        <div id="spielfeld5x5">
-            <div id="links">
-                <div id="siebz"><a class="qq">O</a></div>
-                <div id="achz"><a class="rr">O</a></div>
-                <div id="neunz"><a class="ss">O</a></div>
-                <div id="z"><a class="tt">O</a></div>
-            </div>
-            <div id="u5x5">
-                <div id="ez"><a class="uu">O</a></div>
-                <div id="zz"><a class="vv">O</a></div>
-                <div id="dz"><a class="ww">O</a></div>
-                <div id="vz"><a class="xx">O</a></div>
-                <div id="fz"><a class="yy">O</a></div>
-                <br>
-            </div>
+
+        <!-- Spielfeld -->
+        <div class="spiel">
+            <div class="feld"></div>
+            <div class="feld"></div>
+            <div class="feld"></div>
+
+            <div class="feld"></div>
+            <div class="feld"></div>
+            <div class="feld"></div>
+
+            <div class="feld"></div>
+            <div class="feld"></div>
+            <div class="feld"></div>
         </div>
     </main>
 
     <footer>
         <!-- Name und Martrikelnummer -->
         <div id="footer">
-            Eileen Harr 
+            Eileen Harr
             <br>268387
         </div>
     </footer>
+
 </body>
+
 </html>
