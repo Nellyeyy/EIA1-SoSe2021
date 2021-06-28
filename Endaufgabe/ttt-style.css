@@ -286,30 +286,176 @@ img {
 }
 
 /* Spielfeld Button */
-.spiel{
-    width: 21.4rem;
-    height: 21.4rem;
-    margin: auto;
-    border: 1px solid white;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    position:relative;
-    display: none;
+#eins, #zwei, #drei, #vier, #fuenf, #sechs, #sieben, #acht, #neun, #zehn, #elf, #zwoelf, #dreiz, #vierz, 
+#fuenfz, #sechsz, #siebz, #achz, #neunz, #z, #ez, #zz, #dz, #vz, #fz {
+    background-color: cadetblue;
+    border-color: white;
+    border-style: solid;
+    height: 100px;
+    width: 100px;
+    color: white;
+    font-size: 90px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
-.spiel.active{
-    display: ;
-}
-.feld{
-    width: 7rem;
-    height: 7rem;
-    border: 1px solid white;
-}
-.feld:hover{
+#eins:hover, #zwei:hover, #drei:hover, #vier:hover, #fuenf:hover, #sechs:hover, #sieben:hover, #acht:hover, #neun:hover, #zehn:hover, #elf:hover, #zwoelf:hover, #dreiz:hover, #vierz:hover, #fuenfz:hover, #sechsz:hover, #siebz:hover, #achz:hover, #neunz:hover, #z:hover, #ez:hover, #zz:hover, #dz:hover, #vz:hover, #fz:hover {
     background-color: rgb(114, 189, 192);
+} 
+
+/* Spielfelder 3x3*/
+#eins{
+    position: absolute;
+    top: 40%;
+    left: 41.9%;
+    transform: translate(-50%, -50%);  
 }
-.feld.active{
-    display: none;
+#zwei{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+#drei{
+    position: absolute;
+    top: 40%;
+    left: 57.9%;
+    transform: translate(-50%, -50%);  
+}
+#vier{
+    position: absolute;
+    top: 53%;
+    left: 41.9%;
+    transform: translate(-50%, -50%);  
+}
+#fuenf{
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+#sechs{
+    position: absolute;
+    top: 53%;
+    left: 57.9%;
+    transform: translate(-50%, -50%);  
+}
+#sieben{
+    position: absolute;
+    top: 66%;
+    left: 41.9%;
+    transform: translate(-50%, -50%);  
+}
+#acht{
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+#neun{
+    position: absolute;
+    top: 66%;
+    left: 57.9%;
+    transform: translate(-50%, -50%);  
+}
+
+/* Spielfelder 4x4*/
+#zehn{
+    position: absolute;
+    top: 40%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+}
+#elf{
+    position: absolute;
+    top: 53%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+}
+#zwoelf{
+    position: absolute;
+    top: 66%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+}
+#dreiz{
+    position: absolute;
+    top: 79%;
+    left: 41.9%;
+    transform: translate(-50%, -50%);  
+}
+#vierz{
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+#fuenfz{
+    position: absolute;
+    top: 79%;
+    left: 57.9%;
+    transform: translate(-50%, -50%);  
+}
+#sechsz{
+    position: absolute;
+    top: 79%;
+    left: 66%;
+    transform: translate(-50%, -50%);  
+}
+
+/* Spielfelder 5x5*/
+#siebz{
+    position: absolute;
+    top: 40%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+}
+#achz{
+    position: absolute;
+    top: 53%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+}
+#neunz{
+    position: absolute;
+    top: 66%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+}
+#z{
+    position: absolute;
+    top: 79%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+}
+#ez{
+    position: absolute;
+    top: 92%;
+    left: 33.75%;
+    transform: translate(-50%, -50%); 
+}
+#zz{
+    position: absolute;
+    top: 92%;
+    left: 41.9%;
+    transform: translate(-50%, -50%); 
+}
+#dz{
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+#vz{
+    position: absolute;
+    top: 92%;
+    left: 57.9%;
+    transform: translate(-50%, -50%); 
+}
+#fz{
+    position: absolute;
+    top: 92%;
+    left: 66%;
+    transform: translate(-50%, -50%); 
 }
 
 /* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
