@@ -35,6 +35,9 @@ var dz: HTMLDivElement;
 var vz: HTMLDivElement;
 var fz: HTMLDivElement;
 
+var maschiene: string = "X";
+var mensch: string = "O";
+
 window.addEventListener("load", function (): void {
 
     // Zuweisungen
@@ -174,7 +177,7 @@ window.addEventListener("load", function (): void {
             buttonschwer.setAttribute("class", "");
         }
 
-       // Einblenden des 4x4 wenn vorher von anderer Schwierigkeit kommend
+        // Einblenden des 4x4 wenn vorher von anderer Schwierigkeit kommend
         if (activeeins.getAttribute("class") == "active") {
             activeeins.setAttribute("class", "");
         }
@@ -220,284 +223,37 @@ window.addEventListener("load", function (): void {
         }
     }
 
-    // eins.addEventListener("click", play);
-    // function play(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         aa.classList.remove("aa");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         aa.classList.remove("aa");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         aa.classList.remove("aa");
-    //     }
-    // }
-
-    // zwei.addEventListener("click", palyz);
-    // function palyz(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         bb.classList.remove("bb");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         bb.classList.remove("bb");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         bb.classList.remove("bb");
-    //     }
-    // }
-
-    // drei.addEventListener("click", playd);
-    // function playd(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         cc.classList.remove("cc");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         cc.classList.remove("cc");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         cc.classList.remove("cc");
-    //     }
-    // }
-
-    // vier.addEventListener("click", playv);
-    // function playv(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         dd.classList.remove("dd");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         dd.classList.remove("dd");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         dd.classList.remove("dd");
-    //     }
-    // }
-
-    // fuenf.addEventListener("click", playf);
-    // function playf(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         ee.classList.remove("ee");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         ee.classList.remove("ee");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ee.classList.remove("ee");
-    //     }
-    // }
-
-    // sechs.addEventListener("click", plays);
-    // function plays(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         ff.classList.remove("ff");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         ff.classList.remove("ff");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ff.classList.remove("ff");
-    //     }
-    // }
-
-    // sieben.addEventListener("click", playsi);
-    // function playsi(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         gg.classList.remove("gg");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         gg.classList.remove("gg");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         gg.classList.remove("gg");
-    //     }
-    // }
-
-    // acht.addEventListener("click", playa);
-    // function playa(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         hh.classList.remove("hh");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         hh.classList.remove("hh");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         hh.classList.remove("hh");
-    //     }
-    // }
-
-    // neun.addEventListener("click", playn);
-    // function playn(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         ii.classList.remove("ii");
-    //     }
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         ii.classList.remove("ii");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ii.classList.remove("ii");
-    //     }
-    // }
-
-    // zehn.addEventListener("click", playz);
-    // function playz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         jj.classList.remove("jj");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         jj.classList.remove("jj");
-    //     }
-    // }
-
-    // elf.addEventListener("click", playez);
-    // function playez(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         kk.classList.remove("kk");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         kk.classList.remove("kk");
-    //     }
-    // }
-
-    // zwoelf.addEventListener("click", playzz);
-    // function playzz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         ll.classList.remove("ll");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ll.classList.remove("ll");
-    //     }
-    // }
-
-    // dreiz.addEventListener("click", playdz);
-    // function playdz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         mm.classList.remove("mm");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         mm.classList.remove("mm");
-    //     }
-    // }
-
-    // vierz.addEventListener("click", playvz);
-    // function playvz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         nn.classList.remove("nn");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         nn.classList.remove("nn");
-    //     }
-    // }
-
-    // fuenfz.addEventListener("click", playfz);
-    // function playfz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         oo.classList.remove("oo");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         oo.classList.remove("oo");
-    //     }
-    // }
-
-    // sechsz.addEventListener("click", playsz);
-    // function playsz(): void {
-    //     if (buttonmittel.getAttribute("class") == "active") {
-    //         pp.classList.remove("pp");
-    //     }
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         pp.classList.remove("pp");
-    //     }
-    // }
-
-    // siebz.addEventListener("click", playsiz);
-    // function playsiz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         qq.classList.remove("qq");
-    //     }
-    // }
-
-    // achz.addEventListener("click", playaz);
-    // function playaz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         rr.classList.remove("rr");
-    //     }
-    // }
-
-    // neunz.addEventListener("click", playnz);
-    // function playnz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ss.classList.remove("ss");
-    //     }
-    // }
-
-    // z.addEventListener("click", playzzz);
-    // function playzzz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         tt.classList.remove("tt");
-    //     }
-    // }
-
-    // ez.addEventListener("click", playzzzz);
-    // function playzzzz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         uu.classList.remove("uu");
-    //     }
-    // }
-
-    // zz.addEventListener("click", playzdz);
-    // function playzdz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         vv.classList.remove("vv");
-    //     }
-    // }
-
-    // dz.addEventListener("click", playzvz);
-    // function playzvz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         ww.classList.remove("ww");
-    //     }
-    // }
-
-    // vz.addEventListener("click", playzfz);
-    // function playzfz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         xx.classList.remove("xx");
-    //     }
-    // }
-
-    // fz.addEventListener("click", playzsz);
-    // function playzsz(): void {
-    //     if (buttonschwer.getAttribute("class") == "active") {
-    //         yy.classList.remove("yy");
-    //     }
-    // }
-
-    // // Neustart
-    // neustart.addEventListener("click", neu);
-
-    // function neu(): void {
-    //     console.log("löschen");
-    // }
-
-
-    // Züge 3x3 / Kreis und Kreiz setzen
+    // Züge 3x3 / Kreis und Kreuz setzen
     let i: number = 0;
+    let a: number = 0;
+
     let button3x3: HTMLDivElement[] = [eins, zwei, drei, vier, fuenf, sechs, sieben, acht, neun];
 
     leicht.addEventListener("click", computer);
 
-    // function computer(): void {
-    //     var computerchoos = button3x3[Math.floor(Math.random() * button3x3.length)];
-    //     document.getElementById(computerchoos).classList.remove = " ";
-    // }
-
     function computer(): void {
         if (buttonleicht.getAttribute("class") == "active") {
             i = Math.floor(Math.random() * button3x3.length);
-            button3x3[i].setAttribute("class") == "x";
-            
-            // aa.classList.remove("bb");
-            // aa.classList.remove("aa");
-            console.log(i);
+            button3x3[i].innerHTML = maschiene;
         }
     }
+
+    // button[].addEventListener("click", player);
+
+    // function player(): void {
+    //     button[].innerHTML = mensch;
+    //     // button3x3[b].innerHTML = mensch;
+    //     // button3x3[c].innerHTML = mensch;
+    //     // button3x3[d].innerHTML = mensch;
+    //     // button3x3[e].innerHTML = mensch;
+    //     // button3x3[f].innerHTML = mensch;
+    //     // button3x3[g].innerHTML = mensch;
+    //     // button3x3[h].innerHTML = mensch;
+    //     // button3x3[i].innerHTML = mensch;
+    // }
+
 });
+
+
+
 
