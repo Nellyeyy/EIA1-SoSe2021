@@ -39,6 +39,12 @@ var maschine: string = "X";
 var mensch: string = "O";
 
 var runden: HTMLElement;
+var zaehlermensch: HTMLElement;
+// tslint:disable-next-line: no-any
+var zahlmensch: any = 0;
+var zaehlercomputer: HTMLElement;
+// tslint:disable-next-line: no-any
+var zahlcomputer: any = 0;
 
 window.addEventListener("load", function (): void {
 
@@ -80,6 +86,8 @@ window.addEventListener("load", function (): void {
     fz = document.querySelector("#fz");
 
     runden = document.querySelector(".runden");
+    zaehlermensch = document.querySelector(".zaehlermensch");
+    zaehlercomputer = document.querySelector(".zaehlercomputer");
 
     // Hilfebutton
     var erklaeren: HTMLElement = document.getElementById("erklaerung");
@@ -103,11 +111,11 @@ window.addEventListener("load", function (): void {
 
     var activeeins: HTMLElement = document.getElementById("spielfeld4x4");
     var activezwei: HTMLElement = document.getElementById("spielfeld5x5");
+
     // 1. Leicht
     leicht.addEventListener("click", playleicht);
 
     function playleicht(): void {
-
         // Hintergrundfarbe
         if (buttonleicht.getAttribute("class") == "active") {
             buttonleicht.setAttribute("class", "");
@@ -139,21 +147,22 @@ window.addEventListener("load", function (): void {
         if (activeeins.getAttribute("class") == "") {
             activeeins.setAttribute("class", "active");
         }
-
         // Bei deaktivieren von Button wird Start gezeigt
         if (buttonleicht.getAttribute("class") == "") {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
-        // Runden wechseln
+       
+        // Runden wechseln und Zählerstand einblenden
         runden.innerHTML = "3";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
 
     // Mittleres Spiel
     mittel.addEventListener("click", playmittel);
 
     function playmittel(): void {
-
         // Hintergrundfarbe
         if (buttonmittel.getAttribute("class") == "active") {
             buttonmittel.setAttribute("class", "");
@@ -187,13 +196,14 @@ window.addEventListener("load", function (): void {
         }
         // Runden wechseln
         runden.innerHTML = "4";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
 
     // Schweres Spiel
     schwer.addEventListener("click", playschwer);
 
     function playschwer(): void {
-
         // Hintergrundfarbe
         if (buttonschwer.getAttribute("class") == "active") {
             buttonschwer.setAttribute("class", "");
@@ -216,6 +226,8 @@ window.addEventListener("load", function (): void {
         }
         // Runden wechseln
         runden.innerHTML = "5";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
 
     // Züge 3x3 / Kreis und Kreuz setzen
@@ -273,8 +285,8 @@ window.addEventListener("load", function (): void {
             index = Math.floor(Math.random() * but.length);
             but[index].buttondiv.innerHTML = maschine;
             but[index].buttoncheck = false;
-        } 
-        
+        }
+
     }
 
     // Zug Mensch & Computer im Anschluss
@@ -306,7 +318,7 @@ window.addEventListener("load", function (): void {
         spielfeldclick(8);
     });
 
-    
+
     function spielfeldclick(i: number): void {
         if (buttonleicht.getAttribute("class") == "active" && but[i].buttoncheck == true) {
             but[i].buttondiv.innerHTML = mensch;
@@ -369,28 +381,29 @@ window.addEventListener("load", function (): void {
                 }
             }
         }
-        if (eins.innerHTML == maschine  && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
-            vier.innerHTML == maschine  && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
-            sieben.innerHTML == maschine  && acht.innerHTML == maschine && neun.innerHTML == maschine ||
-            eins.innerHTML == maschine  && vier.innerHTML == maschine && acht.innerHTML == maschine ||
-            zwei.innerHTML == maschine  && fuenf.innerHTML == maschine && acht.innerHTML == maschine ||
-            drei.innerHTML == maschine  && sechs.innerHTML == maschine && neun.innerHTML == maschine ||
-            eins.innerHTML == maschine  && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
-            drei.innerHTML == maschine  && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
-            console.log("Computer hat Gewonnen");
-            
+        // Gewinnerregeln definiert & Zähler erhöht sich & neue Spielrunde
+        if (eins.innerHTML == maschine && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
+            vier.innerHTML == maschine && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
+            sieben.innerHTML == maschine && acht.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine && vier.innerHTML == maschine && sieben.innerHTML == maschine ||
+            zwei.innerHTML == maschine && fuenf.innerHTML == maschine && acht.innerHTML == maschine ||
+            drei.innerHTML == maschine && sechs.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
+            drei.innerHTML == maschine && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
+            zaehlercomputer.innerHTML = zahlcomputer + 1;
+            // but[1 && 2 && 3].buttondiv.innerHTML = "";
         }
+        
 
-        if (eins.innerHTML == mensch  && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
-            vier.innerHTML == mensch  && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
-            sieben.innerHTML == mensch  && acht.innerHTML == mensch && neun.innerHTML == mensch ||
-            eins.innerHTML == mensch  && vier.innerHTML == mensch && acht.innerHTML == mensch ||
-            zwei.innerHTML == mensch  && fuenf.innerHTML == mensch && acht.innerHTML == mensch ||
-            drei.innerHTML == mensch  && sechs.innerHTML == mensch && neun.innerHTML == mensch ||
-            eins.innerHTML == mensch  && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
-            drei.innerHTML == mensch  && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
-            console.log("Mensch hat Gewonnen");
-            
+        if (eins.innerHTML == mensch && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
+            vier.innerHTML == mensch && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
+            sieben.innerHTML == mensch && acht.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch && vier.innerHTML == mensch && sieben.innerHTML == mensch ||
+            zwei.innerHTML == mensch && fuenf.innerHTML == mensch && acht.innerHTML == mensch ||
+            drei.innerHTML == mensch && sechs.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
+            drei.innerHTML == mensch && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
+            zaehlermensch.innerHTML = zahlmensch + 1;
         }
     }
 

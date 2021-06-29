@@ -34,6 +34,12 @@ var fz;
 var maschine = "X";
 var mensch = "O";
 var runden;
+var zaehlermensch;
+// tslint:disable-next-line: no-any
+var zahlmensch = 0;
+var zaehlercomputer;
+// tslint:disable-next-line: no-any
+var zahlcomputer = 0;
 window.addEventListener("load", function () {
     // Zuweisungen
     hilfe = document.querySelector("#hilfe");
@@ -69,6 +75,8 @@ window.addEventListener("load", function () {
     vz = document.querySelector("#vz");
     fz = document.querySelector("#fz");
     runden = document.querySelector(".runden");
+    zaehlermensch = document.querySelector(".zaehlermensch");
+    zaehlercomputer = document.querySelector(".zaehlercomputer");
     // Hilfebutton
     var erklaeren = document.getElementById("erklaerung");
     hilfe.addEventListener("click", erklaerung);
@@ -129,8 +137,10 @@ window.addEventListener("load", function () {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
-        // Runden wechseln
+        // Runden wechseln und Zählerstand einblenden
         runden.innerHTML = "3";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
     // Mittleres Spiel
     mittel.addEventListener("click", playmittel);
@@ -170,6 +180,8 @@ window.addEventListener("load", function () {
         }
         // Runden wechseln
         runden.innerHTML = "4";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
     // Schweres Spiel
     schwer.addEventListener("click", playschwer);
@@ -197,6 +209,8 @@ window.addEventListener("load", function () {
         }
         // Runden wechseln
         runden.innerHTML = "5";
+        zaehlermensch.innerHTML = zahlmensch;
+        zaehlercomputer.innerHTML = zahlcomputer;
     }
     // Züge 3x3 / Kreis und Kreuz setzen
     var index = 0;
@@ -334,25 +348,27 @@ window.addEventListener("load", function () {
                 }
             }
         }
+        // Gewinnerregeln definiert & Zähler erhöht sich & neue Spielrunde
         if (eins.innerHTML == maschine && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
             vier.innerHTML == maschine && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
             sieben.innerHTML == maschine && acht.innerHTML == maschine && neun.innerHTML == maschine ||
-            eins.innerHTML == maschine && vier.innerHTML == maschine && acht.innerHTML == maschine ||
+            eins.innerHTML == maschine && vier.innerHTML == maschine && sieben.innerHTML == maschine ||
             zwei.innerHTML == maschine && fuenf.innerHTML == maschine && acht.innerHTML == maschine ||
             drei.innerHTML == maschine && sechs.innerHTML == maschine && neun.innerHTML == maschine ||
             eins.innerHTML == maschine && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
             drei.innerHTML == maschine && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
-            console.log("Computer hat Gewonnen");
+            zaehlercomputer.innerHTML = zahlcomputer + 1;
+            // but[1 && 2 && 3].buttondiv.innerHTML = "";
         }
         if (eins.innerHTML == mensch && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
             vier.innerHTML == mensch && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
             sieben.innerHTML == mensch && acht.innerHTML == mensch && neun.innerHTML == mensch ||
-            eins.innerHTML == mensch && vier.innerHTML == mensch && acht.innerHTML == mensch ||
+            eins.innerHTML == mensch && vier.innerHTML == mensch && sieben.innerHTML == mensch ||
             zwei.innerHTML == mensch && fuenf.innerHTML == mensch && acht.innerHTML == mensch ||
             drei.innerHTML == mensch && sechs.innerHTML == mensch && neun.innerHTML == mensch ||
             eins.innerHTML == mensch && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
             drei.innerHTML == mensch && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
-            console.log("Mensch hat Gewonnen");
+            zaehlermensch.innerHTML = zahlmensch + 1;
         }
     }
     // 4x4 Züge  setzen 
