@@ -38,6 +38,8 @@ var fz: HTMLDivElement;
 var maschine: string = "X";
 var mensch: string = "O";
 
+
+
 window.addEventListener("load", function (): void {
 
     // Zuweisungen
@@ -224,430 +226,633 @@ window.addEventListener("load", function (): void {
     }
 
     // Züge 3x3 / Kreis und Kreuz setzen
-    // let i: number = 0;
+    let index: number = 0;
 
-    // interface Button {
-    //     buttondiv: HTMLDivElement;
-    //     buttoncheck: boolean;
-    //     buttontext: string;
-    // }
+    interface Button {
+        buttondiv: HTMLDivElement;
+        buttoncheck: boolean;
+    }
 
-    // let but: Button[] = [
-    //     {
-    //         buttondiv: eins,
-    //         buttoncheck: true,
-    //         buttontext: "" 
-    //     },
-    //     {
-    //         buttondiv: zwei,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: drei,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: vier,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: fuenf,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: sechs,
-    //         buttoncheck: true,
-    //         buttontext: "" 
-    //     },
-    //     {
-    //         buttondiv: sieben,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: acht,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     },
-    //     {
-    //         buttondiv: neun,
-    //         buttoncheck: true,
-    //         buttontext: ""  
-    //     }
-    // ];
+    let but: Button[] = [
+        {
+            buttondiv: eins,
+            buttoncheck: true
+        },
+        {
+            buttondiv: zwei,
+            buttoncheck: true
+        },
+        {
+            buttondiv: drei,
+            buttoncheck: true
+        },
+        {
+            buttondiv: vier,
+            buttoncheck: true
+        },
+        {
+            buttondiv: fuenf,
+            buttoncheck: true
+        },
+        {
+            buttondiv: sechs,
+            buttoncheck: true
+        },
+        {
+            buttondiv: sieben,
+            buttoncheck: true
+        },
+        {
+            buttondiv: acht,
+            buttoncheck: true
+        },
+        {
+            buttondiv: neun,
+            buttoncheck: true
+        }
+    ];
 
-    // let button3x3: HTMLDivElement[] = [eins, zwei, drei, vier, fuenf, sechs, sieben, acht, neun];
-
-    // leicht.addEventListener("click", computer);
-    // function computer(): void {
-    //     if (buttonleicht.getAttribute("class") == "active") {
-    //         i = Math.floor(Math.random() * but.length);
-    //         but[i].innerHTML = maschine;
-    //         but.buttoncheck == false;
-    //     }
-    // }
-
-    // Züge 3x3 / Kreis und Kreuz setzen
-    let i: number = 0;
-    var zug: boolean = true;
-
-    let check0: boolean = true;
-    let check1: boolean = true;
-    let check2: boolean = true;
-    let check3: boolean = true;
-    let check4: boolean = true;
-    let check5: boolean = true;
-    let check6: boolean = true;
-    let check7: boolean = true;
-    let check8: boolean = true;
-
-    let button3x3: HTMLDivElement[] = [eins, zwei, drei, vier, fuenf, sechs, sieben, acht, neun];
-
-    // Erster Zug Computer bei klick auf Leicht
+    // Erster Zug Computer
     leicht.addEventListener("click", computer);
+
     function computer(): void {
         if (buttonleicht.getAttribute("class") == "active") {
-            i = Math.floor(Math.random() * button3x3.length);
-            button3x3[i].innerHTML = maschine;
-            zug = false;
-            console.log(zug);
+            index = Math.floor(Math.random() * but.length);
+            but[index].buttondiv.innerHTML = maschine;
+            but[index].buttoncheck = false;
         }
     }
 
-    // function computerabc(): void {
-    //     if (check0 == true && zug == true) {
-    //         i = 0;
-    //         button3x3[i].innerHTML = maschine;
-    //         check0 = false;
-    //         zug = false;
-    //     }
-    //     if (check1 == true && zug == true) {
-    //         i = 1;
-    //         button3x3[i].innerHTML = maschine;
-    //         check1 = false;
-    //         zug = false;
-    //     }
-    //     if (check2 == true && zug == true) {
-    //         i = 2;
-    //         button3x3[i].innerHTML = maschine;
-    //         check2 = false;
-    //         zug = false;
-    //     }
-    //     if (check3 == true && zug == true) {
-    //         i = 3;
-    //         button3x3[i].innerHTML = maschine;
-    //         check3 = false;
-    //         zug = false;
-    //     }
-    //     if (check4 == true && zug == true) {
-    //         i = 4;
-    //         button3x3[i].innerHTML = maschine;
-    //         check4 = false;
-    //         zug = false;
-    //     }
-    //     if (check5 == true && zug == true) {
-    //         i = 5;
-    //         button3x3[i].innerHTML = maschine;
-    //         check5 = false;
-    //         zug = false;
-    //     }
-    //     if (check6 == true && zug == true) {
-    //         i = 6;
-    //         button3x3[i].innerHTML = maschine;
-    //         check6 = false;
-    //         zug = false;
-    //     }
-    //     if (check7 == true && zug == true) {
-    //         i = 7;
-    //         button3x3[i].innerHTML = maschine;
-    //         check7 = false;
-    //         zug = false;
-    //     }
-    //     if (check8 == true && zug == true) {
-    //         i = 8;
-    //         button3x3[i].innerHTML = maschine;
-    //         check8 = false;
-    //         zug = false;
-    //     }
-    // }
+    // Zug Mensch 
+    eins.addEventListener("click", function (): void {
+        spielfeldclick(0);
+    });
+    zwei.addEventListener("click", function (): void {
+        spielfeldclick(1);
+    });
+    drei.addEventListener("click", function (): void {
+        spielfeldclick(2);
+    });
+    vier.addEventListener("click", function (): void {
+        spielfeldclick(3);
+    });
+    fuenf.addEventListener("click", function (): void {
+        spielfeldclick(4);
+    });
+    sechs.addEventListener("click", function (): void {
+        spielfeldclick(5);
+    });
+    sieben.addEventListener("click", function (): void {
+        spielfeldclick(6);
+    });
+    acht.addEventListener("click", function (): void {
+        spielfeldclick(7);
+    });
+    neun.addEventListener("click", function (): void {
+        spielfeldclick(8);
+    });
 
-    // Zug von Mensch, Computer setzt darauf hin seinen Zug
-    button3x3[0].addEventListener("click", player0);
-    function player0(): void {
-        if (buttonleicht.getAttribute("class") == "active" && check0 == true ) {
-            button3x3[0].innerHTML = mensch;
-            check0 = false;
-            i = Math.floor(Math.random() * button3x3.length);
-            button3x3[i].innerHTML = maschine;
-            zug = false;
+    function spielfeldclick(i): void {
+        if (buttonleicht.getAttribute("class") == "active" && but[i].buttoncheck == true) {
+            but[i].buttondiv.innerHTML = mensch;
+            but[i].buttoncheck = false;
+
+            index = Math.floor(Math.random() * but.length);
+
+            if (but[index].buttoncheck == true) {
+                but[index].buttondiv.innerHTML = maschine;
+                but[index].buttoncheck = false;
+            } else {
+                index = Math.floor(Math.random() * but.length);
+
+                if (but[index].buttoncheck == true) {
+                    but[index].buttondiv.innerHTML = maschine;
+                    but[index].buttoncheck = false;
+                } else {
+                    index = Math.floor(Math.random() * but.length);
+    
+                    if (but[index].buttoncheck == true) {
+                        but[index].buttondiv.innerHTML = maschine;
+                        but[index].buttoncheck = false;
+                    } else {
+                        index = Math.floor(Math.random() * but.length);
+        
+                        if (but[index].buttoncheck == true) {
+                            but[index].buttondiv.innerHTML = maschine;
+                            but[index].buttoncheck = false;
+                        } else {
+                            index = Math.floor(Math.random() * but.length);
+            
+                            if (but[index].buttoncheck == true) {
+                                but[index].buttondiv.innerHTML = maschine;
+                                but[index].buttoncheck = false;
+                            } else {
+                                index = Math.floor(Math.random() * but.length);
+                
+                                if (but[index].buttoncheck == true) {
+                                    but[index].buttondiv.innerHTML = maschine;
+                                    but[index].buttoncheck = false;
+                                } else {
+                                    index = Math.floor(Math.random() * but.length);
+                    
+                                    if (but[index].buttoncheck == true) {
+                                        but[index].buttondiv.innerHTML = maschine;
+                                        but[index].buttoncheck = false;
+                                    } else {
+                                        index = Math.floor(Math.random() * but.length);
+                        
+                                        if (but[index].buttoncheck == true) {
+                                            but[index].buttondiv.innerHTML = maschine;
+                                            but[index].buttoncheck = false;
+                                        } 
+                                    }
+                                }
+
+                            }
+                        }
+                    }   
+                }
+            }
         }
-        // if (check0 == false) {
-        //     button3x3[i].innerHTML = maschine;
-        // }
+    }
+    
+    // 4x4 Züge  setzen 
+    let index4x4: number = 0;
 
+    interface Button4x4 {
+        buttondiv4x4: HTMLDivElement;
+        buttoncheck4x4: boolean;
     }
 
-    button3x3[1].addEventListener("click", player1);
-    function player1(): void {
-        if (check1 == true) {
-            button3x3[1].innerHTML = mensch;
-            check1 = false;
-            if (check1 == false) {
-                button3x3[i].innerHTML = maschine;
+    let but4x4: Button4x4[] = [
+        {
+            buttondiv4x4: eins,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: zwei,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: drei,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: vier,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: fuenf,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: sechs,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: sieben,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: acht,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: neun,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: zehn,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: elf,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: zwoelf,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: dreiz,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: vierz,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: fuenfz,
+            buttoncheck4x4: true
+        },
+        {
+            buttondiv4x4: sechsz,
+            buttoncheck4x4: true
+        }
+    ];
+
+    // Erster Zug Computer
+    mittel.addEventListener("click", computer4x4);
+
+    function computer4x4(): void {
+        if (buttonmittel.getAttribute("class") == "active") {
+            index4x4 = Math.floor(Math.random() * but4x4.length);
+            but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+            but4x4[index4x4].buttoncheck4x4 = false;
+        }
+    }
+
+    // Zug Mensch 
+    eins.addEventListener("click", function (): void {
+        spielfeldclick4x4(0);
+    });
+    zwei.addEventListener("click", function (): void {
+        spielfeldclick4x4(1);
+    });
+    drei.addEventListener("click", function (): void {
+        spielfeldclick4x4(2);
+    });
+    vier.addEventListener("click", function (): void {
+        spielfeldclick4x4(3);
+    });
+    fuenf.addEventListener("click", function (): void {
+        spielfeldclick4x4(4);
+    });
+    sechs.addEventListener("click", function (): void {
+        spielfeldclick4x4(5);
+    });
+    sieben.addEventListener("click", function (): void {
+        spielfeldclick4x4(6);
+    });
+    acht.addEventListener("click", function (): void {
+        spielfeldclick4x4(7);
+    });
+    neun.addEventListener("click", function (): void {
+        spielfeldclick4x4(8);
+    });   
+    zehn.addEventListener("click", function (): void {
+        spielfeldclick4x4(9);
+    });
+    elf.addEventListener("click", function (): void {
+        spielfeldclick4x4(10);
+    });
+    zwoelf.addEventListener("click", function (): void {
+        spielfeldclick4x4(11);
+    });
+    dreiz.addEventListener("click", function (): void {
+        spielfeldclick4x4(12);
+    });
+    vierz.addEventListener("click", function (): void {
+        spielfeldclick4x4(13);
+    });
+    fuenfz.addEventListener("click", function (): void {
+        spielfeldclick4x4(14);
+    });
+    sechsz.addEventListener("click", function (): void {
+        spielfeldclick4x4(15);
+    });
+
+    function spielfeldclick4x4(i): void {
+        if (buttonmittel.getAttribute("class") == "active" && but4x4[i].buttoncheck4x4 == true) {
+            but4x4[i].buttondiv4x4.innerHTML = mensch;
+            but4x4[i].buttoncheck4x4 = false;
+
+            index4x4 = Math.floor(Math.random() * but.length);
+
+            if (but4x4[index4x4].buttoncheck4x4 == true) {
+                but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                but4x4[index4x4].buttoncheck4x4 = false;
+            } else {
+                index4x4 = Math.floor(Math.random() * but.length);
+
+                if (but4x4[index4x4].buttoncheck4x4 == true) {
+                    but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                    but4x4[index4x4].buttoncheck4x4 = false;
+                } else {
+                    index4x4 = Math.floor(Math.random() * but.length);
+    
+                    if (but4x4[index4x4].buttoncheck4x4 == true) {
+                        but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                        but4x4[index4x4].buttoncheck4x4 = false;
+                    } else {
+                        index4x4 = Math.floor(Math.random() * but.length);
+        
+                        if (but4x4[index4x4].buttoncheck4x4 == true) {
+                            but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                            but4x4[index4x4].buttoncheck4x4 = false;
+                        } else {
+                            index4x4 = Math.floor(Math.random() * but.length);
+            
+                            if (but4x4[index4x4].buttoncheck4x4 == true) {
+                                but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                                but4x4[index4x4].buttoncheck4x4 = false;
+                            } else {
+                                index4x4 = Math.floor(Math.random() * but.length);
+                
+                                if (but4x4[index4x4].buttoncheck4x4 == true) {
+                                    but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                                    but4x4[index4x4].buttoncheck4x4 = false;
+                                } else {
+                                    index4x4 = Math.floor(Math.random() * but.length);
+                    
+                                    if (but4x4[index4x4].buttoncheck4x4 == true) {
+                                        but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                                        but4x4[index4x4].buttoncheck4x4 = false;
+                                    } else {
+                                        index4x4 = Math.floor(Math.random() * but.length);
+                        
+                                        if (but4x4[index4x4].buttoncheck4x4 == true) {
+                                            but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                                            but4x4[index4x4].buttoncheck4x4 = false;
+                                        } else {
+                                            index4x4 = Math.floor(Math.random() * but.length);
+                            
+                                            if (but4x4[index4x4].buttoncheck4x4 == true) {
+                                                but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
+                                                but4x4[index4x4].buttoncheck4x4 = false;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }   
+                }
             }
         }
     }
 
-    button3x3[2].addEventListener("click", player2);
-    function player2(): void {
-        if (check2 == true) {
-            button3x3[2].innerHTML = mensch;
-            check2 = false;
-            if (check2 == false) {
-                button3x3[i].innerHTML = maschine;
+    // 5x5 Züge  setzen 
+    let index5x5: number = 0;
+
+    interface Button5x5 {
+        buttondiv5x5: HTMLDivElement;
+        buttoncheck5x5: boolean;
+    }
+
+    let but5x5: Button5x5[] = [
+        {
+            buttondiv5x5: eins,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: zwei,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: drei,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: vier,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: fuenf,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: sechs,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: sieben,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: acht,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: neun,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: zehn,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: elf,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: zwoelf,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: dreiz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: vierz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: fuenfz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: sechsz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: siebz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: achz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: neunz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: z,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: ez,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: zz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: dz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: vz,
+            buttoncheck5x5: true
+        },
+        {
+            buttondiv5x5: fz,
+            buttoncheck5x5: true
+        }
+    ];
+
+    // Erster Zug Computer
+    schwer.addEventListener("click", computer5x5);
+
+    function computer5x5(): void {
+        if (buttonschwer.getAttribute("class") == "active") {
+            index5x5 = Math.floor(Math.random() * but5x5.length);
+            but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+            but5x5[index5x5].buttoncheck5x5 = false;
+        }
+    }
+
+    // Zug Mensch 
+    eins.addEventListener("click", function (): void {
+        spielfeldclick5x5(0);
+    });
+    zwei.addEventListener("click", function (): void {
+        spielfeldclick5x5(1);
+    });
+    drei.addEventListener("click", function (): void {
+        spielfeldclick5x5(2);
+    });
+    vier.addEventListener("click", function (): void {
+        spielfeldclick5x5(3);
+    });
+    fuenf.addEventListener("click", function (): void {
+        spielfeldclick5x5(4);
+    });
+    sechs.addEventListener("click", function (): void {
+        spielfeldclick5x5(5);
+    });
+    sieben.addEventListener("click", function (): void {
+        spielfeldclick5x5(6);
+    });
+    acht.addEventListener("click", function (): void {
+        spielfeldclick5x5(7);
+    });
+    neun.addEventListener("click", function (): void {
+        spielfeldclick5x5(8);
+    });
+    zehn.addEventListener("click", function (): void {
+        spielfeldclick5x5(9);
+    });
+    elf.addEventListener("click", function (): void {
+        spielfeldclick5x5(10);
+    });
+    zwoelf.addEventListener("click", function (): void {
+        spielfeldclick5x5(11);
+    });
+    dreiz.addEventListener("click", function (): void {
+        spielfeldclick5x5(12);
+    });
+    vierz.addEventListener("click", function (): void {
+        spielfeldclick5x5(13);
+    });
+    fuenfz.addEventListener("click", function (): void {
+        spielfeldclick5x5(14);
+    });
+    sechsz.addEventListener("click", function (): void {
+        spielfeldclick5x5(15);
+    });
+    siebz.addEventListener("click", function (): void {
+        spielfeldclick5x5(16);
+    });
+    achz.addEventListener("click", function (): void {
+        spielfeldclick5x5(17);
+    });
+    neunz.addEventListener("click", function (): void {
+        spielfeldclick5x5(18);
+    });
+    z.addEventListener("click", function (): void {
+        spielfeldclick5x5(19);
+    });
+    ez.addEventListener("click", function (): void {
+        spielfeldclick5x5(20);
+    });
+    zz.addEventListener("click", function (): void {
+        spielfeldclick5x5(21);
+    });
+    dz.addEventListener("click", function (): void {
+        spielfeldclick5x5(22);
+    });
+    vz.addEventListener("click", function (): void {
+        spielfeldclick5x5(23);
+    });
+    fz.addEventListener("click", function (): void {
+        spielfeldclick5x5(24);
+    });
+
+    function spielfeldclick5x5(i): void {
+        if (buttonschwer.getAttribute("class") == "active" && but5x5[i].buttoncheck5x5 == true) {
+            but5x5[i].buttondiv5x5.innerHTML = mensch;
+            but5x5[i].buttoncheck5x5 = false;
+
+            index5x5 = Math.floor(Math.random() * but.length);
+
+            if (but5x5[index5x5].buttoncheck5x5 == true) {
+                but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                but5x5[index5x5].buttoncheck5x5 = false;
+            } else {
+                index5x5 = Math.floor(Math.random() * but.length);
+
+                if (but5x5[index5x5].buttoncheck5x5 == true) {
+                    but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                    but5x5[index5x5].buttoncheck5x5 = false;
+                } else {
+                    index5x5 = Math.floor(Math.random() * but.length);
+    
+                    if (but5x5[index5x5].buttoncheck5x5 == true) {
+                        but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                        but5x5[index5x5].buttoncheck5x5 = false;
+                    } else {
+                        index5x5 = Math.floor(Math.random() * but.length);
+        
+                        if (but5x5[index5x5].buttoncheck5x5 == true) {
+                            but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                            but5x5[index5x5].buttoncheck5x5 = false;
+                        } else {
+                            index5x5 = Math.floor(Math.random() * but.length);
+            
+                            if (but5x5[index5x5].buttoncheck5x5 == true) {
+                                but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                                but5x5[index5x5].buttoncheck5x5 = false;
+                            } else {
+                                index5x5 = Math.floor(Math.random() * but.length);
+                
+                                if (but5x5[index5x5].buttoncheck5x5 == true) {
+                                    but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                                    but5x5[index5x5].buttoncheck5x5 = false;
+                                } else {
+                                    index5x5 = Math.floor(Math.random() * but.length);
+                    
+                                    if (but5x5[index5x5].buttoncheck5x5 == true) {
+                                        but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                                        but5x5[index5x5].buttoncheck5x5 = false;
+                                    } else {
+                                        index5x5 = Math.floor(Math.random() * but.length);
+                        
+                                        if (but5x5[index5x5].buttoncheck5x5 == true) {
+                                            but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                                            but5x5[index5x5].buttoncheck5x5 = false;
+                                        } else {
+                                            index5x5 = Math.floor(Math.random() * but.length);
+                            
+                                            if (but5x5[index5x5].buttoncheck5x5 == true) {
+                                                but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
+                                                but5x5[index5x5].buttoncheck5x5 = false;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                    }   
+                }
             }
         }
     }
 
-    button3x3[3].addEventListener("click", player3);
-    function player3(): void {
-        if (check3 == true) {
-            button3x3[3].innerHTML = mensch;
-            check3 = false;
-            if (check3 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
 
-    button3x3[4].addEventListener("click", player4);
-    function player4(): void {
-        if (check4 == true) {
-            button3x3[4].innerHTML = mensch;
-            check4 = false;
-            if (check4 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
-
-    button3x3[5].addEventListener("click", player5);
-    function player5(): void {
-        if (check5 == true) {
-            button3x3[5].innerHTML = mensch;
-            check5 = false;
-            if (check5 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
-
-    button3x3[6].addEventListener("click", player6);
-    function player6(): void {
-        if (check6 == true) {
-            button3x3[6].innerHTML = mensch;
-            check6 = false;
-            if (check6 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
-
-    button3x3[7].addEventListener("click", player7);
-    function player7(): void {
-        if (check7 == true) {
-            button3x3[7].innerHTML = mensch;
-            check7 = false;
-            if (check7 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
-
-    button3x3[8].addEventListener("click", player8);
-    function player8(): void {
-        if (check8 == true) {
-            button3x3[8].innerHTML = mensch;
-            check8 = false;
-            if (check8 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
-        }
-    }
-
-
-    // function computertest(): void {
-    //     while (zug == true) {
-    //         i = Math.floor(Math.random() * button3x3.length);
-    //         if (ckeckarray[i] == true) {
-    //             button3x3[i].innerHTML = maschine; 
-    //             zug = false; 
-    //             ckeckarray [i] = false;
-    //         }
-    //     }
-    // }
-
-    // function computerabc(): void {
-    //     if (check0 == true && zug == true) {
-    //         i = 0;
-    //         button3x3[i].innerHTML = maschine;
-    //         check0 = false;
-    //         zug = false;
-    //     }
-    //     if (check1 == true  && zug == true) {
-    //         i = 1;
-    //         button3x3[i].innerHTML = maschine;
-    //         check1 = false;
-    //         zug = false;
-    //     }
-    //     if (check2 == true && zug == true) {
-    //         i = 2;
-    //         button3x3[i].innerHTML = maschine;
-    //         check2 = false;
-    //         zug = false;
-    //     }
-    //     if (check3 == true && zug == true) {
-    //         i = 3;
-    //         button3x3[i].innerHTML = maschine;
-    //         check3 = false;
-    //         zug = false;
-    //     }
-    //     if (check4 == true && zug == true) {
-    //         i = 4;
-    //         button3x3[i].innerHTML = maschine;
-    //         check4 = false;
-    //         zug = false;
-    //     }
-    //     if (check5 == true && zug == true) {
-    //         i = 5;
-    //         button3x3[i].innerHTML = maschine;
-    //         check5 = false;
-    //         zug = false;
-    //     }
-    //     if (check6 == true && zug == true) {
-    //         i = 6;
-    //         button3x3[i].innerHTML = maschine;
-    //         check6 = false;
-    //         zug = false;
-    //     }
-    //     if (check7 == true && zug == true) {
-    //         i = 7;
-    //         button3x3[i].innerHTML = maschine;
-    //         check7 = false;
-    //         zug = false;
-    //     }
-    //     if (check8 == true && zug == true) {
-    //         i = 8;
-    //         button3x3[i].innerHTML = maschine;
-    //         check8 = false;
-    //         zug = false;
-    //     }
-    // }
-
-
-
-    // button3x3[0].addEventListener("click", player0);
-
-    // function player0(): void {
-    //     if (check0 == true) {
-    //         button3x3[0].innerHTML = mensch;
-    //         check0 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[1].addEventListener("click", player1);
-
-    // function player1(): void {
-    //     if (check1 == true) {
-    //         button3x3[1].innerHTML = mensch;
-    //         check1 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[2].addEventListener("click", player2);
-
-    // function player2(): void {
-    //     if (check2 == true) {
-    //         button3x3[2].innerHTML = mensch;
-    //         check2 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[3].addEventListener("click", player3);
-
-    // function player3(): void {
-    //     if (check3 == true) {
-    //         button3x3[3].innerHTML = mensch;
-    //         check3 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[4].addEventListener("click", player4);
-
-    // function player4(): void {
-    //     if (check4 == true) {
-    //         button3x3[4].innerHTML = mensch;
-    //         check4 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[5].addEventListener("click", player5);
-
-    // function player5(): void {
-    //     if (check5 == true) {
-    //         button3x3[5].innerHTML = mensch;
-    //         check5 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[6].addEventListener("click", player6);
-
-    // function player6(): void {
-    //     if (check6 == true) {
-    //         button3x3[6].innerHTML = mensch;
-    //         check6 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[7].addEventListener("click", player7);
-
-    // function player7(): void {
-    //     if (check7 == true) {
-    //         button3x3[7].innerHTML = mensch;
-    //         check7 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
-
-    // button3x3[8].addEventListener("click", player8);
-
-    // function player8(): void {
-    //     if (check8 == true) {
-    //         button3x3[8].innerHTML = mensch;
-    //         check8 = false;
-    //         computertest();
-    //         zug = true;
-    //     }
-    // }
+      
 });
 
 
