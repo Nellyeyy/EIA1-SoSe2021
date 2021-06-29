@@ -224,6 +224,74 @@ window.addEventListener("load", function (): void {
     }
 
     // Züge 3x3 / Kreis und Kreuz setzen
+    // let i: number = 0;
+
+    // interface Button {
+    //     buttondiv: HTMLDivElement;
+    //     buttoncheck: boolean;
+    //     buttontext: string;
+    // }
+
+    // let but: Button[] = [
+    //     {
+    //         buttondiv: eins,
+    //         buttoncheck: true,
+    //         buttontext: "" 
+    //     },
+    //     {
+    //         buttondiv: zwei,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: drei,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: vier,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: fuenf,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: sechs,
+    //         buttoncheck: true,
+    //         buttontext: "" 
+    //     },
+    //     {
+    //         buttondiv: sieben,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: acht,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     },
+    //     {
+    //         buttondiv: neun,
+    //         buttoncheck: true,
+    //         buttontext: ""  
+    //     }
+    // ];
+
+    // let button3x3: HTMLDivElement[] = [eins, zwei, drei, vier, fuenf, sechs, sieben, acht, neun];
+
+    // leicht.addEventListener("click", computer);
+    // function computer(): void {
+    //     if (buttonleicht.getAttribute("class") == "active") {
+    //         i = Math.floor(Math.random() * but.length);
+    //         but[i].innerHTML = maschine;
+    //         but.buttoncheck == false;
+    //     }
+    // }
+
+    // Züge 3x3 / Kreis und Kreuz setzen
     let i: number = 0;
     var zug: boolean = true;
 
@@ -245,7 +313,8 @@ window.addEventListener("load", function (): void {
         if (buttonleicht.getAttribute("class") == "active") {
             i = Math.floor(Math.random() * button3x3.length);
             button3x3[i].innerHTML = maschine;
-            i++;
+            zug = false;
+            console.log(zug);
         }
     }
 
@@ -309,13 +378,17 @@ window.addEventListener("load", function (): void {
     // Zug von Mensch, Computer setzt darauf hin seinen Zug
     button3x3[0].addEventListener("click", player0);
     function player0(): void {
-        if (check0 == true) {
+        if (buttonleicht.getAttribute("class") == "active" && check0 == true ) {
             button3x3[0].innerHTML = mensch;
             check0 = false;
-            if (check0 == false) {
-                button3x3[i].innerHTML = maschine;
-            }
+            i = Math.floor(Math.random() * button3x3.length);
+            button3x3[i].innerHTML = maschine;
+            zug = false;
         }
+        // if (check0 == false) {
+        //     button3x3[i].innerHTML = maschine;
+        // }
+
     }
 
     button3x3[1].addEventListener("click", player1);
