@@ -38,7 +38,7 @@ var fz: HTMLDivElement;
 var maschine: string = "X";
 var mensch: string = "O";
 
-
+var runden: HTMLElement;
 
 window.addEventListener("load", function (): void {
 
@@ -79,6 +79,8 @@ window.addEventListener("load", function (): void {
     vz = document.querySelector("#vz");
     fz = document.querySelector("#fz");
 
+    runden = document.querySelector(".runden");
+
     // Hilfebutton
     var erklaeren: HTMLElement = document.getElementById("erklaerung");
 
@@ -112,34 +114,28 @@ window.addEventListener("load", function (): void {
         } else {
             buttonleicht.setAttribute("class", "active");
         }
-
         // Ausblenden des 4x4 und 5x5
         if (activezwei.getAttribute("class") == "active") {
             activezwei.setAttribute("class", "");
         } else {
             activezwei.setAttribute("class", "active");
         }
-
         if (activeeins.getAttribute("class") == "active") {
             activeeins.setAttribute("class", "");
         } else {
             activeeins.setAttribute("class", "active");
         }
-
         // Hintergrund der beiden anderen Button ausblenden bei klicken des aktuellen Buttons
         if (buttonmittel.getAttribute("class") == "active") {
             buttonmittel.setAttribute("class", "");
         }
-
         if (buttonschwer.getAttribute("class") == "active") {
             buttonschwer.setAttribute("class", "");
         }
-
         // Einblenden des 3x3 wenn vorher von anderer Schwierigkeit kommend
         if (activezwei.getAttribute("class") == "") {
             activezwei.setAttribute("class", "active");
         }
-
         if (activeeins.getAttribute("class") == "") {
             activeeins.setAttribute("class", "active");
         }
@@ -149,6 +145,8 @@ window.addEventListener("load", function (): void {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "3";
     }
 
     // Mittleres Spiel
@@ -162,23 +160,19 @@ window.addEventListener("load", function (): void {
         } else {
             buttonmittel.setAttribute("class", "active");
         }
-
         // Ausblenden des 5x5
         if (activezwei.getAttribute("class") == "active") {
             activezwei.setAttribute("class", "");
         } else {
             activezwei.setAttribute("class", "active");
         }
-
         // Hintergrund der beiden anderen Button ausblenden bei klicken des aktuellen Buttons
         if (buttonleicht.getAttribute("class") == "active") {
             buttonleicht.setAttribute("class", "");
         }
-
         if (buttonschwer.getAttribute("class") == "active") {
             buttonschwer.setAttribute("class", "");
         }
-
         // Einblenden des 4x4 wenn vorher von anderer Schwierigkeit kommend
         if (activeeins.getAttribute("class") == "active") {
             activeeins.setAttribute("class", "");
@@ -186,15 +180,16 @@ window.addEventListener("load", function (): void {
         if (activezwei.getAttribute("class") == "") {
             activezwei.setAttribute("class", "active");
         }
-
         // Bei deaktivieren von Button wird Start gezeigt
         if (buttonmittel.getAttribute("class") == "") {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "4";
     }
 
-    // 3. Schwer
+    // Schweres Spiel
     schwer.addEventListener("click", playschwer);
 
     function playschwer(): void {
@@ -205,24 +200,22 @@ window.addEventListener("load", function (): void {
         } else {
             buttonschwer.setAttribute("class", "active");
         }
-
         // Hintergrund der beiden anderen Button ausblenden bei klicken des aktuellen Buttons
         if (buttonleicht.getAttribute("class") == "active") {
             buttonleicht.setAttribute("class", "");
         }
-
         if (buttonmittel.getAttribute("class") == "active") {
             buttonmittel.setAttribute("class", "");
         }
-
         // Einblenden des 5x5 wenn vorher von anderer Schwierigkeit kommend
         if (activezwei.getAttribute("class") == "active") {
             activezwei.setAttribute("class", "");
         }
-
         if (activeeins.getAttribute("class") == "active") {
             activeeins.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "5";
     }
 
     // Züge 3x3 / Kreis und Kreuz setzen
@@ -280,10 +273,11 @@ window.addEventListener("load", function (): void {
             index = Math.floor(Math.random() * but.length);
             but[index].buttondiv.innerHTML = maschine;
             but[index].buttoncheck = false;
-        }
+        } 
+        
     }
 
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function (): void {
         spielfeldclick(0);
     });
@@ -312,7 +306,8 @@ window.addEventListener("load", function (): void {
         spielfeldclick(8);
     });
 
-    function spielfeldclick(i): void {
+    
+    function spielfeldclick(i: number): void {
         if (buttonleicht.getAttribute("class") == "active" && but[i].buttoncheck == true) {
             but[i].buttondiv.innerHTML = mensch;
             but[i].buttoncheck = false;
@@ -330,52 +325,75 @@ window.addEventListener("load", function (): void {
                     but[index].buttoncheck = false;
                 } else {
                     index = Math.floor(Math.random() * but.length);
-    
+
                     if (but[index].buttoncheck == true) {
                         but[index].buttondiv.innerHTML = maschine;
                         but[index].buttoncheck = false;
                     } else {
                         index = Math.floor(Math.random() * but.length);
-        
+
                         if (but[index].buttoncheck == true) {
                             but[index].buttondiv.innerHTML = maschine;
                             but[index].buttoncheck = false;
                         } else {
                             index = Math.floor(Math.random() * but.length);
-            
+
                             if (but[index].buttoncheck == true) {
                                 but[index].buttondiv.innerHTML = maschine;
                                 but[index].buttoncheck = false;
                             } else {
                                 index = Math.floor(Math.random() * but.length);
-                
+
                                 if (but[index].buttoncheck == true) {
                                     but[index].buttondiv.innerHTML = maschine;
                                     but[index].buttoncheck = false;
                                 } else {
                                     index = Math.floor(Math.random() * but.length);
-                    
+
                                     if (but[index].buttoncheck == true) {
                                         but[index].buttondiv.innerHTML = maschine;
                                         but[index].buttoncheck = false;
                                     } else {
                                         index = Math.floor(Math.random() * but.length);
-                        
+
                                         if (but[index].buttoncheck == true) {
                                             but[index].buttondiv.innerHTML = maschine;
                                             but[index].buttoncheck = false;
-                                        } 
+                                        }
                                     }
                                 }
 
                             }
                         }
-                    }   
+                    }
                 }
             }
         }
+        if (eins.innerHTML == maschine  && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
+            vier.innerHTML == maschine  && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
+            sieben.innerHTML == maschine  && acht.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine  && vier.innerHTML == maschine && acht.innerHTML == maschine ||
+            zwei.innerHTML == maschine  && fuenf.innerHTML == maschine && acht.innerHTML == maschine ||
+            drei.innerHTML == maschine  && sechs.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine  && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
+            drei.innerHTML == maschine  && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
+            console.log("Computer hat Gewonnen");
+            
+        }
+
+        if (eins.innerHTML == mensch  && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
+            vier.innerHTML == mensch  && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
+            sieben.innerHTML == mensch  && acht.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch  && vier.innerHTML == mensch && acht.innerHTML == mensch ||
+            zwei.innerHTML == mensch  && fuenf.innerHTML == mensch && acht.innerHTML == mensch ||
+            drei.innerHTML == mensch  && sechs.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch  && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
+            drei.innerHTML == mensch  && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
+            console.log("Mensch hat Gewonnen");
+            
+        }
     }
-    
+
     // 4x4 Züge  setzen 
     let index4x4: number = 0;
 
@@ -462,7 +480,7 @@ window.addEventListener("load", function (): void {
         }
     }
 
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function (): void {
         spielfeldclick4x4(0);
     });
@@ -489,7 +507,7 @@ window.addEventListener("load", function (): void {
     });
     neun.addEventListener("click", function (): void {
         spielfeldclick4x4(8);
-    });   
+    });
     zehn.addEventListener("click", function (): void {
         spielfeldclick4x4(9);
     });
@@ -512,7 +530,7 @@ window.addEventListener("load", function (): void {
         spielfeldclick4x4(15);
     });
 
-    function spielfeldclick4x4(i): void {
+    function spielfeldclick4x4(i: number): void {
         if (buttonmittel.getAttribute("class") == "active" && but4x4[i].buttoncheck4x4 == true) {
             but4x4[i].buttondiv4x4.innerHTML = mensch;
             but4x4[i].buttoncheck4x4 = false;
@@ -530,43 +548,43 @@ window.addEventListener("load", function (): void {
                     but4x4[index4x4].buttoncheck4x4 = false;
                 } else {
                     index4x4 = Math.floor(Math.random() * but.length);
-    
+
                     if (but4x4[index4x4].buttoncheck4x4 == true) {
                         but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                         but4x4[index4x4].buttoncheck4x4 = false;
                     } else {
                         index4x4 = Math.floor(Math.random() * but.length);
-        
+
                         if (but4x4[index4x4].buttoncheck4x4 == true) {
                             but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                             but4x4[index4x4].buttoncheck4x4 = false;
                         } else {
                             index4x4 = Math.floor(Math.random() * but.length);
-            
+
                             if (but4x4[index4x4].buttoncheck4x4 == true) {
                                 but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                                 but4x4[index4x4].buttoncheck4x4 = false;
                             } else {
                                 index4x4 = Math.floor(Math.random() * but.length);
-                
+
                                 if (but4x4[index4x4].buttoncheck4x4 == true) {
                                     but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                                     but4x4[index4x4].buttoncheck4x4 = false;
                                 } else {
                                     index4x4 = Math.floor(Math.random() * but.length);
-                    
+
                                     if (but4x4[index4x4].buttoncheck4x4 == true) {
                                         but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                                         but4x4[index4x4].buttoncheck4x4 = false;
                                     } else {
                                         index4x4 = Math.floor(Math.random() * but.length);
-                        
+
                                         if (but4x4[index4x4].buttoncheck4x4 == true) {
                                             but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                                             but4x4[index4x4].buttoncheck4x4 = false;
                                         } else {
                                             index4x4 = Math.floor(Math.random() * but.length);
-                            
+
                                             if (but4x4[index4x4].buttoncheck4x4 == true) {
                                                 but4x4[index4x4].buttondiv4x4.innerHTML = maschine;
                                                 but4x4[index4x4].buttoncheck4x4 = false;
@@ -575,8 +593,8 @@ window.addEventListener("load", function (): void {
                                     }
                                 }
                             }
-                        } 
-                    }   
+                        }
+                    }
                 }
             }
         }
@@ -704,7 +722,7 @@ window.addEventListener("load", function (): void {
         }
     }
 
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function (): void {
         spielfeldclick5x5(0);
     });
@@ -781,7 +799,7 @@ window.addEventListener("load", function (): void {
         spielfeldclick5x5(24);
     });
 
-    function spielfeldclick5x5(i): void {
+    function spielfeldclick5x5(i: number): void {
         if (buttonschwer.getAttribute("class") == "active" && but5x5[i].buttoncheck5x5 == true) {
             but5x5[i].buttondiv5x5.innerHTML = mensch;
             but5x5[i].buttoncheck5x5 = false;
@@ -799,43 +817,43 @@ window.addEventListener("load", function (): void {
                     but5x5[index5x5].buttoncheck5x5 = false;
                 } else {
                     index5x5 = Math.floor(Math.random() * but.length);
-    
+
                     if (but5x5[index5x5].buttoncheck5x5 == true) {
                         but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                         but5x5[index5x5].buttoncheck5x5 = false;
                     } else {
                         index5x5 = Math.floor(Math.random() * but.length);
-        
+
                         if (but5x5[index5x5].buttoncheck5x5 == true) {
                             but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                             but5x5[index5x5].buttoncheck5x5 = false;
                         } else {
                             index5x5 = Math.floor(Math.random() * but.length);
-            
+
                             if (but5x5[index5x5].buttoncheck5x5 == true) {
                                 but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                                 but5x5[index5x5].buttoncheck5x5 = false;
                             } else {
                                 index5x5 = Math.floor(Math.random() * but.length);
-                
+
                                 if (but5x5[index5x5].buttoncheck5x5 == true) {
                                     but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                                     but5x5[index5x5].buttoncheck5x5 = false;
                                 } else {
                                     index5x5 = Math.floor(Math.random() * but.length);
-                    
+
                                     if (but5x5[index5x5].buttoncheck5x5 == true) {
                                         but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                                         but5x5[index5x5].buttoncheck5x5 = false;
                                     } else {
                                         index5x5 = Math.floor(Math.random() * but.length);
-                        
+
                                         if (but5x5[index5x5].buttoncheck5x5 == true) {
                                             but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                                             but5x5[index5x5].buttoncheck5x5 = false;
                                         } else {
                                             index5x5 = Math.floor(Math.random() * but.length);
-                            
+
                                             if (but5x5[index5x5].buttoncheck5x5 == true) {
                                                 but5x5[index5x5].buttondiv5x5.innerHTML = maschine;
                                                 but5x5[index5x5].buttoncheck5x5 = false;
@@ -844,15 +862,15 @@ window.addEventListener("load", function (): void {
                                     }
                                 }
                             }
-                        } 
-                    }   
+                        }
+                    }
                 }
             }
         }
     }
 
 
-      
+
 });
 
 

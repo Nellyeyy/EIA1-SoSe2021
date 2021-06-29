@@ -33,6 +33,7 @@ var vz;
 var fz;
 var maschine = "X";
 var mensch = "O";
+var runden;
 window.addEventListener("load", function () {
     // Zuweisungen
     hilfe = document.querySelector("#hilfe");
@@ -67,6 +68,7 @@ window.addEventListener("load", function () {
     dz = document.querySelector("#dz");
     vz = document.querySelector("#vz");
     fz = document.querySelector("#fz");
+    runden = document.querySelector(".runden");
     // Hilfebutton
     var erklaeren = document.getElementById("erklaerung");
     hilfe.addEventListener("click", erklaerung);
@@ -127,6 +129,8 @@ window.addEventListener("load", function () {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "3";
     }
     // Mittleres Spiel
     mittel.addEventListener("click", playmittel);
@@ -164,8 +168,10 @@ window.addEventListener("load", function () {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "4";
     }
-    // 3. Schwer
+    // Schweres Spiel
     schwer.addEventListener("click", playschwer);
     function playschwer() {
         // Hintergrundfarbe
@@ -189,6 +195,8 @@ window.addEventListener("load", function () {
         if (activeeins.getAttribute("class") == "active") {
             activeeins.setAttribute("class", "");
         }
+        // Runden wechseln
+        runden.innerHTML = "5";
     }
     // Züge 3x3 / Kreis und Kreuz setzen
     var index = 0;
@@ -239,7 +247,7 @@ window.addEventListener("load", function () {
             but[index].buttoncheck = false;
         }
     }
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function () {
         spielfeldclick(0);
     });
@@ -326,6 +334,26 @@ window.addEventListener("load", function () {
                 }
             }
         }
+        if (eins.innerHTML == maschine && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
+            vier.innerHTML == maschine && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
+            sieben.innerHTML == maschine && acht.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine && vier.innerHTML == maschine && acht.innerHTML == maschine ||
+            zwei.innerHTML == maschine && fuenf.innerHTML == maschine && acht.innerHTML == maschine ||
+            drei.innerHTML == maschine && sechs.innerHTML == maschine && neun.innerHTML == maschine ||
+            eins.innerHTML == maschine && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
+            drei.innerHTML == maschine && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
+            console.log("Computer hat Gewonnen");
+        }
+        if (eins.innerHTML == mensch && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
+            vier.innerHTML == mensch && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
+            sieben.innerHTML == mensch && acht.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch && vier.innerHTML == mensch && acht.innerHTML == mensch ||
+            zwei.innerHTML == mensch && fuenf.innerHTML == mensch && acht.innerHTML == mensch ||
+            drei.innerHTML == mensch && sechs.innerHTML == mensch && neun.innerHTML == mensch ||
+            eins.innerHTML == mensch && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
+            drei.innerHTML == mensch && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
+            console.log("Mensch hat Gewonnen");
+        }
     }
     // 4x4 Züge  setzen 
     var index4x4 = 0;
@@ -404,7 +432,7 @@ window.addEventListener("load", function () {
             but4x4[index4x4].buttoncheck4x4 = false;
         }
     }
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function () {
         spielfeldclick4x4(0);
     });
@@ -633,7 +661,7 @@ window.addEventListener("load", function () {
             but5x5[index5x5].buttoncheck5x5 = false;
         }
     }
-    // Zug Mensch 
+    // Zug Mensch & Computer im Anschluss
     eins.addEventListener("click", function () {
         spielfeldclick5x5(0);
     });
