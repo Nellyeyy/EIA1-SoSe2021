@@ -33,6 +33,7 @@ var vz;
 var fz;
 var maschine = "X";
 var mensch = "O";
+var none = "";
 var runden;
 var zaehlermensch;
 // tslint:disable-next-line: no-any
@@ -340,6 +341,13 @@ window.addEventListener("load", function () {
                                             but[index].buttondiv.innerHTML = maschine;
                                             but[index].buttoncheck = false;
                                         }
+                                        else {
+                                            index = Math.floor(Math.random() * but.length);
+                                            if (but[index].buttoncheck == true) {
+                                                but[index].buttondiv.innerHTML = maschine;
+                                                but[index].buttoncheck = false;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -358,7 +366,6 @@ window.addEventListener("load", function () {
             eins.innerHTML == maschine && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
             drei.innerHTML == maschine && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
             zaehlercomputer.innerHTML = zahlcomputer + 1;
-            // but[1 && 2 && 3].buttondiv.innerHTML = "";
         }
         if (eins.innerHTML == mensch && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
             vier.innerHTML == mensch && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||

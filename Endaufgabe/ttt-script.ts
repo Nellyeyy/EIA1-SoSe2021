@@ -37,6 +37,7 @@ var fz: HTMLDivElement;
 
 var maschine: string = "X";
 var mensch: string = "O";
+var none: string = "";
 
 var runden: HTMLElement;
 var zaehlermensch: HTMLElement;
@@ -152,7 +153,7 @@ window.addEventListener("load", function (): void {
             activeeins.setAttribute("class", "");
             activezwei.setAttribute("class", "");
         }
-       
+
         // Runden wechseln und Zählerstand einblenden
         runden.innerHTML = "3";
         zaehlermensch.innerHTML = zahlmensch;
@@ -286,7 +287,6 @@ window.addEventListener("load", function (): void {
             but[index].buttondiv.innerHTML = maschine;
             but[index].buttoncheck = false;
         }
-
     }
 
     // Zug Mensch & Computer im Anschluss
@@ -330,6 +330,7 @@ window.addEventListener("load", function (): void {
                 but[index].buttondiv.innerHTML = maschine;
                 but[index].buttoncheck = false;
             } else {
+                
                 index = Math.floor(Math.random() * but.length);
 
                 if (but[index].buttoncheck == true) {
@@ -371,6 +372,13 @@ window.addEventListener("load", function (): void {
                                         if (but[index].buttoncheck == true) {
                                             but[index].buttondiv.innerHTML = maschine;
                                             but[index].buttoncheck = false;
+                                        } else {
+                                            index = Math.floor(Math.random() * but.length);
+    
+                                            if (but[index].buttoncheck == true) {
+                                                but[index].buttondiv.innerHTML = maschine;
+                                                but[index].buttoncheck = false;
+                                            }
                                         }
                                     }
                                 }
@@ -381,6 +389,7 @@ window.addEventListener("load", function (): void {
                 }
             }
         }
+
         // Gewinnerregeln definiert & Zähler erhöht sich & neue Spielrunde
         if (eins.innerHTML == maschine && zwei.innerHTML == maschine && drei.innerHTML == maschine ||
             vier.innerHTML == maschine && fuenf.innerHTML == maschine && sechs.innerHTML == maschine ||
@@ -391,9 +400,9 @@ window.addEventListener("load", function (): void {
             eins.innerHTML == maschine && fuenf.innerHTML == maschine && neun.innerHTML == maschine ||
             drei.innerHTML == maschine && fuenf.innerHTML == maschine && sieben.innerHTML == maschine) {
             zaehlercomputer.innerHTML = zahlcomputer + 1;
-            // but[1 && 2 && 3].buttondiv.innerHTML = "";
+          
         }
-        
+
 
         if (eins.innerHTML == mensch && zwei.innerHTML == mensch && drei.innerHTML == mensch ||
             vier.innerHTML == mensch && fuenf.innerHTML == mensch && sechs.innerHTML == mensch ||
@@ -404,6 +413,7 @@ window.addEventListener("load", function (): void {
             eins.innerHTML == mensch && fuenf.innerHTML == mensch && neun.innerHTML == mensch ||
             drei.innerHTML == mensch && fuenf.innerHTML == mensch && sieben.innerHTML == mensch) {
             zaehlermensch.innerHTML = zahlmensch + 1;
+
         }
     }
 
