@@ -2,35 +2,32 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="ttt-style.css">
-    <script src="ttt-script.js"></script>
+    <link href="TicTacToe-styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!-- Überschrift -->
     <header>
         <div id="h1">
             <h1>Tic-Tac-Toe</h1>
         </div>
     </header>
-
     <main>
         <!-- Deko - Kreise linke-Seite) -->
         <div id="kreis"></div>
         <div id="kreisz"></div>
 
         <!-- Neustart-Button -->
-        <div id="neustart">
+        <div id="deko">
             <h6>Neustart</h6>
         </div>
 
         <!-- Deko - Spielfiguren -->
-        <h4 id="o">O</h4>
-        <h5 id="x">X</h5>
+        <h4 id="player1">X</h4>
+        <h5 id="player2">O</h5>
 
         <!-- Deko - Kreise (rechte Seite)-->
         <div id="kreisd"></div>
@@ -38,10 +35,6 @@
 
         <!-- Flowchart -->
         <div><a id="flowchart" href=".JPG" target="_blank" class="flowchart">Flowchart</a></div>
-
-        <!-- Spielstand und gespielte Runden -->
-        <div id="spiele">0 gespielte Runden von <span class="runden"></span></div>
-        <div id="spielstand"><span class="zaehlermensch"></span>:<span class="zaehlercomputer"></span></div>
 
         <!-- Deko - Bilder -->
         <div>
@@ -65,15 +58,15 @@
                 <br>(je nach Schwierigkeit) in einer Zeile, Spalte oder Diagonale
                 <br>zu platzieren. Wem das zuerst gelingt, holt die Runde!
                 <div class="styles">Wertung und Neustart:</div>
-                Gespielte Runden & Spielstand stehen oben. Gewinner ist, Spieler mit meisten Runden!
-                Neustart des Spieles, bei klick auf Neustart.
+                Gespielte Runden & Spielstand stehen oben. Gewinner ist: Spieler mit meisten Runden!
+                Neustart & andere Schwierigkeit: F5.
                 <div class="styles">Viel Spaß und viel Erfolg!</div>
             </h3>
         </div>
 
         <!-- Button um Schwierigkeit auszuwählen -->
         <div id="level">
-            <button id="leicht" class="background1">Leichtes Spiel </button>
+            <button id="leicht">Leichtes Spiel </button>
             <p id="l">3 Runden <br> 3x3</p>
             <button id="mittel"> Mittleres Spiel </button>
             <p id="m">4 Runden <br> 4x4</p>
@@ -81,67 +74,20 @@
             <p id="s">5 Runden <br> 5x5</p>
         </div>
 
-        <!-- Spielfeld 3x3 -->
-        <div id="spielfeld">
-            <div id="oben">
-                <div id="eins"></div>
-                <div id="zwei"></div>
-                <div id="drei"></div>
-            </div>
-            <div id="mitte">
-                <div id="vier"></div>
-                <div id="fuenf"></div>
-                <div id="sechs"></div>
-            </div>
-            <div id="unten">
-                <div id="sieben"></div>
-                <div id="acht"></div>
-                <div id="neun"></div>
-            </div>
-        </div>
-
-        <!-- Spielfeld 4x4 (add rechts und unten zu 3x3) -->
-        <div id="spielfeld4x4">
-            <div id="rechts">
-                <div id="zehn"></div>
-                <div id="elf"></div>
-                <div id="zwoelf"></div>
-            </div>
-            <div id="u4x4">
-                <div id="dreiz"></div>
-                <div id="vierz"></div>
-                <div id="fuenfz"></div>
-                <div id="sechsz"></div>
-            </div>
-        </div>
-
-        <!-- Spielfeld 5x5 (add links und unten zu 3x3) -->
-        <div id="spielfeld5x5">
-            <div id="links">
-                <div id="siebz"></div>
-                <div id="achz"></div>
-                <div id="neunz"></div>
-                <div id="z"></div>
-            </div>
-            <div id="u5x5">
-                <div id="ez"></div>
-                <div id="zz"></div>
-                <div id="dz"></div>
-                <div id="vz"></div>
-                <div id="fz"></div>
-                <br>
-            </div>
-        </div>
-
+        <!-- Spielfeld -->
+        <div id="game"></div>
     </main>
 
     <footer>
-    <!-- Name und Martrikelnummer -->
+        <!-- Name und Martrikelnummer -->
         <div id="footer">
             Eileen Harr
             <br>268387
         </div>
     </footer>
+
+    <!-- Script am Ende, damit es zum Schluss (nach HTML/CSS) ausgeführt wird-->
+    <script src="TicTacToe-script.js"></script>
 
 </body>
 
