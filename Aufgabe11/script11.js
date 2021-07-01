@@ -32,22 +32,22 @@ window.addEventListener("load", function () {
     drawListToDOM();
     function drawListToDOM() {
         todosDOMElement.innerHTML = "";
-        var _loop_1 = function (index) {
+        var _loop_1 = function (index_1) {
             var todo = document.createElement("div");
             todo.classList.add("todo");
-            todo.innerHTML = "<span class='check " + tDA[index].todosChecked + "'><i class='fas fa-check'></i></span>"
-                + tDA[index].todosText +
+            todo.innerHTML = "<span class='check " + tDA[index_1].todosChecked + "'><i class='fas fa-check'></i></span>"
+                + tDA[index_1].todosText +
                 "<span class='trash fas fa-trash-alt'></span>";
             todo.querySelector(".check").addEventListener("click", function () {
-                toggleCheckState(index);
+                toggleCheckState(index_1);
             });
             todo.querySelector(".trash").addEventListener("click", function () {
-                deleteTodo(index);
+                deleteTodo(index_1);
             });
             todosDOMElement.appendChild(todo);
         };
-        for (var index = 0; index < tDA.length; index++) {
-            _loop_1(index);
+        for (var index_1 = 0; index_1 < tDA.length; index_1++) {
+            _loop_1(index_1);
         }
         updateCounter();
         updateOpen();

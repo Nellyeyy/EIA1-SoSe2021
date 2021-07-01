@@ -6,6 +6,7 @@ var buttonschwer = document.getElementById("schwer");
 var l = document.getElementById("l");
 var m = document.getElementById("m");
 var s = document.getElementById("s");
+var index = 0;
 // Hilfebutton (Text ein und ausblenden), Bei Klick auf Button wird Erklär-text angezeigt, bei erneutem klicken, text ausgeblendet
 hilfe.addEventListener("click", erklaerung);
 function erklaerung() {
@@ -172,29 +173,28 @@ var Spiel = /** @class */ (function () {
             info.remove();
         };
         // Rundenstand wird erstellt und über dem Spielfeld platziert, Hier werden die gespielten von den gesammten Spielständen gezählt
-        this.rundenstand = function (round) {
+        this.rundenstand = function (tttrunde) {
             var game = _this.getElement("#game");
             var rundenText = _this.createElement("div", "tttrunde");
             game.append(rundenText);
             var rundenTextgespRunde = _this.createElement("div", "gespRunde");
-            rundenTextgespRunde.textContent = round.gespRunde + " von ";
+            rundenTextgespRunde.textContent = tttrunde.gespRunde + " von ";
             rundenTextgespRunde.id = "tttrunde-gespRunde";
             var rundenTextgesRunden = _this.createElement("div", "gesRunden");
-            rundenTextgesRunden.textContent = round.gesRunden + " Runden";
+            rundenTextgesRunden.textContent = tttrunde.gesRunden + " Runden";
             rundenTextgesRunden.id = "tttrunde-gesRunden";
             rundenText.append(rundenTextgespRunde, rundenTextgesRunden);
         };
-        // Versuch die Runden zu addieren -> Runde wird aber in der Console erhöht
-        // addPunkte = (tttrunde: Runden): void => {
-        //     const newRound: HTMLElement = this.getElement(`${tttrunde}`);
-        //     const i: number = tttrunde.gespRunde;
-        //     newRound.textContent = `${i}`;
+        // addRunde = (tttrunde: Runden, aktuellerSpieler: string): void => {
+        //     const aktuellerSpielerScore: HTMLElement = this.getElement(`#tttrunde-${aktuellerSpieler}`);
+        //     const player: "Player X" | "Player O" = aktuellerSpieler === "x" ? "Player X" : "Player O";
+        //     const d: number = tttrunde[aktuellerSpieler];
+        //     aktuellerSpielerScore.textContent = `${player}: ${d}`;
         // }
         // Gewinnernachricht wird erstellt bzw. Spieler ermittelt und Nachricht erstellt 
         this.gewinnerNachricht = function (gewinner) {
             var gewinnertext = _this.createElement("div", "gewinnertext");
-            var player = gewinner === "x" ? "Player X" : "Player O";
-            gewinnertext.textContent = gewinner ? player + " hat gewonnen" : "X und O haben gewonnen";
+            gewinnertext.textContent = "Das Spiel ist zu Ende!";
             var game = _this.getElement("#game");
             game.append(gewinnertext);
         };
@@ -299,7 +299,15 @@ var TiTaTo3x3 = /** @class */ (function () {
         //Spieler wird nach jeder Runde gewechselt, je nachdem wer gewonnen hat (gewinner beginnt)
         this.tauschePlayer = function () {
             _this.aktuellerSpieler = _this.aktuellerSpieler === _this.spieler.x ? _this.spieler.o : _this.spieler.x;
+            // if (this.spieler.o) {
+            //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
+            //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
+            // }
         };
+        // computer = (): void => {
+        //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
+        //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
+        // }
         // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
         this.neustartSpielfeld = function () {
             if (_this.tttrunde.gespRunde <= 2) {
@@ -314,7 +322,7 @@ var TiTaTo3x3 = /** @class */ (function () {
         this.spieler = { x: "x", o: "o" };
         this.score = { x: 0, o: 0 };
         this.tttrunde = { gespRunde: 1, gesRunden: 3 };
-        this.aktuellerSpieler = this.spieler.o;
+        this.aktuellerSpieler = this.spieler.x;
         this.gesSpielfeld.klick(this.klick);
         this.verzugzeit = 1000;
         this.verzug = false;

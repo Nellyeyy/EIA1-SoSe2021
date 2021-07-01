@@ -9,6 +9,8 @@ var l: HTMLElement = document.getElementById("l");
 var m: HTMLElement = document.getElementById("m");
 var s: HTMLElement = document.getElementById("s");
 
+let index: number = 0;
+
 // Interface für Spieler & Spielstand & Rundenstand & Spielfeld
 // Spieler bekommt bekommt das X und O als text (string) mitgegeben (Kombination aus Spieler und Spielstand ergibt später Funktionen)
 interface Spieler {
@@ -42,8 +44,8 @@ interface Spielboard {
     addPunkte(aktuellerPunktestand: Spielstand, aktuellerSpieler: string): void;
     nachricht(gewinner?: string): void;
     clearNachricht(): void;
-    rundenstand(round: Runden): void;
-    // addRunde(tttrunde: Runden): void;
+    rundenstand(tttrunde: Runden): void;
+    // addRunde(tttrunde: Runden, aktuellerSpieler: string): void;
     gewinnerNachricht(gewinner?: string): void;
 }
 
@@ -210,6 +212,7 @@ class Spiel implements Spielboard {
         const spielerXstand: HTMLElement = this.createElement("div", "x");
         spielerXstand.textContent = `Player X: ${punkte.x}`;
         spielerXstand.id = "score-x";
+        
 
         const playerOstand: HTMLElement = this.createElement("div", "o");
         playerOstand.textContent = `Player O: ${punkte.o}`;
@@ -241,35 +244,35 @@ class Spiel implements Spielboard {
         info.remove();
     }
     // Rundenstand wird erstellt und über dem Spielfeld platziert, Hier werden die gespielten von den gesammten Spielständen gezählt
-    rundenstand = (round: Runden): void => {
+    rundenstand = (tttrunde: Runden): void => {
         const game: HTMLElement = this.getElement("#game");
         const rundenText: HTMLElement = this.createElement("div", "tttrunde");
 
         game.append(rundenText);
 
         const rundenTextgespRunde: HTMLElement = this.createElement("div", "gespRunde");
-        rundenTextgespRunde.textContent = `${round.gespRunde} von `;
+        rundenTextgespRunde.textContent = `${tttrunde.gespRunde} von `;
         rundenTextgespRunde.id = "tttrunde-gespRunde";
 
         const rundenTextgesRunden: HTMLElement = this.createElement("div", "gesRunden");
-        rundenTextgesRunden.textContent = `${round.gesRunden} Runden`;
+        rundenTextgesRunden.textContent = `${tttrunde.gesRunden} Runden`;
         rundenTextgesRunden.id = "tttrunde-gesRunden";
 
         rundenText.append(rundenTextgespRunde, rundenTextgesRunden);
     }
-    // Versuch die Runden zu addieren -> Runde wird aber in der Console erhöht
-    // addPunkte = (tttrunde: Runden): void => {
-    //     const newRound: HTMLElement = this.getElement(`${tttrunde}`);
-    //     const i: number = tttrunde.gespRunde;
-    //     newRound.textContent = `${i}`;
+
+    // addRunde = (tttrunde: Runden, aktuellerSpieler: string): void => {
+    //     const aktuellerSpielerScore: HTMLElement = this.getElement(`#tttrunde-${aktuellerSpieler}`);
+    //     const player: "Player X" | "Player O" = aktuellerSpieler === "x" ? "Player X" : "Player O";
+    //     const d: number = tttrunde[aktuellerSpieler];
+    //     aktuellerSpielerScore.textContent = `${player}: ${d}`;
     // }
 
     // Gewinnernachricht wird erstellt bzw. Spieler ermittelt und Nachricht erstellt 
     gewinnerNachricht = (gewinner: string): void => {
         const gewinnertext: HTMLElement = this.createElement("div", "gewinnertext");
-        const player: "Player X" | "Player O" = gewinner === "x" ? "Player X" : "Player O";
 
-        gewinnertext.textContent = gewinner ? `${player} hat gewonnen` : "X und O haben gewonnen";
+        gewinnertext.textContent = `Das Spiel ist zu Ende!`;
 
         const game: HTMLElement = this.getElement("#game");
         game.append(gewinnertext);
@@ -296,7 +299,7 @@ class TiTaTo3x3 {
         this.spieler = { x: "x", o: "o" };
         this.score = { x: 0, o: 0 };
         this.tttrunde = { gespRunde: 1, gesRunden: 3 };
-        this.aktuellerSpieler = this.spieler.o;
+        this.aktuellerSpieler = this.spieler.x;
         this.gesSpielfeld.klick(this.klick);
         this.verzugzeit = 1000;
         this.verzug = false;
@@ -357,6 +360,7 @@ class TiTaTo3x3 {
             }
         }
     }
+
     // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
     neuerScore = (): void => {
         this.score[this.aktuellerSpieler] += 1;
@@ -388,9 +392,22 @@ class TiTaTo3x3 {
 
     }
     //Spieler wird nach jeder Runde gewechselt, je nachdem wer gewonnen hat (gewinner beginnt)
+    
+
     tauschePlayer = (): void => {
         this.aktuellerSpieler = this.aktuellerSpieler === this.spieler.x ? this.spieler.o : this.spieler.x;
+        // if (this.spieler.o) {
+        //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
+        //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
+        // }
     }
+
+    // computer = (): void => {
+    //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
+    //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
+    // }
+    
+
     // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
     neustartSpielfeld = (): void => {
         if (this.tttrunde.gespRunde <= 2) {
@@ -398,6 +415,7 @@ class TiTaTo3x3 {
             this.gesSpielfeld.neustart();
             this.board = this.erstelleSpielfeld();
             this.neuerZeahler();
+            
         }
     }
 }

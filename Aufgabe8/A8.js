@@ -50,8 +50,8 @@ window.addEventListener("load", function () {
     function mix() {
         beat.length = 0;
         for (var i_1 = 0; i_1 < 3; i_1++) {
-            var index = Math.floor(Math.random() * 9);
-            playSample(nameBeat[index]);
+            var index_1 = Math.floor(Math.random() * 9);
+            playSample(nameBeat[index_1]);
         }
     }
 });
