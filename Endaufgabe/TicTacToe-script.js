@@ -194,7 +194,7 @@ var Spiel = /** @class */ (function () {
         this.gewinnerNachricht = function (gewinner) {
             var gewinnertext = _this.createElement("div", "gewinnertext");
             var player = gewinner === "x" ? "Player X" : "Player O";
-            gewinnertext.textContent = gewinner ? player + " hat gewonnen" : "Kein Spieler hat gewonnen";
+            gewinnertext.textContent = gewinner ? player + " hat gewonnen" : "X und O haben gewonnen";
             var game = _this.getElement("#game");
             game.append(gewinnertext);
         };

@@ -269,7 +269,7 @@ class Spiel implements Spielboard {
         const gewinnertext: HTMLElement = this.createElement("div", "gewinnertext");
         const player: "Player X" | "Player O" = gewinner === "x" ? "Player X" : "Player O";
 
-        gewinnertext.textContent = gewinner ? `${player} hat gewonnen` : "Kein Spieler hat gewonnen";
+        gewinnertext.textContent = gewinner ? `${player} hat gewonnen` : "X und O haben gewonnen";
 
         const game: HTMLElement = this.getElement("#game");
         game.append(gewinnertext);
@@ -398,7 +398,6 @@ class TiTaTo3x3 {
             this.gesSpielfeld.neustart();
             this.board = this.erstelleSpielfeld();
             this.neuerZeahler();
-
         }
     }
 }
@@ -415,6 +414,9 @@ function start3x3(): void {
         ticTacToe.startSpiel();
     }
 }
+
+
+
 
 
 

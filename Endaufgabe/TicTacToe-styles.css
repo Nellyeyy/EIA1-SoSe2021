@@ -63,11 +63,11 @@ h1 {
     margin-top: -700px;
     margin-left: 850px;
 }
-
-#deko {
+/* Neustart-Button */
+#neustart {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 18px;
+    font-size: 25px;
     margin-top: 600px;
     margin-left: 1000px;
     background-color: rgb(114, 189, 192);
@@ -79,6 +79,9 @@ h1 {
     border-color: white;
     vertical-align: middle;
     position: absolute;
+}
+#neustart:hover {
+    background-color: rgb(42, 97, 99);
 }
 
 /* Hilfe-Button */
@@ -335,7 +338,7 @@ img {
     font-family: Arial, Helvetica, sans-serif
 }
 
-/* Flowchart */
+/* Flowchart und Design */
 
 #flowchart {
     color: white;
@@ -343,7 +346,7 @@ img {
     text-align: left;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    top: 50%;
+    top: 49%;
     left: 88%;
     position: absolute;
     margin-top: 5px;
@@ -351,6 +354,24 @@ img {
 }
 
 #flowchart:hover {
+    color: rgb(42, 97, 99);
+    text-decoration: underline;
+}
+
+#design {
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 53%;
+    left: 89.3%;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -3px;
+}
+
+#design:hover {
     color: rgb(42, 97, 99);
     text-decoration: underline;
 }
