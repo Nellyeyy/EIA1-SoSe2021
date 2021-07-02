@@ -1,4 +1,10 @@
 // Variablen
+var leicht;
+var mittel;
+var schwer;
+var hilfe;
+var computer;
+var mensch;
 var erklaeren = document.getElementById("erklaerung");
 var buttonleicht = document.getElementById("leicht");
 var buttonmittel = document.getElementById("mittel");
@@ -9,6 +15,13 @@ var s = document.getElementById("s");
 var rund = document.getElementById("rund");
 var stand = ["1", "2", "3", "4", "5"];
 var index = 0;
+// Zuordnung der Variablen
+leicht = document.querySelector("#leicht");
+mittel = document.querySelector("#mittel");
+schwer = document.querySelector("#schwer");
+hilfe = document.querySelector("#hilfe");
+computer = document.querySelector("#computer");
+mensch = document.querySelector("#mensch2");
 // Hilfebutton (Text ein und ausblenden), Bei Klick auf Button wird Erklär-text angezeigt, bei erneutem klicken, text ausgeblendet
 hilfe.addEventListener("click", erklaerung);
 function erklaerung() {
@@ -17,6 +30,13 @@ function erklaerung() {
     }
     else {
         erklaeren.setAttribute("class", "ausblenden");
+    }
+}
+// Modus: Mensch gegen Mensch/ Mensch gegen Computer auswählen
+mensch.addEventListener("click", switchPic);
+function switchPic() {
+    if (computer.getAttribute("class") == "active") {
+        computer.setAttribute("class", "");
     }
 }
 // Auswahl der Schwierigkeit
@@ -49,6 +69,11 @@ function playleicht() {
         rund.setAttribute("class", "");
         document.querySelector("#rund").innerHTML = stand[0];
     }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
+        mensch.setAttribute("class", "active");
+    }
 }
 // 2. Mittleres Spiel
 mittel.addEventListener("click", playmittel);
@@ -79,6 +104,10 @@ function playmittel() {
         rund.setAttribute("class", "");
         document.querySelector("#rund").innerHTML = stand[0];
     }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
+    }
 }
 // Schweres Spiel
 schwer.addEventListener("click", playschwer);
@@ -108,6 +137,10 @@ function playschwer() {
     if (buttonleicht.getAttribute("class") == "active") {
         rund.setAttribute("class", "");
         document.querySelector("#rund").innerHTML = stand[0];
+    }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
     }
 }
 // Grundlegendes Spielfeld wird erzeugt durch alle Zuweisungen in Klasse Spiel 
@@ -205,7 +238,7 @@ var Spiel = /** @class */ (function () {
         // Gewinnernachricht wird erstellt bzw. Spieler ermittelt und Nachricht erstellt 
         this.gewinnerNachricht = function (gewinner) {
             var gewinnertext = _this.createElement("div", "gewinnertext");
-            gewinnertext.textContent = "Das Spiel ist zu Ende!";
+            gewinnertext.textContent = "Das Spiel ist zu Ende! F\u00FCr neues Spiel: klicke Neustart :)";
             var game = _this.getElement("#game");
             game.append(gewinnertext);
         };
@@ -236,31 +269,44 @@ var TiTaTo3x3 = /** @class */ (function () {
         var _this = this;
         // Spielfeld 3x3 erstellen / Array mit freien Feldern (String), in diese später X und O gesetzt werden
         this.erstelleSpielfeld = function () { return [["", "", ""], ["", "", ""], ["", "", ""]]; };
-        // Regeln, wann Spieler gewinnen kann
+        // Regeln, wann Spieler gewinnen kann, Für jeden Spieler (o und X) definiert
         this.gewonnen = function (reihe, feld) {
             if (
             // Horizontal gewinnen
-            (_this.board[reihe][0] === _this.aktuellerSpieler &&
-                _this.board[reihe][1] === _this.aktuellerSpieler &&
-                _this.board[reihe][2] === _this.aktuellerSpieler) ||
+            (_this.board[reihe][0] === _this.spieler.x &&
+                _this.board[reihe][1] === _this.spieler.x &&
+                _this.board[reihe][2] === _this.spieler.x ||
+                _this.board[reihe][0] === _this.spieler.o &&
+                    _this.board[reihe][1] === _this.spieler.o &&
+                    _this.board[reihe][2] === _this.spieler.o) ||
                 // Vertical gewinnen
-                (_this.board[0][feld] === _this.aktuellerSpieler &&
-                    _this.board[1][feld] === _this.aktuellerSpieler &&
-                    _this.board[2][feld] === _this.aktuellerSpieler) ||
+                (_this.board[0][feld] === _this.spieler.x &&
+                    _this.board[1][feld] === _this.spieler.x &&
+                    _this.board[2][feld] === _this.spieler.x ||
+                    _this.board[0][feld] === _this.spieler.o &&
+                        _this.board[1][feld] === _this.spieler.o &&
+                        _this.board[2][feld] === _this.spieler.o) ||
                 // Diagonal gewinnen
-                ((_this.board[0][0] === _this.aktuellerSpieler &&
-                    _this.board[1][1] === _this.aktuellerSpieler &&
-                    _this.board[2][2] === _this.aktuellerSpieler) ||
-                    (_this.board[2][0] === _this.aktuellerSpieler &&
-                        _this.board[1][1] === _this.aktuellerSpieler &&
-                        _this.board[0][2] === _this.aktuellerSpieler)))
+                ((_this.board[0][0] === _this.spieler.x &&
+                    _this.board[1][1] === _this.spieler.x &&
+                    _this.board[2][2] === _this.spieler.x ||
+                    _this.board[0][0] === _this.spieler.o &&
+                        _this.board[1][1] === _this.spieler.o &&
+                        _this.board[2][2] === _this.spieler.o) ||
+                    (_this.board[2][0] === _this.spieler.x &&
+                        _this.board[1][1] === _this.spieler.x &&
+                        _this.board[0][2] === _this.spieler.x ||
+                        _this.board[2][0] === _this.spieler.o &&
+                            _this.board[1][1] === _this.spieler.o &&
+                            _this.board[0][2] === _this.spieler.o)))
                 return true;
             return false;
         };
         // Klick in ein Spielfeld: Wenn Spielzug möglich, kann aktueller Spieler Stein setzen 
         this.klick = function (reihe, feld) {
             var spielzugMoeglich = _this.board[reihe][feld] === "";
-            if (spielzugMoeglich && !_this.verzug) {
+            // Bei Mensch gegen Mensch wird dieser Teil ausgeführt
+            if (spielzugMoeglich && !_this.verzug && computer.getAttribute("class") == "active") {
                 _this.board[reihe][feld] = _this.aktuellerSpieler;
                 _this.gesSpielfeld.updateSpielfeld(reihe, feld, _this.aktuellerSpieler);
                 // Festlegung was passiert, bei win und unentschieden
@@ -282,6 +328,10 @@ var TiTaTo3x3 = /** @class */ (function () {
                     }
                 }
             }
+            if (computer.getAttribute("class") == "") {
+                index = Math.floor(Math.random() * 9);
+                console.log(index);
+            }
         };
         // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
         this.neuerScore = function () {
@@ -290,6 +340,7 @@ var TiTaTo3x3 = /** @class */ (function () {
         //Anzeigentafel wird erhöht, sodass Computer weiß, welche Runde es ist -> Wann ist Spielende
         this.neuerZeahler = function () {
             _this.tttrunde.gespRunde += 1;
+            // Konsole für den Überblick
             if (_this.tttrunde.gespRunde <= 3) {
                 console.log(_this.tttrunde.gespRunde);
             }
@@ -310,15 +361,7 @@ var TiTaTo3x3 = /** @class */ (function () {
         //Spieler wird nach jeder Runde gewechselt, je nachdem wer gewonnen hat (gewinner beginnt)
         this.tauschePlayer = function () {
             _this.aktuellerSpieler = _this.aktuellerSpieler === _this.spieler.x ? _this.spieler.o : _this.spieler.x;
-            // if (this.spieler.o) {
-            //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
-            //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
-            // }
         };
-        // computer = (): void => {
-        //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
-        //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
-        // }
         // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
         this.neustartSpielfeld = function () {
             if (_this.tttrunde.gespRunde <= 2) {
@@ -356,6 +399,7 @@ var TiTaTo3x3 = /** @class */ (function () {
 /* Spiel beginnen 3x3 (Funktion hinter Klasse, da diese erst deklariert werden muss bevor Nutzung),
 Spielfeld angezeigt bzw. Spielbeginn erst nachdem Schwierigkeits-Button aktiviert. */
 var ticTacToe = new TiTaTo3x3(new Spiel());
+var gaga = [];
 leicht.addEventListener("click", start3x3);
 function start3x3() {
     // Nur wenn der Button aktiv ist, wird das (classe) TicTacToe-Spiel gestartet

@@ -1,4 +1,13 @@
 // Variablen
+var leicht: HTMLElement;
+var mittel: HTMLElement;
+var schwer: HTMLElement;
+
+var hilfe: HTMLElement;
+
+var computer: HTMLElement;
+var mensch: HTMLElement;
+
 var erklaeren: HTMLElement = document.getElementById("erklaerung");
 
 var buttonleicht: HTMLElement = document.getElementById("leicht");
@@ -17,6 +26,12 @@ let index: number = 0;
 // Interface für Spieler & Spielstand & Rundenstand & Spielfeld
 // Spieler bekommt bekommt das X und O als text (string) mitgegeben (Kombination aus Spieler und Spielstand ergibt später Funktionen)
 interface Spieler {
+    x: string;
+    o: string;
+    [key: string]: string;
+}
+// Interface für Computer gegen Mensch, X und O werden zugewiesen
+interface MCSpieler {
     x: string;
     o: string;
     [key: string]: string;
@@ -51,6 +66,16 @@ interface Spielboard {
     gewinnerNachricht(gewinner?: string): void;
 }
 
+// Zuordnung der Variablen
+leicht = document.querySelector("#leicht");
+mittel = document.querySelector("#mittel");
+schwer = document.querySelector("#schwer");
+
+hilfe = document.querySelector("#hilfe");
+
+computer = document.querySelector("#computer");
+mensch = document.querySelector("#mensch2");
+
 // Hilfebutton (Text ein und ausblenden), Bei Klick auf Button wird Erklär-text angezeigt, bei erneutem klicken, text ausgeblendet
 hilfe.addEventListener("click", erklaerung);
 
@@ -59,6 +84,15 @@ function erklaerung(): void {
         erklaeren.setAttribute("class", "");
     } else {
         erklaeren.setAttribute("class", "ausblenden");
+    }
+}
+
+// Modus: Mensch gegen Mensch/ Mensch gegen Computer auswählen
+mensch.addEventListener("click", switchPic);
+
+function switchPic(): void {
+    if (computer.getAttribute("class") == "active") {
+        computer.setAttribute("class", "");
     }
 }
 
@@ -90,8 +124,14 @@ function playleicht(): void {
     // Aktuelle Runde wird angezeit (Links, oben im Eck)
     if (buttonleicht.getAttribute("class") == "active") {
         rund.setAttribute("class", "");
-        document.querySelector("#rund").innerHTML = stand[0];   
+        document.querySelector("#rund").innerHTML = stand[0];
     }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
+        mensch.setAttribute("class", "active");
+    }
+
 }
 // 2. Mittleres Spiel
 mittel.addEventListener("click", playmittel);
@@ -120,7 +160,11 @@ function playmittel(): void {
     // Aktuelle Runde wird angezeit (Links, oben im Eck)
     if (buttonleicht.getAttribute("class") == "active") {
         rund.setAttribute("class", "");
-        document.querySelector("#rund").innerHTML = stand[0]; 
+        document.querySelector("#rund").innerHTML = stand[0];
+    }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
     }
 }
 // Schweres Spiel
@@ -150,7 +194,11 @@ function playschwer(): void {
     // Aktuelle Runde wird angezeit (Links, oben im Eck)
     if (buttonleicht.getAttribute("class") == "active") {
         rund.setAttribute("class", "");
-        document.querySelector("#rund").innerHTML = stand[0]; 
+        document.querySelector("#rund").innerHTML = stand[0];
+    }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonleicht.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
     }
 }
 
@@ -282,7 +330,7 @@ class Spiel implements Spielboard {
     gewinnerNachricht = (gewinner: string): void => {
         const gewinnertext: HTMLElement = this.createElement("div", "gewinnertext");
 
-        gewinnertext.textContent = `Das Spiel ist zu Ende!`;
+        gewinnertext.textContent = `Das Spiel ist zu Ende! Für neues Spiel: klicke Neustart :)`;
 
         const game: HTMLElement = this.getElement("#game");
         game.append(gewinnertext);
@@ -316,24 +364,36 @@ class TiTaTo3x3 {
     }
     // Spielfeld 3x3 erstellen / Array mit freien Feldern (String), in diese später X und O gesetzt werden
     erstelleSpielfeld = (): Array<Array<string>> => [["", "", ""], ["", "", ""], ["", "", ""]];
-    // Regeln, wann Spieler gewinnen kann
+    // Regeln, wann Spieler gewinnen kann, Für jeden Spieler (o und X) definiert
     gewonnen = (reihe: number, feld: number): boolean => {
         if (
             // Horizontal gewinnen
-            (this.board[reihe][0] === this.aktuellerSpieler &&
-                this.board[reihe][1] === this.aktuellerSpieler &&
-                this.board[reihe][2] === this.aktuellerSpieler) ||
+            (this.board[reihe][0] === this.spieler.x &&
+                this.board[reihe][1] === this.spieler.x &&
+                this.board[reihe][2] === this.spieler.x ||
+                this.board[reihe][0] === this.spieler.o &&
+                this.board[reihe][1] === this.spieler.o &&
+                this.board[reihe][2] === this.spieler.o) ||
             // Vertical gewinnen
-            (this.board[0][feld] === this.aktuellerSpieler &&
-                this.board[1][feld] === this.aktuellerSpieler &&
-                this.board[2][feld] === this.aktuellerSpieler) ||
+            (this.board[0][feld] === this.spieler.x &&
+                this.board[1][feld] === this.spieler.x &&
+                this.board[2][feld] === this.spieler.x ||
+                this.board[0][feld] === this.spieler.o &&
+                this.board[1][feld] === this.spieler.o &&
+                this.board[2][feld] === this.spieler.o) ||
             // Diagonal gewinnen
-            ((this.board[0][0] === this.aktuellerSpieler &&
-                this.board[1][1] === this.aktuellerSpieler &&
-                this.board[2][2] === this.aktuellerSpieler) ||
-                (this.board[2][0] === this.aktuellerSpieler &&
-                    this.board[1][1] === this.aktuellerSpieler &&
-                    this.board[0][2] === this.aktuellerSpieler))
+            ((this.board[0][0] === this.spieler.x &&
+                this.board[1][1] === this.spieler.x &&
+                this.board[2][2] === this.spieler.x ||
+                this.board[0][0] === this.spieler.o &&
+                this.board[1][1] === this.spieler.o &&
+                this.board[2][2] === this.spieler.o) ||
+                (this.board[2][0] === this.spieler.x &&
+                    this.board[1][1] === this.spieler.x &&
+                    this.board[0][2] === this.spieler.x ||
+                    this.board[2][0] === this.spieler.o &&
+                    this.board[1][1] === this.spieler.o &&
+                    this.board[0][2] === this.spieler.o))
         )
             return true;
         return false;
@@ -348,7 +408,8 @@ class TiTaTo3x3 {
     klick = (reihe: number, feld: number) => {
         const spielzugMoeglich: boolean = this.board[reihe][feld] === "";
 
-        if (spielzugMoeglich && !this.verzug) {
+        // Bei Mensch gegen Mensch wird dieser Teil ausgeführt
+        if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
             this.board[reihe][feld] = this.aktuellerSpieler;
             this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
 
@@ -368,23 +429,25 @@ class TiTaTo3x3 {
                     this.tauschePlayer();
                 }
             }
-        }
-    }
+        }  
+        if (computer.getAttribute("class") == "") {
+            index = Math.floor(Math.random() * 9);
+            console.log(index);
 
+        }      
+    }
     // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
     neuerScore = (): void => {
         this.score[this.aktuellerSpieler] += 1;
-
     }
-
     //Anzeigentafel wird erhöht, sodass Computer weiß, welche Runde es ist -> Wann ist Spielende
     neuerZeahler = (): void => {
         this.tttrunde.gespRunde += 1;
+        // Konsole für den Überblick
         if (this.tttrunde.gespRunde <= 3) {
             console.log(this.tttrunde.gespRunde);
         }
     }
-
     // Verzug der löschung nach Spielende, damit Nachricht gelesen werden kann 
     spielEnde = (gewinner?: string) => {
         this.verzug = true;
@@ -398,26 +461,11 @@ class TiTaTo3x3 {
             this.verzug = false;
             // tslint:disable-next-line: align -> Formatierung verschiebt sich jedes mal, daher Auskommentiert
         }, this.verzugzeit);
-
-
     }
     //Spieler wird nach jeder Runde gewechselt, je nachdem wer gewonnen hat (gewinner beginnt)
-
-
     tauschePlayer = (): void => {
         this.aktuellerSpieler = this.aktuellerSpieler === this.spieler.x ? this.spieler.o : this.spieler.x;
-        // if (this.spieler.o) {
-        //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
-        //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
-        // }
     }
-
-    // computer = (): void => {
-    //     index =  Math.floor(Math.random() * this.erstelleSpielfeld.length);
-    //     this.erstelleSpielfeld[index].buttondiv.innerHTML = this.spieler.o;
-    // }
-
-
     // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
     neustartSpielfeld = (): void => {
         if (this.tttrunde.gespRunde <= 2) {
@@ -435,17 +483,18 @@ class TiTaTo3x3 {
     }
 }
 
-
 /* Spiel beginnen 3x3 (Funktion hinter Klasse, da diese erst deklariert werden muss bevor Nutzung),
 Spielfeld angezeigt bzw. Spielbeginn erst nachdem Schwierigkeits-Button aktiviert. */
 var ticTacToe: TiTaTo3x3 = new TiTaTo3x3(new Spiel());
+var gaga: HTMLDivElement[] = [];
 
 leicht.addEventListener("click", start3x3);
+
 
 function start3x3(): void {
     // Nur wenn der Button aktiv ist, wird das (classe) TicTacToe-Spiel gestartet
     if (buttonleicht.getAttribute("class") == "active" && erklaeren.getAttribute("class") == "ausblenden") {
         ticTacToe.startSpiel();
     }
-}
 
+}
