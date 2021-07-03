@@ -6,6 +6,7 @@ body {
 }
 
 /* Texte Überschrift */
+
 h1 {
     text-align: center;
     color: white;
@@ -19,6 +20,7 @@ h1 {
 }
 
 /* Hintergrunddeko (Kreise) */
+
 #kreis {
     background-color: rgb(114, 189, 192);
     width: 530px;
@@ -63,7 +65,9 @@ h1 {
     margin-top: -700px;
     margin-left: 850px;
 }
+
 /* Neustart-Button */
+
 #neustart {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -80,11 +84,13 @@ h1 {
     vertical-align: middle;
     position: absolute;
 }
+
 #neustart:hover {
     background-color: rgb(42, 97, 99);
 }
 
 /* Hilfe-Button */
+
 h2 {
     color: white;
     font-size: 50px;
@@ -138,6 +144,7 @@ h2:hover {
 }
 
 /* Bilder */
+
 img {
     height: 100px;
     width: 100px;
@@ -152,7 +159,7 @@ img {
     border: 4px solid rgb(73, 126, 129);
 }
 
-#computer{
+#computer {
     position: absolute;
     top: 24%;
     left: 38%;
@@ -170,20 +177,21 @@ img {
     border: 4px solid rgb(73, 126, 129);
 }
 
-#mensch2:hover{
+#mensch2:hover {
     border: 4px solid rgb(42, 97, 99);
 }
 
-#computer.active{
+#computer.active {
     display: none;
-    pointer-events:none;
+    pointer-events: none;
 }
 
-#mensch2.active{
-    pointer-events:none;
+#mensch2.active {
+    pointer-events: none;
 }
 
 /* Spielfiguren*/
+
 #player1 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -215,6 +223,7 @@ img {
 }
 
 /* Button für Schwierigkeit */
+
 #leicht {
     display: flex;
     position: absolute;
@@ -301,17 +310,19 @@ img {
     text-align: center;
 }
 
-#l.active, #m.active, #s.active{
+#l.active, #m.active, #s.active {
     display: none;
 }
 
 /* Aktivieren des Spielfeldes (3x3, 4x4, 5x5)*/
-#leicht.active, #mittel.active, #schwer.active   {
+
+#leicht.active, #mittel.active, #schwer.active {
     display: none;
 }
 
 /* Rundenstand */
-#rund{
+
+#rund {
     color: white;
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
@@ -319,11 +330,13 @@ img {
     margin-left: 395px;
     position: fixed;
 }
-#rund.active{
+
+#rund.active {
     display: none;
 }
 
 /* Spielfeld */
+
 #game {
     max-width: 550px;
     margin: 0 auto;
@@ -332,7 +345,7 @@ img {
     margin-top: 50px;
 }
 
-.feld, .feld4x4  {
+.feld, .feld4x4, .feld5x5 {
     border: 3px solid white;
     margin: 5px;
     height: 80px;
@@ -343,24 +356,25 @@ img {
     top: 20px;
 }
 
-.feld:hover {
+.feld:hover, .feld4x4:hover, .feld5x5:hover {
     border: 3px solid rgb(42, 97, 99);
 }
 
-.reihe, .feld, .reihe4x4, .feld4x4  {
+.reihe, .feld, .reihe4x4, .feld4x4, .reihe5x5, .feld5x5 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* Spielsteine x und o (welche in Spielfeld gesetzt werden)*/
-.x, .o, .x4x4, .o4x4 {
+
+.x, .o {
     color: rgb(42, 97, 99);
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif
 }
 
-.score, .score4x4 {
+.score, .score4x4, .score5x5 {
     margin: 1rem 0;
     text-align: center;
     margin-top: -80px;
@@ -368,7 +382,7 @@ img {
     margin-left: 200px;
 }
 
-.tttrunde, .tttrunde4x4 {
+.tttrunde, .tttrunde4x4, .tttrunde5x5 {
     margin: 1rem 0;
     text-align: center;
     margin-top: -150px;
@@ -431,7 +445,8 @@ footer {
 }
 
 /* Gewinner-, Verlierer- oder Unentschieden- Message */
-.info, .info4x4 {
+
+.info, .info4x4, .info5x5 {
     margin: 2rem 0;
     text-align: center;
     color: rgb(42, 97, 99);
@@ -442,7 +457,7 @@ footer {
     margin-left: 120px;
 }
 
-.gewinnertext, .gewinnertext4x4 {
+.gewinnertext {
     margin: 2rem 0;
     text-align: center;
     color: rgb(42, 97, 99);
@@ -455,6 +470,34 @@ footer {
     height: 285px;
     width: 320px;
     border: 3px solid rgb(42, 97, 99);
-    
 }
 
+.gewinnertext4x4 {
+    margin: 2rem 0;
+    text-align: center;
+    color: rgb(42, 97, 99);
+    background-color: cadetblue;
+    font-size: 49px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 80px;
+    height: 370px;
+    width: 390px;
+    border: 3px solid rgb(42, 97, 99);
+}
+
+.gewinnertext5x5 {
+    margin: 2rem 0;
+    text-align: center;
+    color: rgb(42, 97, 99);
+    background-color: cadetblue;
+    font-size: 49px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 40px;
+    height: 465px;
+    width: 470px;
+    border: 3px solid rgb(42, 97, 99);
+}

@@ -1,3 +1,38 @@
+// Auswahl der Schwierigkeit Mittleres Spiel
+mittel.addEventListener("click", playmittel);
+function playmittel() {
+    // Bei Auswahl des Buttons verschwindet dieser + die beiden anderen (und passendes Spielfeld erschein, durch Ts später)
+    if (buttonmittel.getAttribute("class") == "active" && m.getAttribute("class") == "active") {
+        buttonmittel.setAttribute("class", "");
+        buttonleicht.setAttribute("class", "");
+        buttonschwer.setAttribute("class", "");
+        m.setAttribute("class", "");
+        l.setAttribute("class", "");
+        s.setAttribute("class", "");
+    }
+    else {
+        buttonmittel.setAttribute("class", "active");
+        buttonleicht.setAttribute("class", "active");
+        buttonschwer.setAttribute("class", "active");
+        m.setAttribute("class", "active");
+        l.setAttribute("class", "active");
+        s.setAttribute("class", "active");
+    }
+    // Bei aktivieren des Spieles wird automatisch die Erklärung ausgeblendet
+    if (buttonmittel.getAttribute("class") == "active") {
+        erklaeren.setAttribute("class", "ausblenden");
+    }
+    // Aktuelle Runde wird angezeit (Links, oben im Eck)
+    if (buttonmittel.getAttribute("class") == "active") {
+        rund.setAttribute("class", "");
+        document.querySelector("#rund").innerHTML = stand[0];
+    }
+    // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
+    if (buttonmittel.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
+        computer.parentNode.removeChild(computer);
+        mensch.setAttribute("class", "active");
+    }
+}
 // Grundlegendes Spielfeld wird erzeugt durch alle Zuweisungen in Klasse Spiel 
 var Spiel4x4 = /** @class */ (function () {
     function Spiel4x4() {
