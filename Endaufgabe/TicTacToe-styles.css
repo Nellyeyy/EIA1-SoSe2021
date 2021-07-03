@@ -332,7 +332,7 @@ img {
     margin-top: 50px;
 }
 
-.feld {
+.feld, .feld4x4  {
     border: 3px solid white;
     margin: 5px;
     height: 80px;
@@ -347,26 +347,28 @@ img {
     border: 3px solid rgb(42, 97, 99);
 }
 
-.reihe, .feld {
+.reihe, .feld, .reihe4x4, .feld4x4  {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* Spielsteine x und o (welche in Spielfeld gesetzt werden)*/
-.x, .o {
+.x, .o, .x4x4, .o4x4 {
     color: rgb(42, 97, 99);
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif
 }
 
-.score {
+.score, .score4x4 {
     margin: 1rem 0;
     text-align: center;
     margin-top: -80px;
+    position: fixed;
+    margin-left: 200px;
 }
 
-.tttrunde {
+.tttrunde, .tttrunde4x4 {
     margin: 1rem 0;
     text-align: center;
     margin-top: -150px;
@@ -429,7 +431,7 @@ footer {
 }
 
 /* Gewinner-, Verlierer- oder Unentschieden- Message */
-.info {
+.info, .info4x4 {
     margin: 2rem 0;
     text-align: center;
     color: rgb(42, 97, 99);
@@ -440,7 +442,7 @@ footer {
     margin-left: 120px;
 }
 
-.gewinnertext {
+.gewinnertext, .gewinnertext4x4 {
     margin: 2rem 0;
     text-align: center;
     color: rgb(42, 97, 99);
@@ -448,7 +450,7 @@ footer {
     font-size: 49px;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    margin-top: 9px;
+    margin-top: 5px;
     margin-left: 120px;
     height: 285px;
     width: 320px;

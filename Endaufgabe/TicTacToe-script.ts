@@ -30,12 +30,6 @@ interface Spieler {
     o: string;
     [key: string]: string;
 }
-// Interface für Computer gegen Mensch, X und O werden zugewiesen
-interface MCSpieler {
-    x: string;
-    o: string;
-    [key: string]: string;
-}
 // Spielstand bekommt bekommt das X und O als Nummer mitgegeben (Kombination aus Spieler und Spielstand ergibt später Funktionen)
 interface Spielstand {
     x: number;
@@ -165,9 +159,10 @@ function playmittel(): void {
     // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
     if (buttonmittel.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
         computer.parentNode.removeChild(computer);
+        mensch.setAttribute("class", "active");
     }
 }
-// Schweres Spiel
+// 3. Schweres Spiel
 schwer.addEventListener("click", playschwer);
 
 function playschwer(): void {
@@ -199,6 +194,7 @@ function playschwer(): void {
     // Wenn Schwierigkeit ausgewählt, kann der Spielmodus (Mensch vs. Mensch bzw. Mensch vs. Computer) nicht mehr ausgewählt werden
     if (buttonschwer.getAttribute("class") == "active" && computer.getAttribute("class") == "active") {
         computer.parentNode.removeChild(computer);
+        mensch.setAttribute("class", "active");
     }
 }
 
@@ -363,6 +359,7 @@ class TiTaTo3x3 {
     }
     // Spielfeld 3x3 erstellen / Array mit freien Feldern (String), in diese später X und O gesetzt werden
     erstelleSpielfeld = (): Array<Array<string>> => [["", "", ""], ["", "", ""], ["", "", ""]];
+
     // Regeln, wann Spieler gewinnen kann, Für jeden Spieler (o und X) definiert
     gewonnen = (reihe: number, feld: number): boolean => {
         if (
@@ -394,10 +391,11 @@ class TiTaTo3x3 {
     // Klick in ein Spielfeld: Wenn Spielzug möglich, kann aktueller Spieler Stein setzen 
     klick = (reihe: number, feld: number) => {
         const spielzugMoeglich: boolean = this.board[reihe][feld] === "";
-        // Bei Mensch gegen Mensch wird dieser Teil ausgeführt
-        if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
+
+        if (spielzugMoeglich && !this.verzug) {
             this.board[reihe][feld] = this.aktuellerSpieler;
             this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
+
             // Festlegung was passiert, bei win und unentschieden
             const win: boolean = this.gewonnen(reihe, feld);
             const unentschieden: string[][] = this.board
@@ -415,28 +413,29 @@ class TiTaTo3x3 {
                 }
             }
         }
-        // // Bei Computer gegen Mensch wird dieser Teil ausgeführt
-        // if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
-        //     this.board[reihe][feld] = this.aktuellerSpieler;
-        //     this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
-        //     // Festlegung was passiert, bei win und unentschieden
-        //     const win: boolean = this.gewonnen(reihe, feld);
-        //     const unentschieden: string[][] = this.board
-        //         .map(reihe => reihe.filter(feld => feld === ""))
-        //         .filter(reihe => reihe.length > 0);
-        //     if (!this.verzug) {
-        //         if (win) {
-        //             this.neuerScore();
-        //             this.gesSpielfeld.addPunkte(this.score, this.aktuellerSpieler);
-        //             this.spielEnde(this.aktuellerSpieler);
-        //         } else if (unentschieden.length < 1) {
-        //             this.spielEnde();
-        //         } else {
-        //             this.tauschePlayer();
-        //         }
-        //     }
-        // }
     }
+    // // Bei Computer gegen Mensch wird dieser Teil ausgeführt
+    // if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
+    //     this.board[reihe][feld] = this.aktuellerSpieler;
+    //     this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
+    //     // Festlegung was passiert, bei win und unentschieden
+    //     const win: boolean = this.gewonnen(reihe, feld);
+    //     const unentschieden: string[][] = this.board
+    //         .map(reihe => reihe.filter(feld => feld === ""))
+    //         .filter(reihe => reihe.length > 0);
+    //     if (!this.verzug) {
+    //         if (win) {
+    //             this.neuerScore();
+    //             this.gesSpielfeld.addPunkte(this.score, this.aktuellerSpieler);
+    //             this.spielEnde(this.aktuellerSpieler);
+    //         } else if (unentschieden.length < 1) {
+    //             this.spielEnde();
+    //         } else {
+    //             this.tauschePlayer();
+    //         }
+    //     }
+    // }
+
     // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
     neuerScore = (): void => {
         this.score[this.aktuellerSpieler] += 1;
@@ -504,149 +503,154 @@ function start3x3(): void {
     }
 }
 
-// Mittleres Spiel spielen
-/* Klasse für Spiel 4x4 -> welches nach Abruf der Funktion ausgeführt wird (Spielboard, Spieler und Spielstand aus Interface), 
-Spielboard erhält die oben definierte Klasse Spiel*/
-class TiTaTo4x4 {
-    gesSpielfeld: Spielboard;
-    spieler: Spieler;
-    score: Spielstand;
-    tttrunde: Runden;
-    board: Array<Array<string>>;
-    aktuellerSpieler: string;
-    // Verzug, damit Nachricht lesbar und Enspielstand gesehen werden kann 
-    verzugzeit: number;
-    verzug: boolean;
-    // Zuweisungen/ Inhalt für Klasse TiTaTo4x4
-    constructor(gesSpielfeld: Spielboard) {
-        this.gesSpielfeld = gesSpielfeld;
-        this.board = this.erstelleSpielfeld();
-        this.spieler = { x: "x", o: "o" };
-        this.score = { x: 0, o: 0 };
-        this.tttrunde = { gespRunde: 1, gesRunden: 4};
-        this.aktuellerSpieler = this.spieler.x;
-        this.gesSpielfeld.klick(this.klick);
-        this.verzugzeit = 1000;
-        this.verzug = false;
-    }
-    // Spielfeld 4x4 erstellen / Array mit freien Feldern (String), in diese später X und O gesetzt werden
-    erstelleSpielfeld = (): Array<Array<string>> => [["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""]];
-    // Regeln, wann Spieler gewinnen kann, Für jeden Spieler (o und X) definiert
-    gewonnen = (reihe: number, feld: number): boolean => {
-        if (
-            // Horizontal gewinnen
-            (this.board[reihe][0] === this.spieler.x &&
-                this.board[reihe][1] === this.spieler.x &&
-                this.board[reihe][2] === this.spieler.x &&
-                this.board[reihe][3] === this.spieler.x) ||
-            // Vertical gewinnen
-            (this.board[0][feld] === this.spieler.x &&
-                this.board[1][feld] === this.spieler.x &&
-                this.board[2][feld] === this.spieler.x &&
-                this.board[3][feld] === this.spieler.x) ||
-            // Diagonal gewinnen
-            ((this.board[0][0] === this.spieler.x &&
-                this.board[1][1] === this.spieler.x &&
-                this.board[2][2] === this.spieler.x &&
-                this.board[3][3] === this.spieler.x) ||
-                (this.board[3][0] === this.spieler.x &&
-                    this.board[2][1] === this.spieler.x &&
-                    this.board[2][2] === this.spieler.x &&
-                    this.board[0][3] === this.spieler.x))
-        )
-            return true;
-        return false;
-    }
-    // Spielfeld und Punktestand positionieren
-    startSpiel(): void {
-        this.gesSpielfeld.punktestand(this.score);
-        this.gesSpielfeld.getSpielfeld(this.board);
-        this.gesSpielfeld.rundenstand(this.tttrunde);
-    }
-    // Klick in ein Spielfeld: Wenn Spielzug möglich, kann aktueller Spieler Stein setzen 
-    klick = (reihe: number, feld: number) => {
-        const spielzugMoeglich: boolean = this.board[reihe][feld] === "";
 
-        // Bei Mensch gegen Mensch wird dieser Teil ausgeführt
-        if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
-            this.board[reihe][feld] = this.aktuellerSpieler;
-            this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
 
-            // Festlegung was passiert, bei win und unentschieden
-            const win: boolean = this.gewonnen(reihe, feld);
-            const unentschieden: string[][] = this.board
-                .map(reihe => reihe.filter(feld => feld === ""))
-                .filter(reihe => reihe.length > 0);
-            if (!this.verzug) {
-                if (win) {
-                    this.neuerScore();
-                    this.gesSpielfeld.addPunkte(this.score, this.aktuellerSpieler);
-                    this.spielEnde(this.aktuellerSpieler);
-                } else if (unentschieden.length < 1) {
-                    this.spielEnde();
-                } else {
-                    this.tauschePlayer();
-                }
-            }
-        }
-    }
-    // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
-    neuerScore = (): void => {
-        this.score[this.aktuellerSpieler] += 1;
-    }
-    //Anzeigentafel wird erhöht, sodass Computer weiß, welche Runde es ist -> Wann ist Spielende
-    neuerZeahler = (): void => {
-        this.tttrunde.gespRunde += 1;
-        // Konsole für den Überblick
-        if (this.tttrunde.gespRunde <= 4) {
-            console.log(this.tttrunde.gespRunde);
-        }
-    }
-    // Verzug der löschung nach Spielende, damit Nachricht gelesen werden kann 
-    spielEnde = (gewinner?: string) => {
-        this.verzug = true;
-        this.gesSpielfeld.nachricht(gewinner);
-        if (this.tttrunde.gespRunde == 4) {
-            this.gesSpielfeld.gewinnerNachricht(gewinner);
-        }
-        setTimeout(() => {
-            this.neustartSpielfeld();
-            this.verzug = false;
-            // tslint:disable-next-line: align -> Formatierung verschiebt sich jedes mal, daher Auskommentiert
-        }, this.verzugzeit);
-    }
-    //Spieler nach jedem Zug tauschen
-    tauschePlayer = (): void => {
-        this.aktuellerSpieler = this.aktuellerSpieler === this.spieler.x ? this.spieler.o : this.spieler.x;
-    }
-    // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
-    neustartSpielfeld = (): void => {
-        if (this.tttrunde.gespRunde <= 3) {
-            this.gesSpielfeld.clearNachricht();
-            this.gesSpielfeld.neustart();
-            this.board = this.erstelleSpielfeld();
-            this.neuerZeahler();
-        }
-        // Zählerstand wird erhöht (Links oben - Halbkreis)
-        if (this.tttrunde.gespRunde == 2) {
-            document.querySelector("#rund").innerHTML = stand[1];
-        } else if (this.tttrunde.gespRunde == 3) {
-            document.querySelector("#rund").innerHTML = stand[2];
-        } else if (this.tttrunde.gespRunde == 4) {
-            document.querySelector("#rund").innerHTML = stand[3];
-        }
-    }
-}
 
-/* Spiel beginnen 4x4 (Funktion hinter Klasse, da diese erst deklariert werden muss bevor Nutzung),
-Spielfeld angezeigt bzw. Spielbeginn erst nachdem Schwierigkeits-Button aktiviert. */
-var ticTacToe4x4: TiTaTo4x4 = new TiTaTo4x4(new Spiel());
 
-mittel.addEventListener("click", start4x4);
+// // // Mittleres Spiel spielen
+// // /* Klasse für Spiel 4x4 -> welches nach Abruf der Funktion ausgeführt wird (Spielboard, Spieler und Spielstand aus Interface), 
+// // Spielboard erhält die oben definierte Klasse Spiel*/
+// // class TiTaTo4x4 {
+// //     gesSpielfeld: Spielboard;
+// //     spieler: Spieler;
+// //     score: Spielstand;
+// //     tttrunde: Runden;
+// //     board: Array<Array<string>>;
+// //     aktuellerSpieler: string;
+// //     // Verzug, damit Nachricht lesbar und Enspielstand gesehen werden kann 
+// //     verzugzeit: number;
+// //     verzug: boolean;
+// //     // Zuweisungen/ Inhalt für Klasse TiTaTo4x4
+// //     constructor(gesSpielfeld: Spielboard) {
+// //         this.gesSpielfeld = gesSpielfeld;
+// //         this.board = this.erstelleSpielfeld4x4();
+// //         this.spieler = { x: "x", o: "o" };
+// //         this.score = { x: 0, o: 0 };
+// //         this.tttrunde = { gespRunde: 1, gesRunden: 3 };
+// //         this.aktuellerSpieler = this.spieler.x;
+// //         this.verzugzeit = 1000;
+// //         this.verzug = false;
+// //     }
+// //     // Spielfeld 4x4 erstellen / Array mit freien Feldern (String), in diese später X und O gesetzt werden
+// //     erstelleSpielfeld4x4 = (): Array<Array<string>> => [["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""]];
+// //     // Regeln, wann Spieler gewinnen kann, Für jeden Spieler (o und X) definiert
+// //     gewonnen4x4 = (reihe: number, feld: number): boolean => {
+// //         if (
+// //             // Horizontal gewinnen
+// //             (this.board[reihe][0] === this.aktuellerSpieler &&
+// //                 this.board[reihe][1] === this.aktuellerSpieler &&
+// //                 this.board[reihe][2] === this.aktuellerSpieler &&
+// //                 this.board[reihe][3] === this.aktuellerSpieler) ||
+// //             // Vertical gewinnen
+// //             (this.board[0][feld] === this.aktuellerSpieler &&
+// //                 this.board[1][feld] === this.aktuellerSpieler &&
+// //                 this.board[2][feld] === this.aktuellerSpieler &&
+// //                 this.board[3][feld] === this.aktuellerSpieler) ||
+// //             // Diagonal gewinnen
+// //             ((this.board[0][0] === this.aktuellerSpieler &&
+// //                 this.board[1][1] === this.aktuellerSpieler &&
+// //                 this.board[2][2] === this.aktuellerSpieler  &&
+// //                 this.board[3][3] === this.aktuellerSpieler) ||
+// //                 (this.board[3][0] === this.aktuellerSpieler &&
+// //                     this.board[1][2] === this.aktuellerSpieler &&
+// //                     this.board[2][2] === this.aktuellerSpieler &&
+// //                     this.board[0][3] === this.aktuellerSpieler))
+// //         )
+// //             return true;
+// //         return false;
+// //     }
+// //     // Spielfeld und Punktestand positionieren
+// //     startSpiel(): void {
+// //         this.gesSpielfeld.punktestand(this.score);
+// //         this.gesSpielfeld.getSpielfeld(this.board);
+// //         this.gesSpielfeld.rundenstand(this.tttrunde);
+// //     }
+// //        // Klick in ein Spielfeld: Wenn Spielzug möglich, kann aktueller Spieler Stein setzen 
+// //        klick = (reihe: number, feld: number) => {
+// //         const spielzugMoeglich: boolean = this.board[reihe][feld] === "";
 
-function start4x4(): void {
-    // Nur wenn der Button aktiv ist, wird das (classe) TicTacToe-Spiel gestartet
-    if (buttonmittel.getAttribute("class") == "active" && erklaeren.getAttribute("class") == "ausblenden") {
-        ticTacToe4x4.startSpiel();
-    }
-}
+// //         if (spielzugMoeglich && !this.verzug) {
+// //             this.board[reihe][feld] = this.aktuellerSpieler;
+// //             this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
+
+// //             // Festlegung was passiert, bei win und unentschieden
+// //             const win: boolean = this.gewonnen4x4(reihe, feld);
+// //             const unentschieden: string[][] = this.board
+// //                 .map(reihe => reihe.filter(feld => feld === ""))
+// //                 .filter(reihe => reihe.length > 0);
+// //             if (!this.verzug) {
+// //                 if (win) {
+// //                     this.neuerScore();
+// //                     this.gesSpielfeld.addPunkte(this.score, this.aktuellerSpieler);
+// //                     this.spielEnde(this.aktuellerSpieler);
+// //                 } else if (unentschieden.length < 1) {
+// //                     this.spielEnde();
+// //                 } else {
+// //                     this.tauschePlayer();
+// //                 }
+// //             }
+// //         }
+// //     }
+   
+// //     // Die Punktzahl des Gewinners werden in seinen Score eingetragen +1, Runden werden in Rundenanzeige ahtualisiert +1
+// //     neuerScore = (): void => {
+// //         this.score[this.aktuellerSpieler] += 1;
+// //     }
+// //     //Anzeigentafel wird erhöht, sodass Computer weiß, welche Runde es ist -> Wann ist Spielende
+// //     neuerZeahler = (): void => {
+// //         this.tttrunde.gespRunde += 1;
+// //         // Konsole für den Überblick
+// //         if (this.tttrunde.gespRunde <= 4) {
+// //             console.log(this.tttrunde.gespRunde);
+// //         }
+// //     }
+// //     // Verzug der löschung nach Spielende, damit Nachricht gelesen werden kann 
+// //     spielEnde = (gewinner?: string) => {
+// //         this.verzug = true;
+// //         this.gesSpielfeld.nachricht(gewinner);
+// //         if (this.tttrunde.gespRunde == 4) {
+// //             this.gesSpielfeld.gewinnerNachricht(gewinner);
+// //         }
+// //         setTimeout(() => {
+// //             this.neustartSpielfeld();
+// //             this.verzug = false;
+// //             // tslint:disable-next-line: align -> Formatierung verschiebt sich jedes mal, daher Auskommentiert
+// //         }, this.verzugzeit);
+// //     }
+// //     //Spieler nach jedem Zug tauschen
+// //     tauschePlayer = (): void => {
+// //         this.aktuellerSpieler = this.aktuellerSpieler === this.spieler.x ? this.spieler.o : this.spieler.x;
+// //     }
+     
+// //     // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
+// //     neustartSpielfeld = (): void => {
+// //         if (this.tttrunde.gespRunde <= 2) {
+// //             this.gesSpielfeld.clearNachricht();
+// //             this.gesSpielfeld.neustart();
+// //             this.board = this.erstelleSpielfeld4x4();
+// //             this.neuerZeahler();
+// //         }
+// //         // Zählerstand wird erhöht (Links oben - Halbkreis)
+// //         if (this.tttrunde.gespRunde == 2) {
+// //             document.querySelector("#rund").innerHTML = stand[1];
+// //         } else if (this.tttrunde.gespRunde == 3) {
+// //             document.querySelector("#rund").innerHTML = stand[2];
+// //         } else if (this.tttrunde.gespRunde == 4) {
+// //             document.querySelector("#rund").innerHTML = stand[3];
+// //         }
+// //     }
+// // }
+
+// // /* Spiel beginnen 4x4 (Funktion hinter Klasse, da diese erst deklariert werden muss bevor Nutzung),
+// // Spielfeld angezeigt bzw. Spielbeginn erst nachdem Schwierigkeits-Button aktiviert. */
+// // var ticTacToe4: TiTaTo4x4 = new TiTaTo4x4(new Spiel());
+
+// // mittel.addEventListener("click", start4x4);
+
+// // function start4x4(): void {
+// //     // Nur wenn der Button aktiv ist, wird das (classe) TicTacToe-Spiel gestartet
+// //     if (buttonmittel.getAttribute("class") == "active" && erklaeren.getAttribute("class") == "ausblenden") {
+// //         ticTacToe4.startSpiel();
+// //     }
+// // }
+
