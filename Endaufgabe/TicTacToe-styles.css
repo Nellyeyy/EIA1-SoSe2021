@@ -369,11 +369,13 @@ img {
 .tttrunde {
     margin: 1rem 0;
     text-align: center;
-    margin-top: -440px;
+    margin-top: -150px;
+    margin-left: 210px;
     font-size: 15px;
     color: white;
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
 }
 
 /* Flowchart und Design */
