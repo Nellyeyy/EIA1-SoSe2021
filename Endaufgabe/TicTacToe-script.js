@@ -250,6 +250,8 @@ var TiTaTo3x3 = /** @class */ (function () {
         // // Bei Computer gegen Mensch wird dieser Teil ausgeführt VERSUCH
         // if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
         //     this.board[reihe][feld] = this.aktuellerSpieler;
+        //      for (this.spieler.x) {
+        //          zugComputer}
         //     this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
         //     // Festlegung was passiert, bei win und unentschieden
         //     const win: boolean = this.gewonnen(reihe, feld);
@@ -293,15 +295,14 @@ var TiTaTo3x3 = /** @class */ (function () {
                 // tslint:disable-next-line: align -> Formatierung verschiebt sich jedes mal, daher Auskommentiert
             }, _this.verzugzeit);
         };
-        //Spieler nach jedem Zug tauschen
+        //Spieler nach jedem Zug tauschen 
         this.tauschePlayer = function () {
             _this.aktuellerSpieler = _this.aktuellerSpieler === _this.spieler.x ? _this.spieler.o : _this.spieler.x;
         };
         // VERSUCH Computerzug
         // zugComputer = (): void => {
-        //         // this.spieler.x =
-        //         index = Math.floor(Math.random() * 9);
-        //         console.log(index);
+        //    index = Math.floor(Math.random() * bord-length);
+        //    bord[index].innerDivElement.setAttribut = this.spieler.x
         //     }
         // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
         this.neustartSpielfeld = function () {
@@ -334,6 +335,8 @@ var TiTaTo3x3 = /** @class */ (function () {
         this.gesSpielfeld.punktestand(this.score);
         this.gesSpielfeld.getSpielfeld(this.board);
         this.gesSpielfeld.rundenstand(this.tttrunde);
+        // index = Math.floor(Math.random() * board.length);
+        //    bord[index].innerHTML.setAttribut = this.spieler.x;
     };
     return TiTaTo3x3;
 }());

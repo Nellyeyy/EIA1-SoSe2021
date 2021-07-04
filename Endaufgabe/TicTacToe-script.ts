@@ -310,7 +310,7 @@ class TiTaTo3x3 {
                     this.board[1][1] === this.aktuellerSpieler &&
                     this.board[0][2] === this.aktuellerSpieler))
         )
-            return true;
+            return true; 
         return false;
     }
     // Spielfeld und Punktestand positionieren
@@ -318,7 +318,9 @@ class TiTaTo3x3 {
         this.gesSpielfeld.punktestand(this.score);
         this.gesSpielfeld.getSpielfeld(this.board);
         this.gesSpielfeld.rundenstand(this.tttrunde);
-    }
+        // index = Math.floor(Math.random() * board.length);
+    //    bord[index].innerHTML.setAttribut = this.spieler.x;
+        }
     // Klick in ein Spielfeld: Wenn Spielzug möglich, kann aktueller Spieler Stein setzen 
     klick = (reihe: number, feld: number) => {
         const spielzugMoeglich: boolean = this.board[reihe][feld] === "";
@@ -348,6 +350,10 @@ class TiTaTo3x3 {
     // // Bei Computer gegen Mensch wird dieser Teil ausgeführt VERSUCH
     // if (spielzugMoeglich && !this.verzug && computer.getAttribute("class") == "active") {
     //     this.board[reihe][feld] = this.aktuellerSpieler;
+
+    //      for (this.spieler.x) {
+    //          zugComputer}
+        
     //     this.gesSpielfeld.updateSpielfeld(reihe, feld, this.aktuellerSpieler);
     //     // Festlegung was passiert, bei win und unentschieden
     //     const win: boolean = this.gewonnen(reihe, feld);
@@ -392,18 +398,16 @@ class TiTaTo3x3 {
             // tslint:disable-next-line: align -> Formatierung verschiebt sich jedes mal, daher Auskommentiert
         }, this.verzugzeit);
     }
-    //Spieler nach jedem Zug tauschen
+    //Spieler nach jedem Zug tauschen 
     tauschePlayer = (): void => {
         this.aktuellerSpieler = this.aktuellerSpieler === this.spieler.x ? this.spieler.o : this.spieler.x;
     }
     // VERSUCH Computerzug
     // zugComputer = (): void => {
-
-    //         // this.spieler.x =
-
-    //         index = Math.floor(Math.random() * 9);
-    //         console.log(index);
+    //    index = Math.floor(Math.random() * bord-length);
+    //    bord[index].innerDivElement.setAttribut = this.spieler.x
     //     }
+
     // Neustart nach Gewonnen, Verlohren oder Unentschieden, Nachricht wird gelöscht, Neustart Spiel
     neustartSpielfeld = (): void => {
         if (this.tttrunde.gespRunde <= 2) {
